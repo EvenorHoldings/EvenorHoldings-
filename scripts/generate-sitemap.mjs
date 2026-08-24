@@ -24,13 +24,12 @@ export function buildSitemap() {
     ...projects.map((p) => ({ loc: `/projects/${p}`, changefreq: "monthly", priority: "0.7" })),
   ];
 
-  const lastmod = new Date().toISOString().slice(0, 10);
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map(
     (u) =>
-      `  <url><loc>${ORIGIN}${u.loc}</loc><lastmod>${lastmod}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`,
+      `  <url><loc>${ORIGIN}${u.loc}</loc><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`,
   )
   .join("\n")}
 </urlset>
