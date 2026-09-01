@@ -119,32 +119,19 @@ const SectorCard = ({
     <article
       ref={ref}
       style={{
-        transitionDelay: `${index * 90}ms`,
+        transitionDelay: `${Math.min(index, 3) * 80}ms`,
         opacity: seen ? 1 : 0,
-        transform: seen ? "translateY(0)" : "translateY(28px)",
       }}
-      className="group relative bg-white p-8 min-h-[320px] flex flex-col overflow-hidden transition-all duration-700 ease-out border-l-4 border-gold shadow-[0_1px_2px_rgba(11,37,69,0.04)] hover:-translate-y-2 hover:shadow-[0_24px_48px_-16px_rgba(11,37,69,0.22)] focus-within:-translate-y-2"
+      className="group relative bg-white p-8 min-h-[300px] flex flex-col transition-[opacity,transform,box-shadow] duration-400 ease-out border border-border border-l-[3px] border-l-gold rounded-[4px] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(11,37,69,0.12)] focus-within:-translate-y-1"
     >
-
-      {/* navy fill sweep */}
-      <span
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-br from-navy to-navy-deep origin-bottom-left scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out"
-      />
-      {/* gold accent line at top */}
-      <span
-        aria-hidden
-        className="absolute top-0 left-0 h-[2px] w-0 bg-gold group-hover:w-full transition-all duration-700 ease-out"
-      />
-
       <div className="relative z-10 flex flex-col h-full">
-        <div className="mb-5 inline-flex items-center justify-center w-12 h-12 bg-navy/5 group-hover:bg-gold/15 transition-colors duration-500">
-          <Icon size={24} className="text-navy group-hover:text-gold transition-all duration-500 group-hover:rotate-[-6deg] group-hover:scale-110" />
+        <div className="mb-5 inline-flex items-center justify-center w-12 h-12 bg-navy/5">
+          <Icon size={28} className="text-navy" aria-hidden="true" />
         </div>
-        <h3 className="font-semibold text-base tracking-[0.08em] mb-3 text-navy group-hover:text-white transition-colors duration-500">
+        <h3 className="font-semibold text-base tracking-[0.08em] mb-3 text-navy">
           {name}
         </h3>
-        <p className="text-sm leading-relaxed font-light flex-1 text-charcoal/70 group-hover:text-white/80 transition-colors duration-500">
+        <p className="text-[15px] leading-relaxed font-light flex-1 text-charcoal/75">
           {desc}
         </p>
 
@@ -152,7 +139,7 @@ const SectorCard = ({
           {tags.map((t) => (
             <span
               key={t}
-              className="text-[10px] uppercase tracking-[0.15em] px-2 py-1 border border-navy/15 text-navy/70 group-hover:border-gold/60 group-hover:text-gold transition-colors duration-500"
+              className="text-[10px] uppercase tracking-[0.15em] px-2 py-1 border border-navy/15 text-navy/70"
             >
               {t}
             </span>
@@ -165,10 +152,11 @@ const SectorCard = ({
           className="inline-flex items-center gap-1.5 gold-ink text-sm font-medium mt-5 self-start min-h-11 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold before:absolute before:inset-0 before:content-['']"
         >
           <span className="border-b border-gold/0 group-hover:border-gold transition-all">Explore Sector</span>
-          <ArrowUpRight size={14} aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          <ArrowUpRight size={14} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
         </button>
       </div>
     </article>
+
 
   );
 };
