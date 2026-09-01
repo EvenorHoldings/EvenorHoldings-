@@ -4,7 +4,6 @@ import { Mail, Linkedin, Shield, Scale, Users, FileText } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import PageProgressBar from "@/components/PageProgressBar";
 import CookieConsent from "@/components/CookieConsent";
 import PageHero from "@/components/PageHero";
 import { CEO_IMAGE } from "@/assets/images";
@@ -64,7 +63,6 @@ const Leadership = () => {
           email: "joachim@evenor.org",
         }}
       />
-      <PageProgressBar />
       <Navbar />
 
       <main id="main-content">
@@ -80,8 +78,8 @@ const Leadership = () => {
           <div className="container-wide">
             <div className="grid lg:grid-cols-[440px_1fr] gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
               <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
                 className="mx-auto lg:mx-0 lg:sticky lg:top-32"
@@ -115,8 +113,8 @@ const Leadership = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >
@@ -162,8 +160,8 @@ const Leadership = () => {
               {governance.map((g, i) => (
                 <motion.div
                   key={g.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                   className="bg-white p-8 border-l-4 border-gold shadow-[0_4px_24px_rgba(11,37,69,0.06)]"

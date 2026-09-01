@@ -5,7 +5,6 @@ import { Check, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import PageProgressBar from "@/components/PageProgressBar";
 import CookieConsent from "@/components/CookieConsent";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
@@ -60,7 +59,6 @@ const About = () => {
         title="About Evenor Holdings | Continental Vision, Institutional Discipline"
         description="Discover Evenor Holdings — mission, values, continental presence across South Africa, Tanzania, Kenya, Zambia, DRC, Rwanda and Uganda, and our corporate history from 2021 to today."
       />
-      <PageProgressBar />
       <Navbar />
 
       <main id="main-content">
@@ -75,8 +73,8 @@ const About = () => {
         <section className="section-pad bg-white">
           <div className="container-wide max-w-4xl">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
@@ -128,8 +126,8 @@ const About = () => {
               ].map((c) => (
                 <motion.article
                   key={c.label}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                   className="bg-white border-t-4 border-gold p-8 md:p-10 shadow-[0_4px_24px_rgba(11,37,69,0.08)]"
@@ -172,8 +170,8 @@ const About = () => {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
               className="max-w-6xl mx-auto mb-12"
@@ -187,8 +185,8 @@ const About = () => {
               {presence.map((p, i) => (
                 <motion.div
                   key={p.country}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                   className={`p-6 border-l-4 ${p.primary ? "border-gold bg-white/[0.06]" : "border-white/20 bg-white/[0.03]"} backdrop-blur-sm`}
@@ -225,8 +223,8 @@ const About = () => {
                   return (
                     <motion.div
                       key={t.year}
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6 }}
                       className={`relative md:grid md:grid-cols-2 md:gap-12 ${right ? "" : ""}`}

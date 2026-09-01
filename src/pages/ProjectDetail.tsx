@@ -2,7 +2,6 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowUpRight, Check, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageProgressBar from "@/components/PageProgressBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 import { projects } from "@/data/projects";
@@ -36,7 +35,6 @@ const ProjectDetail = () => {
           description: project.summary,
         }}
       />
-      <PageProgressBar />
       <Navbar />
       <main id="main-content">
 

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Filter } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageProgressBar from "@/components/PageProgressBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 import { projects, sectorFilters } from "@/data/projects";
@@ -31,7 +30,6 @@ const Projects = () => {
         title="Projects & Portfolio | Evenor Holdings | Case Studies Across Africa"
         description="Selected engagements from Evenor Holdings — corridor logistics, national fibre backbones, public-sector digital transformation, coastal fuel terminals and mine-to-port optimisation."
       />
-      <PageProgressBar />
       <Navbar />
       <main id="main-content">
 

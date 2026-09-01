@@ -2,7 +2,6 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowRight, Check, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageProgressBar from "@/components/PageProgressBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 import { getSector, sectors } from "@/data/sectors";
@@ -33,7 +32,6 @@ const Sector = () => {
           description: sector.intro[0],
         }}
       />
-      <PageProgressBar />
       <Navbar />
       <main id="main-content">
 

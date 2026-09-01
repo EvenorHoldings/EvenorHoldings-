@@ -69,8 +69,8 @@ const ContactSection = () => {
     >
       <div className="container-wide">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="text-center mb-14 text-white max-w-4xl mx-auto"

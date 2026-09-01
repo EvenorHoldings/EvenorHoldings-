@@ -41,8 +41,8 @@ const IndustriesTeaserSection = () => {
           {industries.map(({ icon: Icon, label }, idx) => (
             <motion.button
               key={label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: idx * 0.06, ease: "easeOut" }}
               whileHover={{ y: -4 }}
