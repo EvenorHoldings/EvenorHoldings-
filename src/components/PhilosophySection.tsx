@@ -47,7 +47,7 @@ const PhilosophySection = () => {
       <section className="bg-navy section-pad text-white">
         <div className="container-wide max-w-4xl text-center">
           <p className="gold-label mb-6">Our Philosophy</p>
-          <h2 className="font-display italic text-white text-3xl md:text-[44px] mb-8">
+          <h2 className="font-display italic text-white text-2xl md:text-[28px] mb-8">
             "Always Better."
           </h2>
           <p className="text-white/75 text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto">
@@ -73,7 +73,7 @@ const PhilosophySection = () => {
       <div className="bg-offwhite">
         <div className="h-[2px] bg-gold w-full" />
         <div
-          className="h-[320px] md:h-[480px] bg-cover bg-center bg-fixed"
+          className="h-[280px] md:h-[400px] bg-cover bg-center"
           style={{ backgroundImage: `url(${IMG.corridor})` }}
           aria-hidden
         />

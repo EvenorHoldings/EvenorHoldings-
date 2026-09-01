@@ -119,7 +119,7 @@ const Leadership = () => {
                 transition={{ duration: 0.4 }}
               >
                 <p className="gold-label gold-ink mb-4">Letter from the CEO</p>
-                <h2 className="font-display italic text-navy text-2xl md:text-[34px] leading-snug mb-10">
+                <h2 className="font-display italic text-navy text-2xl md:text-[28px] leading-snug mb-10">
                   "Africa does not need to be fixed. It needs to be built — with ambition equal to its potential."
                 </h2>
                 <div className="space-y-6 text-charcoal/85 text-[16px] md:text-[17px] font-light leading-[1.9]">
@@ -201,7 +201,7 @@ const Leadership = () => {
         >
           <div className="absolute inset-0 bg-navy/85" />
           <div className="relative container-wide max-w-3xl mx-auto text-center text-white">
-            <p className="font-display italic text-white text-2xl md:text-[30px] leading-snug">
+            <p className="font-display italic text-white text-2xl md:text-[28px] leading-snug">
               "The projects that transform nations are not won in tenders alone — they are earned in relationships, sustained by excellence, and delivered with unflinching commitment."
             </p>
             <p className="text-gold text-[13px] mt-6 tracking-[0.2em] uppercase font-semibold">
