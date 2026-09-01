@@ -8,7 +8,7 @@ const WhyEvenorSection = () => {
       <div className="grid lg:grid-cols-2">
         <div className="px-8 md:px-16 lg:px-20 py-20 lg:py-32">
           <p className="gold-label mb-5">Why Evenor Holdings</p>
-          <h2 className="font-display text-white text-3xl md:text-5xl font-bold leading-tight mb-8">
+          <h2 className="font-display text-white text-3xl md:text-[44px] font-bold leading-tight mb-8">
             Africa Is Not a Market.<br />
             It Is Our Mandate.
           </h2>

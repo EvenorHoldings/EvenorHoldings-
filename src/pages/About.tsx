@@ -5,7 +5,6 @@ import { Check, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import PageProgressBar from "@/components/PageProgressBar";
 import CookieConsent from "@/components/CookieConsent";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
@@ -60,7 +59,6 @@ const About = () => {
         title="About Evenor Holdings | Continental Vision, Institutional Discipline"
         description="Discover Evenor Holdings — mission, values, continental presence across South Africa, Tanzania, Kenya, Zambia, DRC, Rwanda and Uganda, and our corporate history from 2021 to today."
       />
-      <PageProgressBar />
       <Navbar />
 
       <main id="main-content">
@@ -75,13 +73,13 @@ const About = () => {
         <section className="section-pad bg-white">
           <div className="container-wide max-w-4xl">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.4 }}
             >
               <p className="gold-label gold-ink mb-6">Company Profile</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold leading-tight mb-10">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold leading-tight mb-10">
                 Built in Africa. Engineered for its next century.
               </h2>
               <div className="space-y-6 text-charcoal/85 text-[17px] md:text-[18px] font-light leading-[1.9]">
@@ -107,7 +105,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14">
               <p className="gold-label gold-ink mb-4">Our Framework</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
                 Mission · Vision · Values
               </h2>
             </div>
@@ -128,10 +126,10 @@ const About = () => {
               ].map((c) => (
                 <motion.article
                   key={c.label}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.4 }}
                   className="bg-white border-t-4 border-gold p-8 md:p-10 shadow-[0_4px_24px_rgba(11,37,69,0.08)]"
                 >
                   <p className="text-gold text-[11px] font-semibold tracking-[0.22em] uppercase mb-4">
@@ -163,7 +161,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14 text-white max-w-3xl mx-auto">
               <p className="gold-label mb-4">Continental Presence</p>
-              <h2 className="font-display text-white text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
                 Seven Markets. One Standard.
               </h2>
               <p className="text-white/70 font-light leading-relaxed text-base md:text-lg">
@@ -172,10 +170,10 @@ const About = () => {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.4 }}
               className="max-w-6xl mx-auto mb-12"
             >
               <OperationsMap />
@@ -187,10 +185,10 @@ const About = () => {
               {presence.map((p, i) => (
                 <motion.div
                   key={p.country}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
                   className={`p-6 border-l-4 ${p.primary ? "border-gold bg-white/[0.06]" : "border-white/20 bg-white/[0.03]"} backdrop-blur-sm`}
                 >
                   <div className="flex items-start gap-3">
@@ -211,7 +209,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-16">
               <p className="gold-label gold-ink mb-4">Our Trajectory</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
                 A Deliberate, Compounding Build.
               </h2>
             </div>
@@ -225,10 +223,10 @@ const About = () => {
                   return (
                     <motion.div
                       key={t.year}
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6 }}
+                      transition={{ duration: 0.4 }}
                       className={`relative md:grid md:grid-cols-2 md:gap-12 ${right ? "" : ""}`}
                     >
                       <div aria-hidden className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-gold border-2 border-navy md:-translate-x-1/2 z-10" />
@@ -256,7 +254,7 @@ const About = () => {
           <div className="absolute inset-0 bg-navy/85" />
           <div className="relative container-wide text-center max-w-3xl mx-auto text-white">
             <p className="gold-label mb-4">Leadership</p>
-            <h2 className="font-display text-white text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
               Meet the principals behind the mandate.
             </h2>
             <p className="text-white/75 font-light leading-relaxed mb-8 text-base md:text-lg">

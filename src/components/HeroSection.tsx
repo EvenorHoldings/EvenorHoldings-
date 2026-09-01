@@ -86,9 +86,9 @@ const HeroSection = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={i}
-            initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
+            initial={reducedMotion ? { opacity: 0 } : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={reducedMotion ? { opacity: 0 } : { opacity: 0 }}
             transition={{ duration: reducedMotion ? 0.2 : 0.9, ease: "easeOut" }}
             className="max-w-4xl text-center"
           >

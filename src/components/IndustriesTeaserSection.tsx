@@ -27,7 +27,7 @@ const IndustriesTeaserSection = () => {
       <div className="container-wide">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="gold-label gold-ink mb-4">Industries We Serve</p>
-          <h2 className="font-display text-navy text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold mb-6 leading-tight">
             Eight Sectors. One Standard of Delivery.
           </h2>
           <p className="text-charcoal/75 text-base md:text-lg font-light leading-relaxed">
@@ -41,10 +41,10 @@ const IndustriesTeaserSection = () => {
           {industries.map(({ icon: Icon, label }, idx) => (
             <motion.button
               key={label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: idx * 0.06, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: idx * 0.06, ease: "easeOut" }}
               whileHover={{ y: -4 }}
               onClick={() =>
                 document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })

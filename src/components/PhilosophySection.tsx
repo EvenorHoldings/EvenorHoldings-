@@ -47,7 +47,7 @@ const PhilosophySection = () => {
       <section className="bg-navy section-pad text-white">
         <div className="container-wide max-w-4xl text-center">
           <p className="gold-label mb-6">Our Philosophy</p>
-          <h2 className="font-display italic text-white text-3xl md:text-5xl mb-8">
+          <h2 className="font-display italic text-white text-2xl md:text-[28px] mb-8">
             "Always Better."
           </h2>
           <p className="text-white/75 text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto">
@@ -58,7 +58,7 @@ const PhilosophySection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {stats.map((s) => (
               <div key={s.label}>
-                <div className="font-display text-gold text-3xl md:text-5xl font-bold mb-2 leading-tight">
+                <div className="font-display text-gold text-3xl md:text-[44px] font-bold mb-2 leading-tight">
                   <Counter to={s.value} />
                 </div>
                 <div className="text-white/70 text-[11px] md:text-xs uppercase tracking-[0.18em] font-medium">
@@ -73,7 +73,7 @@ const PhilosophySection = () => {
       <div className="bg-offwhite">
         <div className="h-[2px] bg-gold w-full" />
         <div
-          className="h-[320px] md:h-[480px] bg-cover bg-center bg-fixed"
+          className="h-[280px] md:h-[400px] bg-cover bg-center"
           style={{ backgroundImage: `url(${IMG.corridor})` }}
           aria-hidden
         />

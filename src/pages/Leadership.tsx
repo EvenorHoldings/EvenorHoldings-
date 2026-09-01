@@ -4,7 +4,6 @@ import { Mail, Linkedin, Shield, Scale, Users, FileText } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import PageProgressBar from "@/components/PageProgressBar";
 import CookieConsent from "@/components/CookieConsent";
 import PageHero from "@/components/PageHero";
 import { CEO_IMAGE } from "@/assets/images";
@@ -64,7 +63,6 @@ const Leadership = () => {
           email: "joachim@evenor.org",
         }}
       />
-      <PageProgressBar />
       <Navbar />
 
       <main id="main-content">
@@ -80,10 +78,10 @@ const Leadership = () => {
           <div className="container-wide">
             <div className="grid lg:grid-cols-[440px_1fr] gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
               <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.4 }}
                 className="mx-auto lg:mx-0 lg:sticky lg:top-32"
               >
                 <div className="relative w-[300px] sm:w-[380px] lg:w-[440px] aspect-[4/5] overflow-hidden shadow-[0_20px_60px_-20px_rgba(11,37,69,0.5)] border-l-4 border-gold">
@@ -115,13 +113,13 @@ const Leadership = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.4 }}
               >
                 <p className="gold-label gold-ink mb-4">Letter from the CEO</p>
-                <h2 className="font-display italic text-navy text-2xl md:text-[34px] leading-snug mb-10">
+                <h2 className="font-display italic text-navy text-2xl md:text-[28px] leading-snug mb-10">
                   "Africa does not need to be fixed. It needs to be built — with ambition equal to its potential."
                 </h2>
                 <div className="space-y-6 text-charcoal/85 text-[16px] md:text-[17px] font-light leading-[1.9]">
@@ -150,7 +148,7 @@ const Leadership = () => {
           <div className="container-wide">
             <div className="text-center mb-14 max-w-3xl mx-auto">
               <p className="gold-label gold-ink mb-4">Governance</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold mb-6">
                 Standards Held in the Open.
               </h2>
               <p className="text-charcoal/75 font-light leading-relaxed text-base md:text-lg">
@@ -162,10 +160,10 @@ const Leadership = () => {
               {governance.map((g, i) => (
                 <motion.div
                   key={g.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="bg-white p-8 border-l-4 border-gold shadow-[0_4px_24px_rgba(11,37,69,0.06)]"
                 >
                   <g.icon size={28} className="text-gold mb-4" strokeWidth={1.5} />
@@ -203,7 +201,7 @@ const Leadership = () => {
         >
           <div className="absolute inset-0 bg-navy/85" />
           <div className="relative container-wide max-w-3xl mx-auto text-center text-white">
-            <p className="font-display italic text-white text-2xl md:text-[30px] leading-snug">
+            <p className="font-display italic text-white text-2xl md:text-[28px] leading-snug">
               "The projects that transform nations are not won in tenders alone — they are earned in relationships, sustained by excellence, and delivered with unflinching commitment."
             </p>
             <p className="text-gold text-[13px] mt-6 tracking-[0.2em] uppercase font-semibold">

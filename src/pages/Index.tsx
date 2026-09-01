@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import PageProgressBar from "@/components/PageProgressBar";
 import Seo from "@/components/Seo";
 import HeroSection from "@/components/HeroSection";
 import PhilosophySection from "@/components/PhilosophySection";
@@ -22,7 +21,6 @@ const Index = () => {
         title="Evenor Holdings | Always Better | Africa's Multi-Sector Infrastructure Group"
         description="Evenor Holdings is a South African industrial and technology conglomerate delivering turnkey solutions across Logistics, ICT, Consulting, Petrochemicals and Mining in Sub-Saharan Africa."
       />
-      <PageProgressBar />
       <Navbar />
       <main id="main-content">
         <HeroSection />

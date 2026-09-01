@@ -10,9 +10,9 @@ const links: NavLink[] = [
   { label: "SERVICES", href: "#sectors", type: "hash" },
   { label: "PROJECTS", href: "/projects", type: "route" },
   { label: "LEADERSHIP", href: "/leadership", type: "route" },
-  { label: "PARTNERSHIPS", href: "#partners", type: "hash" },
   { label: "CONTACT", href: "/contact", type: "route" },
 ];
+
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

@@ -2,7 +2,6 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowRight, Check, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageProgressBar from "@/components/PageProgressBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
 import { getSector, sectors } from "@/data/sectors";
@@ -33,7 +32,6 @@ const Sector = () => {
           description: sector.intro[0],
         }}
       />
-      <PageProgressBar />
       <Navbar />
       <main id="main-content">
 
@@ -69,7 +67,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="text-center mb-14">
             <p className="gold-label mb-4">Our Distinctive Edge</p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold">Three Pillars.</h2>
+            <h2 className="font-display text-3xl md:text-[44px] font-bold">Three Pillars.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {sector.pillars.map((p, i) => (
@@ -88,7 +86,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="max-w-2xl mb-14">
             <p className="gold-label gold-ink mb-4">Capability Map</p>
-            <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">What We Deliver.</h2>
+            <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">What We Deliver.</h2>
             <div className="mt-6 h-[3px] w-16 bg-gold" />
           </div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -114,7 +112,7 @@ const Sector = () => {
         <div className="container-wide grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
           {sector.metrics.map((m) => (
             <div key={m.label} className="text-center border-l border-white/10 first:border-l-0 md:border-l md:first:border-l-0 px-4">
-              <div className="font-display text-gold text-4xl md:text-5xl font-bold mb-2">{m.value}</div>
+              <div className="font-display text-gold text-4xl md:text-[44px] font-bold mb-2">{m.value}</div>
               <div className="text-white/60 text-[11px] tracking-[0.2em] uppercase font-medium">{m.label}</div>
             </div>
           ))}
@@ -126,7 +124,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="text-center mb-14">
             <p className="gold-label gold-ink mb-4">Delivery Method</p>
-            <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">How We Engage.</h2>
+            <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">How We Engage.</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6 relative">
             {sector.approach.map((a) => (
@@ -145,7 +143,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="max-w-2xl mb-12">
             <p className="gold-label gold-ink mb-4">Representative Engagement</p>
-            <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">Case in Point.</h2>
+            <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">Case in Point.</h2>
             <div className="mt-6 h-[3px] w-16 bg-gold" />
           </div>
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
@@ -199,7 +197,7 @@ const Sector = () => {
       <section className="bg-navy text-white py-20 md:py-28">
         <div className="container-wide text-center max-w-3xl mx-auto">
           <p className="gold-label mb-4">Engage Evenor</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">{sector.cta}.</h2>
+          <h2 className="font-display text-3xl md:text-[44px] font-bold mb-6">{sector.cta}.</h2>
           <p className="text-white/75 font-light text-lg leading-relaxed mb-10">
             Speak directly with a principal. Every enquiry is triaged within one working day.
           </p>

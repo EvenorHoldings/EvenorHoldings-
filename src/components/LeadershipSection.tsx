@@ -9,7 +9,7 @@ const LeadershipSection = () => {
       <div className="container-wide">
         <div className="text-center mb-16">
           <p className="gold-label gold-ink mb-4">Leadership</p>
-          <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">
+          <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
             The Vision Behind the Work.
           </h2>
         </div>
@@ -36,7 +36,7 @@ const LeadershipSection = () => {
 
           <div className="lg:pl-8">
             <p className="gold-label gold-ink mb-4">From the CEO</p>
-            <h3 className="font-display italic text-navy text-2xl md:text-[32px] leading-snug mb-8">
+            <h3 className="font-display italic text-navy text-2xl md:text-[28px] leading-snug mb-8">
               "Africa does not need to be fixed. It needs to be built — with ambition equal to its potential."
             </h3>
             <div className="space-y-5 text-charcoal/85 text-[15px] md:text-base font-light leading-[1.9]">

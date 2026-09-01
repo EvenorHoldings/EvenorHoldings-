@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageProgressBar from "@/components/PageProgressBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/CookieConsent";
 import PageHero from "@/components/PageHero";
@@ -14,7 +13,6 @@ const Contact = () => (
       title="Contact Evenor Holdings | Enquiries, Tenders & Partnerships"
       description="Contact Evenor Holdings — head office in Cape Town, South Africa. Route your enquiry to sales, tenders, partnerships or the executive office."
     />
-    <PageProgressBar />
     <Navbar />
     <main id="main-content">
       <PageHero
