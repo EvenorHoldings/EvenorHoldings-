@@ -72,7 +72,7 @@ const ContactSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-14 text-white max-w-4xl mx-auto"
         >
           <p className="gold-label mb-4">Start a Conversation</p>

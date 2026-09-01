@@ -76,7 +76,7 @@ const About = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.4 }}
             >
               <p className="gold-label gold-ink mb-6">Company Profile</p>
               <h2 className="font-display text-navy text-3xl md:text-5xl font-bold leading-tight mb-10">
@@ -129,7 +129,7 @@ const About = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.4 }}
                   className="bg-white border-t-4 border-gold p-8 md:p-10 shadow-[0_4px_24px_rgba(11,37,69,0.08)]"
                 >
                   <p className="text-gold text-[11px] font-semibold tracking-[0.22em] uppercase mb-4">
@@ -173,7 +173,7 @@ const About = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.4 }}
               className="max-w-6xl mx-auto mb-12"
             >
               <OperationsMap />
@@ -188,7 +188,7 @@ const About = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
                   className={`p-6 border-l-4 ${p.primary ? "border-gold bg-white/[0.06]" : "border-white/20 bg-white/[0.03]"} backdrop-blur-sm`}
                 >
                   <div className="flex items-start gap-3">
@@ -226,7 +226,7 @@ const About = () => {
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6 }}
+                      transition={{ duration: 0.4 }}
                       className={`relative md:grid md:grid-cols-2 md:gap-12 ${right ? "" : ""}`}
                     >
                       <div aria-hidden className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-gold border-2 border-navy md:-translate-x-1/2 z-10" />

@@ -81,7 +81,7 @@ const Leadership = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.4 }}
                 className="mx-auto lg:mx-0 lg:sticky lg:top-32"
               >
                 <div className="relative w-[300px] sm:w-[380px] lg:w-[440px] aspect-[4/5] overflow-hidden shadow-[0_20px_60px_-20px_rgba(11,37,69,0.5)] border-l-4 border-gold">
@@ -116,7 +116,7 @@ const Leadership = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.4 }}
               >
                 <p className="gold-label gold-ink mb-4">Letter from the CEO</p>
                 <h2 className="font-display italic text-navy text-2xl md:text-[34px] leading-snug mb-10">
@@ -163,7 +163,7 @@ const Leadership = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="bg-white p-8 border-l-4 border-gold shadow-[0_4px_24px_rgba(11,37,69,0.06)]"
                 >
                   <g.icon size={28} className="text-gold mb-4" strokeWidth={1.5} />
