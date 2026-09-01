@@ -148,7 +148,7 @@ const Leadership = () => {
           <div className="container-wide">
             <div className="text-center mb-14 max-w-3xl mx-auto">
               <p className="gold-label gold-ink mb-4">Governance</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold mb-6">
                 Standards Held in the Open.
               </h2>
               <p className="text-charcoal/75 font-light leading-relaxed text-base md:text-lg">

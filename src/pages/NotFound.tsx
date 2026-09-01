@@ -39,7 +39,7 @@ const NotFound = () => {
             Off the Map.
           </h1>
           <div className="h-[3px] w-16 bg-gold mb-8" />
-          <p className="text-white/75 font-light text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+          <p className="text-white/75 font-light text-[17px] md:text-[18px] max-w-2xl leading-relaxed mb-10">
             The page you sought is no longer at this address. It may have been
             relocated, retired, or was never charted. Our principals' office
             invites you to continue elsewhere on the estate.

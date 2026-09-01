@@ -79,7 +79,7 @@ const About = () => {
               transition={{ duration: 0.4 }}
             >
               <p className="gold-label gold-ink mb-6">Company Profile</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold leading-tight mb-10">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold leading-tight mb-10">
                 Built in Africa. Engineered for its next century.
               </h2>
               <div className="space-y-6 text-charcoal/85 text-[17px] md:text-[18px] font-light leading-[1.9]">
@@ -105,7 +105,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14">
               <p className="gold-label gold-ink mb-4">Our Framework</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
                 Mission · Vision · Values
               </h2>
             </div>
@@ -161,7 +161,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14 text-white max-w-3xl mx-auto">
               <p className="gold-label mb-4">Continental Presence</p>
-              <h2 className="font-display text-white text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
                 Seven Markets. One Standard.
               </h2>
               <p className="text-white/70 font-light leading-relaxed text-base md:text-lg">
@@ -209,7 +209,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-16">
               <p className="gold-label gold-ink mb-4">Our Trajectory</p>
-              <h2 className="font-display text-navy text-3xl md:text-5xl font-bold">
+              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
                 A Deliberate, Compounding Build.
               </h2>
             </div>
@@ -254,7 +254,7 @@ const About = () => {
           <div className="absolute inset-0 bg-navy/85" />
           <div className="relative container-wide text-center max-w-3xl mx-auto text-white">
             <p className="gold-label mb-4">Leadership</p>
-            <h2 className="font-display text-white text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
               Meet the principals behind the mandate.
             </h2>
             <p className="text-white/75 font-light leading-relaxed mb-8 text-base md:text-lg">

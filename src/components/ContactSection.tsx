@@ -76,7 +76,7 @@ const ContactSection = () => {
           className="text-center mb-14 text-white max-w-4xl mx-auto"
         >
           <p className="gold-label mb-4">Start a Conversation</p>
-          <h2 className="font-display text-white text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
             The Right Project Deserves<br />the Right Partner.
           </h2>
           <p className="text-white/75 max-w-2xl mx-auto font-light leading-relaxed text-base md:text-lg">

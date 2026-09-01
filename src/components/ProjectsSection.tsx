@@ -102,7 +102,7 @@ const ProjectsSection = () => {
       <div className="container-wide">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <p className="gold-label mb-4">Our Capacity</p>
-          <h2 className="font-display text-white text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
             What Evenor Holdings Brings to the Table.
           </h2>
           <p className="text-white/70 text-base md:text-lg font-light leading-relaxed">

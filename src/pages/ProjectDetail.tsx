@@ -73,7 +73,7 @@ const ProjectDetail = () => {
           <div>
             <p className="gold-label mb-4">Engagement Summary</p>
             <div className="h-[3px] w-16 bg-gold mb-6" />
-            <p className="text-charcoal text-lg md:text-xl font-light leading-relaxed">
+            <p className="text-charcoal text-[17px] md:text-[18px] font-light leading-relaxed">
               {project.summary}
             </p>
             <div className="mt-10">
