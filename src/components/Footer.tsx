@@ -29,12 +29,12 @@ const Footer = () => {
         <div>
           <p className="text-white text-[11px] tracking-[0.22em] uppercase mb-5">Company</p>
           <ul className="space-y-2.5 text-sm font-light">
-            <li><a href="#philosophy" className="hover:text-gold transition-colors">About Evenor</a></li>
+            <li><a href="/about" className="hover:text-gold transition-colors">About Evenor</a></li>
             <li><a href="/leadership" className="hover:text-gold transition-colors">Leadership</a></li>
             <li><a href="/projects" className="hover:text-gold transition-colors">Projects & Portfolio</a></li>
-            <li><a href="#partners" className="hover:text-gold transition-colors">Partnerships</a></li>
-            <li><a href="#contact" className="hover:text-gold transition-colors">Investor Relations</a></li>
-            <li><a href="#contact" className="hover:text-gold transition-colors">Tender Opportunities</a></li>
+            <li><a href="/insights" className="hover:text-gold transition-colors">Perspectives & Insights</a></li>
+            <li><a href="/contact" className="hover:text-gold transition-colors">Investor Relations</a></li>
+            <li><a href="/contact" className="hover:text-gold transition-colors">Tender Opportunities</a></li>
           </ul>
         </div>
 
@@ -64,9 +64,9 @@ const Footer = () => {
           </div>
           <p className="text-white text-[11px] tracking-[0.22em] uppercase mt-6 mb-3">Legal</p>
           <ul className="space-y-2 text-sm font-light">
-            <li><a href="#" className="hover:text-gold transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">Terms of Engagement</a></li>
-            <li><a href="#" className="hover:text-gold transition-colors">POPIA Compliance</a></li>
+            <li><a href="/legal/privacy" className="hover:text-gold transition-colors">Privacy Policy</a></li>
+            <li><a href="/legal/terms" className="hover:text-gold transition-colors">Terms of Engagement</a></li>
+            <li><a href="/legal/compliance" className="hover:text-gold transition-colors">POPIA Compliance</a></li>
           </ul>
         </div>
       </div>

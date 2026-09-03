@@ -5,6 +5,10 @@
   <url><loc>https://www.evenor.org/leadership</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.evenor.org/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.evenor.org/projects</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.evenor.org/insights</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.evenor.org/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.evenor.org/legal/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.evenor.org/legal/compliance</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.evenor.org/sectors/logistics</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.evenor.org/sectors/ict</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.evenor.org/sectors/consulting</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -16,4 +20,9 @@
   <url><loc>https://www.evenor.org/projects/coastal-fuel-terminal</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.evenor.org/projects/mine-to-port-optimisation</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.evenor.org/projects/port-campus-connectivity</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.evenor.org/insights/corridor-thinking-african-logistics</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.evenor.org/insights/fibre-is-not-the-project</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.evenor.org/insights/procurement-as-strategy</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.evenor.org/insights/downstream-fuel-reliability</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.evenor.org/insights/mine-to-port-optimisation</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
