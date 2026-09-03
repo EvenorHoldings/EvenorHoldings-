@@ -13,6 +13,7 @@ const slugsFrom = (file) =>
 export function buildSitemap() {
   const sectors = slugsFrom("src/data/sectors.ts");
   const projects = slugsFrom("src/data/projects.ts");
+  const insights = slugsFrom("src/data/insights.ts");
 
   const urls = [
     { loc: "/", changefreq: "weekly", priority: "1.0" },
@@ -20,8 +21,13 @@ export function buildSitemap() {
     { loc: "/leadership", changefreq: "monthly", priority: "0.9" },
     { loc: "/contact", changefreq: "monthly", priority: "0.9" },
     { loc: "/projects", changefreq: "weekly", priority: "0.9" },
+    { loc: "/insights", changefreq: "monthly", priority: "0.8" },
+    { loc: "/legal/privacy", changefreq: "yearly", priority: "0.3" },
+    { loc: "/legal/terms", changefreq: "yearly", priority: "0.3" },
+    { loc: "/legal/compliance", changefreq: "yearly", priority: "0.3" },
     ...sectors.map((s) => ({ loc: `/sectors/${s}`, changefreq: "monthly", priority: "0.8" })),
     ...projects.map((p) => ({ loc: `/projects/${p}`, changefreq: "monthly", priority: "0.7" })),
+    ...insights.map((i) => ({ loc: `/insights/${i}`, changefreq: "monthly", priority: "0.6" })),
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
