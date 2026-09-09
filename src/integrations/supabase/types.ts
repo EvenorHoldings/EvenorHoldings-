@@ -53,6 +53,54 @@ export type Database = {
         }
         Relationships: []
       }
+      job_applications: {
+        Row: {
+          cover_note: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          location: string | null
+          phone: string | null
+          portfolio_url: string | null
+          role_slug: string
+          role_title: string
+          status: string
+          updated_at: string
+          years_experience: string | null
+        }
+        Insert: {
+          cover_note: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          location?: string | null
+          phone?: string | null
+          portfolio_url?: string | null
+          role_slug: string
+          role_title: string
+          status?: string
+          updated_at?: string
+          years_experience?: string | null
+        }
+        Update: {
+          cover_note?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          location?: string | null
+          phone?: string | null
+          portfolio_url?: string | null
+          role_slug?: string
+          role_title?: string
+          status?: string
+          updated_at?: string
+          years_experience?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
