@@ -13,6 +13,7 @@ const Sector = lazy(() => import("./pages/Sector"));
 const Projects = lazy(() => import("./pages/Projects"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Careers = lazy(() => import("./pages/Careers"));
 const Insights = lazy(() => import("./pages/Insights"));
 const InsightDetail = lazy(() => import("./pages/InsightDetail"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
