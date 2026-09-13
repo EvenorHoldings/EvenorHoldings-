@@ -22,6 +22,7 @@ export function buildSitemap() {
     { loc: "/contact", changefreq: "monthly", priority: "0.9" },
     { loc: "/projects", changefreq: "weekly", priority: "0.9" },
     { loc: "/insights", changefreq: "monthly", priority: "0.8" },
+    { loc: "/careers", changefreq: "weekly", priority: "0.8" },
     { loc: "/legal/privacy", changefreq: "yearly", priority: "0.3" },
     { loc: "/legal/terms", changefreq: "yearly", priority: "0.3" },
     { loc: "/legal/compliance", changefreq: "yearly", priority: "0.3" },
