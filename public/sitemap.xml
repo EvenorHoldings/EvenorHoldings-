@@ -6,6 +6,7 @@
   <url><loc>https://www.evenor.org/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.evenor.org/projects</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.evenor.org/insights</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.evenor.org/careers</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.evenor.org/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.evenor.org/legal/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.evenor.org/legal/compliance</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
