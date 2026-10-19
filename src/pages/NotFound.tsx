@@ -29,14 +29,13 @@ const NotFound = () => {
 
         <div className="container-wide relative py-32 md:py-40 text-white">
           <p className="gold-label mb-6">Error 404 · Route Unavailable</p>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-semibold leading-none mb-6">
+          <h1 className="display-xl mb-6">
             Off the Map.
           </h1>
           <div className="h-[3px] w-16 bg-gold mb-8" />
           <p className="text-white/75 font-light text-[17px] md:text-[18px] max-w-2xl leading-relaxed mb-10">
-            The page you sought is no longer at this address. It may have been
-            relocated, retired, or was never charted. Our principals' office
-            invites you to continue elsewhere on the estate.
+            There is nothing at this address. The page may have moved or never existed.
+            Try one of the links below.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-16">
@@ -44,9 +43,9 @@ const NotFound = () => {
               <Home size={16} className="mr-2" />
               Return Home
             </Link>
-            <Link to="/projects" className="btn-outline-white">
+            <Link to="/ventures" className="btn-outline-white">
               <Compass size={16} className="mr-2" />
-              Explore Projects
+              See our ventures
             </Link>
             <button
               onClick={() => window.history.back()}
@@ -59,10 +58,10 @@ const NotFound = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 max-w-4xl border border-white/10">
             {[
-              { label: "About the Group", href: "/about" },
-              { label: "Sectors", href: "/sectors/logistics" },
-              { label: "Leadership", href: "/leadership" },
-              { label: "Contact", href: "/#contact" },
+              { label: "Ventures", href: "/ventures" },
+              { label: "Capabilities", href: "/#capabilities" },
+              { label: "About the group", href: "/about" },
+              { label: "Contact", href: "/contact" },
             ].map((l) => (
               <Link
                 key={l.label}

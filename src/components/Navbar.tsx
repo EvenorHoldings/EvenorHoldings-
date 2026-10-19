@@ -1,146 +1,125 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { contactHref } from "@/lib/site";
 
-type NavLink = { label: string; href: string; type: "route" | "hash" };
-
-const links: NavLink[] = [
-  { label: "HOME", href: "/", type: "route" },
-  { label: "ABOUT", href: "/about", type: "route" },
-  { label: "SERVICES", href: "#sectors", type: "hash" },
-  { label: "PROJECTS", href: "/projects", type: "route" },
-  { label: "LEADERSHIP", href: "/leadership", type: "route" },
-  { label: "CAREERS", href: "/careers", type: "route" },
-  { label: "CONTACT", href: "/contact", type: "route" },
+const links = [
+  { label: "Ventures", to: "/ventures" },
+  { label: "Capabilities", to: "/#capabilities" },
+  { label: "About", to: "/about" },
+  { label: "Projects", to: "/projects" },
+  { label: "Insights", to: "/insights" },
+  { label: "Careers", to: "/careers" },
+  { label: "Contact", to: "/contact" },
 ];
 
+const linkBase =
+  "text-[13px] font-medium tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
-  const navigate = useNavigate();
   const menuRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Mobile menu: escape to close, focus trap, restore focus, lock scroll
+  // Close the mobile menu on navigation.
+  useEffect(() => setOpen(false), [pathname]);
+
+  // Mobile menu: escape to close, focus trap, restore focus, lock scroll.
   useEffect(() => {
     if (!open) return;
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const first = menuRef.current?.querySelector<HTMLElement>("button, a");
-    first?.focus();
+    menuRef.current?.querySelector<HTMLElement>("a, button")?.focus();
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        return;
-      }
+      if (e.key === "Escape") return setOpen(false);
       if (e.key !== "Tab" || !menuRef.current) return;
-      const focusables = Array.from(
-        menuRef.current.querySelectorAll<HTMLElement>("button, a, [tabindex]:not([tabindex='-1'])")
-      ).filter((el) => !el.hasAttribute("disabled"));
-      if (focusables.length === 0) return;
-      const firstEl = focusables[0];
-      const lastEl = focusables[focusables.length - 1];
-      if (e.shiftKey && document.activeElement === firstEl) {
+      const f = Array.from(menuRef.current.querySelectorAll<HTMLElement>("a, button"));
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) {
         e.preventDefault();
-        lastEl.focus();
-      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        f[f.length - 1].focus();
+      } else if (!e.shiftKey && document.activeElement === f[f.length - 1]) {
         e.preventDefault();
-        firstEl.focus();
+        f[0].focus();
       }
     };
-
     document.addEventListener("keydown", onKeyDown);
+    const trigger = triggerRef.current;
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = prevOverflow;
-      triggerRef.current?.focus();
+      trigger?.focus();
     };
   }, [open]);
 
-  const onHome = pathname === "/";
-
-  const handleClick = (l: NavLink) => {
-    setOpen(false);
-    if (l.type === "route") {
-      navigate(l.href);
-      window.scrollTo(0, 0);
-      return;
-    }
-    // hash: scroll if on home, else navigate to home then scroll
-    if (onHome) {
-      document.querySelector(l.href)?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/", { state: { scrollTo: l.href } });
-      setTimeout(() => document.querySelector(l.href)?.scrollIntoView({ behavior: "smooth" }), 250);
-    }
-  };
-
-  const forceOpaque = !onHome;
+  const solid = scrolled || pathname !== "/";
 
   return (
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold focus:text-navy focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:tracking-wide"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold focus:text-navy focus:px-5 focus:py-3 focus:text-sm focus:font-semibold"
       >
         Skip to main content
       </a>
-      <nav
-        aria-label="Primary"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || forceOpaque ? "bg-navy shadow-lg py-4" : "bg-navy/70 backdrop-blur-sm py-6"
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          solid ? "bg-navy/95 backdrop-blur border-b border-white/10" : "bg-transparent"
         }`}
       >
-        <div className="container-wide flex items-center justify-between">
-          <button
-            onClick={() => { navigate("/"); window.scrollTo(0, 0); }}
-            className="text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
-            aria-label="Evenor Holdings — go to home page"
+        <nav aria-label="Primary" className="container-wide flex h-16 md:h-20 items-center justify-between">
+          <Link
+            to="/"
+            className="flex flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+            aria-label="Evenor Holdings home"
           >
-            <span className="font-display text-white text-xl md:text-2xl tracking-wide">Evenor Holdings</span>
-            <div className="h-[2px] w-10 bg-gold mt-1" aria-hidden="true" />
-          </button>
+            <span className="font-display text-white text-lg md:text-xl font-semibold tracking-tight">Evenor Holdings</span>
+            <span className="h-[2px] w-8 bg-gold mt-1" aria-hidden="true" />
+          </Link>
 
-          <div className="hidden xl:flex items-center gap-7">
+          <ul className="hidden lg:flex items-center gap-7">
             {links.map((l) => (
-              <button
-                key={l.label}
-                onClick={() => handleClick(l)}
-                aria-current={l.type === "route" && pathname === l.href ? "page" : undefined}
-                className="nav-underline text-white text-[11px] font-medium tracking-[0.2em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
-              >
-                {l.label}
-              </button>
+              <li key={l.to}>
+                <NavLink
+                  to={l.to}
+                  end={l.to === "/"}
+                  className={({ isActive }) =>
+                    `${linkBase} ${isActive && !l.to.includes("#") ? "text-gold" : "text-white/85 hover:text-white"}`
+                  }
+                >
+                  {l.label}
+                </NavLink>
+              </li>
             ))}
-            <button
-              onClick={() => handleClick({ label: "CONTACT", href: "/contact", type: "route" })}
-              className="btn-gold !py-2.5 !px-5 !text-[11px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Partner With Us
-            </button>
-          </div>
+            <li>
+              <Link to={contactHref("partnership")} className="btn-gold !py-2.5 !px-5">
+                Partner with us
+              </Link>
+            </li>
+          </ul>
 
           <button
             ref={triggerRef}
+            type="button"
             onClick={() => setOpen(true)}
-            className="xl:hidden text-white min-h-11 min-w-11 inline-flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-            aria-label="Open navigation menu"
+            className="lg:hidden text-white min-h-11 min-w-11 inline-flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+            aria-label="Open menu"
             aria-expanded={open}
             aria-controls="mobile-nav"
           >
-            <Menu size={26} aria-hidden="true" />
+            <Menu size={24} aria-hidden="true" />
           </button>
-        </div>
+        </nav>
 
         {open && (
           <div
@@ -148,42 +127,43 @@ const Navbar = () => {
             ref={menuRef}
             role="dialog"
             aria-modal="true"
-            aria-label="Navigation menu"
-            className="fixed inset-0 bg-navy z-50 flex flex-col"
+            aria-label="Menu"
+            className="fixed inset-0 z-50 flex flex-col bg-navy"
           >
-            <div className="flex justify-end p-6">
+            <div className="container-wide flex h-16 items-center justify-between">
+              <span className="font-display text-white text-lg font-semibold">Evenor Holdings</span>
               <button
+                type="button"
                 onClick={() => setOpen(false)}
-                className="text-white min-h-11 min-w-11 inline-flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                aria-label="Close navigation menu"
+                className="text-white min-h-11 min-w-11 inline-flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                aria-label="Close menu"
               >
-                <X size={28} aria-hidden="true" />
+                <X size={24} aria-hidden="true" />
               </button>
             </div>
-            <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6">
+            <ul className="container-wide flex-1 flex flex-col justify-center gap-1">
               {links.map((l) => (
-                <button
-                  key={l.label}
-                  onClick={() => handleClick(l)}
-                  aria-current={l.type === "route" && pathname === l.href ? "page" : undefined}
-                  className="text-white text-lg font-medium tracking-[0.22em] min-h-11 px-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                >
-                  {l.label}
-                </button>
+                <li key={l.to}>
+                  <Link
+                    to={l.to}
+                    onClick={() => setOpen(false)}
+                    className="block py-3 font-display text-2xl text-white hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
               ))}
-              <button
-                onClick={() => handleClick({ label: "CONTACT", href: "/contact", type: "route" })}
-                className="btn-gold mt-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Partner With Us
-              </button>
-            </div>
+              <li className="pt-6">
+                <Link to={contactHref("partnership")} onClick={() => setOpen(false)} className="btn-gold w-full">
+                  Partner with us
+                </Link>
+              </li>
+            </ul>
           </div>
         )}
-      </nav>
+      </header>
     </>
   );
 };
-
 
 export default Navbar;

@@ -38,7 +38,8 @@ const ResponsiveImage = ({
       className={className}
       loading={priority ? "eager" : "lazy"}
       decoding={priority ? "sync" : "async"}
-      fetchPriority={priority ? "high" : "auto"}
+      // React 18 only passes the lowercase attribute through to the DOM.
+      {...{ fetchpriority: priority ? "high" : "auto" }}
     />
   </picture>
 );

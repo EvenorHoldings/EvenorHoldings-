@@ -108,7 +108,7 @@ const ProjectDetail = () => {
       <section className="section-pad bg-navy text-white">
         <div className="container-wide">
           <p className="gold-label gold-ink mb-4">Evenor Approach</p>
-          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight mb-12 max-w-3xl">
+          <h2 className="display-lg mb-12 max-w-3xl">
             How the mandate was structured, sequenced, and governed.
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -126,7 +126,7 @@ const ProjectDetail = () => {
       <section className="section-pad bg-offwhite">
         <div className="container-wide">
           <p className="gold-label gold-ink mb-4">Measured Outcome</p>
-          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy mb-10 max-w-3xl">
+          <h2 className="display-lg text-navy mb-10 max-w-3xl">
             Results the client took to their board.
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">

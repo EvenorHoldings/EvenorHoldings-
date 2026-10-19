@@ -46,7 +46,7 @@ const Projects = () => {
         <div className="container-wide py-14 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
           <div>
             <p className="gold-label mb-4">The Evenor Portfolio</p>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight mb-5">
+            <h2 className="display-lg mb-5">
               Engagements chosen for the standard they set — not the noise they make.
             </h2>
             <p className="text-white/75 font-light leading-relaxed max-w-2xl">

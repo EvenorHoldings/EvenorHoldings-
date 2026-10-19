@@ -1,165 +1,87 @@
 import type { LucideIcon } from "lucide-react";
 import { Truck, Network, Brain, Droplet, Mountain, ArrowUpRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import SectionHeader from "@/components/SectionHeader";
 
-const sectors = [
+const capabilities: { slug: string; icon: LucideIcon; name: string; desc: string; tags: string[] }[] = [
   {
     slug: "logistics",
     icon: Truck,
-    name: "LOGISTICS & SUPPLY CHAIN",
-    desc: "End-to-end freight management, port logistics, last-mile distribution, cold-chain solutions, and cross-border corridor optimisation across Southern and East Africa. We move what matters — on time, every time.",
-    tags: ["Freight", "Ports", "Cross-Border", "Cold-Chain"],
+    name: "Logistics & Supply Chain",
+    desc: "Freight management, port logistics, last-mile distribution, cold chain and cross-border corridor work across Southern and East Africa.",
+    tags: ["Freight", "Ports", "Cross-border", "Cold chain"],
   },
   {
     slug: "ict",
     icon: Network,
-    name: "ICT INFRASTRUCTURE",
-    desc: "Turnkey internet connectivity, fibre optic backbone deployment, enterprise networking, data centre fit-out, and smart port digitisation. From submarine cable landing stations to the last-mile access point.",
-    tags: ["Fibre", "Data Centres", "Connectivity", "Smart Ports"],
+    name: "ICT Infrastructure",
+    desc: "Connectivity, fibre deployment, enterprise networking, data-centre fit-out and smart-port digitisation.",
+    tags: ["Fibre", "Data centres", "Connectivity", "Smart ports"],
   },
   {
     slug: "consulting",
     icon: Brain,
-    name: "MANAGEMENT CONSULTING",
-    desc: "Strategic advisory, organisational design, public sector reform, regulatory navigation, and investment facilitation for governments, parastatals, and multinationals operating in complex African markets.",
-    tags: ["Strategy", "Public Sector", "Investment", "Reform"],
+    name: "Management Consulting",
+    desc: "Strategy, organisational design, public-sector reform, regulatory navigation and investment facilitation in African markets.",
+    tags: ["Strategy", "Public sector", "Investment", "Reform"],
   },
   {
     slug: "petrochemicals",
     icon: Droplet,
-    name: "PETROCHEMICALS SOLUTIONS",
-    desc: "Petroleum product trading, fuel storage and distribution infrastructure, downstream supply chain management, and HSE-compliant facility engineering for refineries, terminals, and port fuel installations.",
+    name: "Petrochemicals",
+    desc: "Petroleum product trading, fuel storage and distribution, downstream supply chain and HSE-compliant facility engineering.",
     tags: ["Trading", "Storage", "Downstream", "HSE"],
   },
   {
     slug: "mining",
     icon: Mountain,
-    name: "MINING SOLUTIONS",
-    desc: "Mineral processing advisory, mine-to-port logistics, tailings management, environmental compliance consulting, and technology integration for junior and mid-tier mining operations across Sub-Saharan Africa.",
-    tags: ["Processing", "Mine-to-Port", "Compliance", "Tech"],
+    name: "Mining Solutions",
+    desc: "Mineral processing advisory, mine-to-port logistics, tailings and environmental compliance for junior and mid-tier operators.",
+    tags: ["Processing", "Mine-to-port", "Compliance", "Technology"],
   },
 ];
 
-const useInView = <T extends HTMLElement>() => {
-  const ref = useRef<T | null>(null);
-  const [seen, setSeen] = useState(false);
-  useEffect(() => {
-    if (!ref.current) return;
-    const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && (setSeen(true), io.disconnect()),
-      { threshold: 0.15 }
-    );
-    io.observe(ref.current);
-    return () => io.disconnect();
-  }, []);
-  return { ref, seen };
-};
-
-const SectorsSection = () => {
-  const go = (h: string) => document.querySelector(h)?.scrollIntoView({ behavior: "smooth" });
-  return (
-    <section id="sectors" className="bg-offwhite section-pad relative overflow-hidden">
-      {/* subtle ambient ornament */}
-      <div aria-hidden className="pointer-events-none absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-gold/5 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-32 -left-32 w-[480px] h-[480px] rounded-full bg-navy/5 blur-3xl" />
-
-      <div className="container-wide relative">
-        <div className="text-center mb-16">
-          <p className="gold-label gold-ink mb-4">Our Core Activities</p>
-          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
-            Five Sectors. One Standard.
-          </h2>
-          <div className="mt-6 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {sectors.slice(0, 3).map((s, i) => (
-            <SectorCard key={s.name} index={i} {...s} />
-          ))}
-        </div>
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8 md:max-w-[66%] md:mx-auto">
-          {sectors.slice(3).map((s, i) => (
-            <SectorCard key={s.name} index={i + 3} {...s} />
-          ))}
-        </div>
-
-        <div className="text-center mt-14">
-          <button onClick={() => go("#deepdive")} className="group inline-flex items-center gap-2 text-navy font-medium tracking-wide text-sm border-b-2 border-gold pb-1 hover:text-gold transition-colors">
-            See Sector Intelligence
-            <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const SectorCard = ({
-  icon: Icon,
-  name,
-  desc,
-  tags,
-  index,
-  slug,
-}: {
-  icon: LucideIcon;
-  name: string;
-  desc: string;
-  tags: string[];
-  index: number;
-  slug: string;
-}) => {
-  const { ref, seen } = useInView<HTMLDivElement>();
-  const navigate = useNavigate();
-  const goDeep = () => {
-    navigate(`/sectors/${slug}`);
-    window.scrollTo(0, 0);
-  };
-  return (
-    <article
-      ref={ref}
-      style={{
-        transitionDelay: `${Math.min(index, 3) * 80}ms`,
-        opacity: seen ? 1 : 0,
-      }}
-      className="group relative bg-white p-8 min-h-[300px] flex flex-col transition-[opacity,transform,box-shadow] duration-400 ease-out border border-border border-l-[3px] border-l-gold rounded-[4px] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(11,37,69,0.12)] focus-within:-translate-y-1"
-    >
-      <div className="relative z-10 flex flex-col h-full">
-        <div className="mb-5 inline-flex items-center justify-center w-12 h-12 bg-navy/5">
-          <Icon size={28} className="text-navy" aria-hidden="true" />
-        </div>
-        <h3 className="font-semibold text-base tracking-[0.08em] mb-3 text-navy">
-          {name}
-        </h3>
-        <p className="text-[15px] leading-relaxed font-light flex-1 text-charcoal/75">
-          {desc}
-        </p>
-
-        <div className="flex flex-wrap gap-2 mt-5">
-          {tags.map((t) => (
-            <span
-              key={t}
-              className="text-[10px] uppercase tracking-[0.15em] px-2 py-1 border border-navy/15 text-navy/70"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-
-        <button
-          onClick={goDeep}
-          aria-label={`Explore the ${name} sector`}
-          className="inline-flex items-center gap-1.5 gold-ink text-sm font-medium mt-5 self-start min-h-11 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold before:absolute before:inset-0 before:content-['']"
-        >
-          <span className="border-b border-gold/0 group-hover:border-gold transition-all">Explore Sector</span>
-          <ArrowUpRight size={14} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
-        </button>
-      </div>
-    </article>
-
-
-  );
-};
+const SectorsSection = () => (
+  <section id="capabilities" aria-labelledby="capabilities-title" className="section-pad bg-white">
+    <div className="container-wide">
+      <SectionHeader
+        id="capabilities-title"
+        eyebrow="Capabilities"
+        title="Five capabilities behind every venture."
+        intro="Our sectors are the toolkit the group draws on. They serve our own ventures first, and selected clients and partners alongside them."
+      />
+      <ul className="grid gap-px bg-navy/10 border border-navy/10 sm:grid-cols-2 lg:grid-cols-3">
+        {capabilities.map(({ slug, icon: Icon, name, desc, tags }) => (
+          <li key={slug} className="group relative bg-white p-8 transition-colors hover:bg-offwhite">
+            <Icon size={28} strokeWidth={1.5} className="text-navy mb-6" aria-hidden="true" />
+            <h3 className="text-lg font-semibold text-navy mb-3">
+              <Link
+                to={`/sectors/${slug}`}
+                className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold before:absolute before:inset-0 before:content-['']"
+              >
+                {name}
+              </Link>
+            </h3>
+            <p className="text-[15px] leading-relaxed text-charcoal/75">{desc}</p>
+            <p className="mt-5 text-xs uppercase tracking-[0.14em] text-navy/60">{tags.join(" · ")}</p>
+            <ArrowUpRight
+              size={18}
+              aria-hidden="true"
+              className="absolute right-6 top-8 text-gold-ink opacity-0 transition-opacity group-hover:opacity-100"
+            />
+          </li>
+        ))}
+        <li className="relative bg-navy p-8 text-white flex flex-col justify-between">
+          <p className="text-lg leading-relaxed text-white/85">
+            Procurement runs across every capability as a supporting function.
+          </p>
+          <Link to="/projects" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-gold-bright">
+            See project work <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </section>
+);
 
 export default SectorsSection;

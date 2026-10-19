@@ -1,83 +1,84 @@
+import { Link } from "react-router-dom";
+import { ventures } from "@/data/ventures";
+import { sectorNav } from "@/data/sectorNav";
+import { contactHref } from "@/lib/site";
+
+const heading = "text-white text-xs font-semibold tracking-[0.18em] uppercase mb-5";
+const link = "hover:text-gold transition-colors";
+
 const Footer = () => {
   const yr = new Date().getFullYear();
   return (
-    <footer style={{ background: "hsl(var(--navy-deep))" }} className="text-white/70 pt-20 pb-8">
-      <div className="container-wide grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-        {/* Column 1 — Identity */}
-        <div className="lg:col-span-1">
-          <p className="font-display text-white text-xl leading-tight mb-1">Evenor Holdings <span className="text-white/75">(Pty) Ltd</span></p>
-          <p className="text-gold italic text-sm mb-5">Always Better.</p>
-          <div className="h-[2px] w-10 bg-gold mb-5" />
-          <p className="text-xs leading-relaxed text-white/75">Reg. No. K2025/717968</p>
-          <p className="text-xs leading-relaxed text-white/75">CIPC South Africa · B-BBEE Level 2</p>
-          <p className="text-xs text-white/70 mt-6">© {yr} Evenor Holdings (Pty) Ltd.<br/>All rights reserved.</p>
+    <footer className="bg-navy-deep text-white/70 pt-20 pb-10">
+      <div className="container-wide grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+        <div>
+          <p className="font-display text-white text-xl font-semibold leading-tight">Evenor Holdings</p>
+          <p className="text-gold text-sm mt-1 mb-5">Always Better.</p>
+          <p className="text-sm leading-relaxed max-w-xs">
+            A South African holding company that builds and operates African ventures.
+          </p>
+          <p className="text-xs leading-relaxed mt-6">Evenor Holdings (Pty) Ltd · Reg. No. K2025/717968</p>
+          <p className="text-xs leading-relaxed">CIPC South Africa · B-BBEE Level 2</p>
         </div>
 
-        {/* Column 2 — Services */}
-        <div>
-          <p className="text-white text-[11px] tracking-[0.22em] uppercase mb-5">Services</p>
-          <ul className="space-y-2.5 text-sm font-light">
-            <li><a href="/sectors/logistics" className="hover:text-gold transition-colors">Logistics & Supply Chain</a></li>
-            <li><a href="/sectors/ict" className="hover:text-gold transition-colors">ICT Infrastructure</a></li>
-            <li><a href="/sectors/consulting" className="hover:text-gold transition-colors">Management Consulting</a></li>
-            <li><a href="/sectors/petrochemicals" className="hover:text-gold transition-colors">Petrochemicals Solutions</a></li>
-            <li><a href="/sectors/mining" className="hover:text-gold transition-colors">Mining Solutions</a></li>
+        <nav aria-label="Ventures">
+          <p className={heading}>Ventures</p>
+          <ul className="space-y-2.5 text-sm">
+            <li><Link to="/ventures" className={link}>All ventures</Link></li>
+            {ventures.map((v) => (
+              <li key={v.slug}><Link to={`/ventures/${v.slug}`} className={link}>{v.name}</Link></li>
+            ))}
           </ul>
-        </div>
+        </nav>
 
-        {/* Column 3 — Company */}
-        <div>
-          <p className="text-white text-[11px] tracking-[0.22em] uppercase mb-5">Company</p>
-          <ul className="space-y-2.5 text-sm font-light">
-            <li><a href="/about" className="hover:text-gold transition-colors">About Evenor</a></li>
-            <li><a href="/leadership" className="hover:text-gold transition-colors">Leadership</a></li>
-            <li><a href="/projects" className="hover:text-gold transition-colors">Projects & Portfolio</a></li>
-            <li><a href="/insights" className="hover:text-gold transition-colors">Perspectives & Insights</a></li>
-            <li><a href="/careers" className="hover:text-gold transition-colors">Careers</a></li>
-            <li><a href="/contact" className="hover:text-gold transition-colors">Investor Relations</a></li>
-            <li><a href="/contact" className="hover:text-gold transition-colors">Tender Opportunities</a></li>
+        <nav aria-label="Capabilities">
+          <p className={heading}>Capabilities</p>
+          <ul className="space-y-2.5 text-sm">
+            {sectorNav.map((s) => (
+              <li key={s.slug}><Link to={`/sectors/${s.slug}`} className={link}>{s.nav}</Link></li>
+            ))}
           </ul>
-        </div>
+        </nav>
 
-        {/* Column 4 — Direct Correspondence */}
-        <div>
-          <p className="text-white text-[11px] tracking-[0.22em] uppercase mb-5">Direct Correspondence</p>
-          <ul className="space-y-2.5 text-sm font-light">
-            <li><span className="text-white/70 text-[11px] uppercase tracking-wider">General</span><br/><a href="mailto:info@evenor.org" className="hover:text-gold transition-colors">info@evenor.org</a></li>
-            <li><span className="text-white/70 text-[11px] uppercase tracking-wider">Sales</span><br/><a href="mailto:sales@evenor.org" className="hover:text-gold transition-colors">sales@evenor.org</a></li>
-            <li><span className="text-white/70 text-[11px] uppercase tracking-wider">Tenders</span><br/><a href="mailto:tenders@evenor.org" className="hover:text-gold transition-colors">tenders@evenor.org</a></li>
-            <li><span className="text-white/70 text-[11px] uppercase tracking-wider">Partners</span><br/><a href="mailto:partners@evenor.org" className="hover:text-gold transition-colors">partners@evenor.org</a></li>
+        <nav aria-label="Company">
+          <p className={heading}>Company</p>
+          <ul className="space-y-2.5 text-sm">
+            <li><Link to="/about" className={link}>About</Link></li>
+            <li><Link to="/leadership" className={link}>Leadership</Link></li>
+            <li><Link to="/projects" className={link}>Projects</Link></li>
+            <li><Link to="/insights" className={link}>Insights</Link></li>
+            <li><Link to="/careers" className={link}>Careers</Link></li>
+            <li><Link to={contactHref("investors")} className={link}>Investor relations</Link></li>
+            <li><Link to={contactHref("tenders")} className={link}>Tender opportunities</Link></li>
           </ul>
-        </div>
+        </nav>
 
-        {/* Column 5 — HQ + Legal */}
         <div>
-          <p className="text-white text-[11px] tracking-[0.22em] uppercase mb-5">Head Office</p>
-          <address className="not-italic text-sm font-light leading-relaxed text-white/70">
-            1st Floor, Cape Dahlia<br/>
-            80 Coral Road, West Beach<br/>
-            Cape Town, 7441<br/>
-            South Africa
+          <p className={heading}>Contact</p>
+          <address className="not-italic text-sm leading-relaxed">
+            1st Floor, Cape Dahlia<br />
+            80 Coral Road, West Beach<br />
+            Cape Town, 7441, South Africa
           </address>
-          <div className="mt-4 space-y-1.5 text-sm font-light">
-            <a href="tel:+27815402781" className="block hover:text-gold transition-colors">+27 81 540 2781</a>
-            <a href={`https://wa.me/27815402781`} target="_blank" rel="noopener noreferrer" className="block hover:text-gold transition-colors">WhatsApp Enquiry</a>
-          </div>
-          <p className="text-white text-[11px] tracking-[0.22em] uppercase mt-6 mb-3">Legal</p>
-          <ul className="space-y-2 text-sm font-light">
-            <li><a href="/legal/privacy" className="hover:text-gold transition-colors">Privacy Policy</a></li>
-            <li><a href="/legal/terms" className="hover:text-gold transition-colors">Terms of Engagement</a></li>
-            <li><a href="/legal/compliance" className="hover:text-gold transition-colors">POPIA Compliance</a></li>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><a href="mailto:info@evenor.org" className={link}>info@evenor.org</a></li>
+            <li><a href="tel:+27815402781" className={link}>+27 81 540 2781</a></li>
+            <li>
+              <a href="https://wa.me/27815402781" target="_blank" rel="noopener noreferrer" className={link}>
+                WhatsApp
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div
-        className="container-wide mt-14 pt-6 border-t flex flex-col md:flex-row justify-between gap-2 text-[12px] text-white/70"
-        style={{ borderColor: "hsl(var(--navy-light))" }}
-      >
-        <span>Evenor Holdings (Pty) Ltd — evenor.org</span>
-        <span className="italic">Designed with purpose. Built for Africa.</span>
+      <div className="container-wide mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs">
+        <p>© {yr} Evenor Holdings (Pty) Ltd. All rights reserved.</p>
+        <ul className="flex flex-wrap gap-x-6 gap-y-2">
+          <li><Link to="/legal/privacy" className={link}>Privacy policy</Link></li>
+          <li><Link to="/legal/terms" className={link}>Terms</Link></li>
+          <li><Link to="/legal/compliance" className={link}>POPIA compliance</Link></li>
+        </ul>
       </div>
     </footer>
   );

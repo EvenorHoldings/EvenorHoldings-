@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
 import { Mail, Linkedin, Shield, Scale, Users, FileText } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -35,18 +33,6 @@ const governance = [
 ];
 
 const Leadership = () => {
-  useEffect(() => {
-    document.title = "Leadership · Office of the CEO · Evenor Holdings";
-    const desc = "Meet Joachim Urio, Founder & CEO of Evenor Holdings, and the governance framework underpinning our principal-led engagement model across Sub-Saharan Africa.";
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", desc);
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-dvh bg-offwhite">
@@ -77,11 +63,7 @@ const Leadership = () => {
         <section className="section-pad bg-white">
           <div className="container-wide">
             <div className="grid lg:grid-cols-[440px_1fr] gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
+              <div
                 className="mx-auto lg:mx-0 lg:sticky lg:top-32"
               >
                 <div className="relative w-[300px] sm:w-[380px] lg:w-[440px] aspect-[4/5] overflow-hidden shadow-[0_20px_60px_-20px_rgba(11,37,69,0.5)] border-l-4 border-gold">
@@ -110,13 +92,9 @@ const Leadership = () => {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
+              <div
               >
                 <p className="gold-label gold-ink mb-4">Letter from the CEO</p>
                 <h2 className="font-display italic text-navy text-2xl md:text-[28px] leading-snug mb-10">
@@ -138,7 +116,7 @@ const Leadership = () => {
                   </p>
                   <p className="text-navy font-medium not-italic pt-4">— Joachim Urio, CEO</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -148,7 +126,7 @@ const Leadership = () => {
           <div className="container-wide">
             <div className="text-center mb-14 max-w-3xl mx-auto">
               <p className="gold-label gold-ink mb-4">Governance</p>
-              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy mb-6">
+              <h2 className="display-lg text-navy mb-6">
                 Standards Held in the Open.
               </h2>
               <p className="text-charcoal/75 font-light leading-relaxed text-base md:text-lg">
@@ -158,18 +136,14 @@ const Leadership = () => {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {governance.map((g, i) => (
-                <motion.div
+                <div
                   key={g.title}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="bg-white p-8 border-l-4 border-gold shadow-[0_4px_24px_rgba(11,37,69,0.06)]"
                 >
                   <g.icon size={28} className="text-gold mb-4" strokeWidth={1.5} />
                   <h3 className="font-display text-xl font-semibold text-navy mb-3">{g.title}</h3>
                   <p className="text-charcoal/75 text-[15px] leading-[1.8] font-light">{g.body}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

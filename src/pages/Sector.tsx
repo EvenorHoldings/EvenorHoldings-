@@ -68,7 +68,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="text-center mb-14">
             <p className="gold-label mb-4">Our Distinctive Edge</p>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight">Three Pillars.</h2>
+            <h2 className="display-lg">Three Pillars.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {sector.pillars.map((p, i) => (
@@ -87,7 +87,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="max-w-2xl mb-14">
             <p className="gold-label gold-ink mb-4">Capability Map</p>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">What We Deliver.</h2>
+            <h2 className="display-lg text-navy">What We Deliver.</h2>
             <div className="mt-6 h-[3px] w-16 bg-gold" />
           </div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -125,7 +125,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="text-center mb-14">
             <p className="gold-label gold-ink mb-4">Delivery Method</p>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">How We Engage.</h2>
+            <h2 className="display-lg text-navy">How We Engage.</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6 relative">
             {sector.approach.map((a) => (
@@ -144,7 +144,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="max-w-2xl mb-12">
             <p className="gold-label gold-ink mb-4">Representative Engagement</p>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">Case in Point.</h2>
+            <h2 className="display-lg text-navy">Case in Point.</h2>
             <div className="mt-6 h-[3px] w-16 bg-gold" />
           </div>
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
@@ -198,7 +198,7 @@ const Sector = () => {
       <section className="bg-navy text-white py-20 md:py-28">
         <div className="container-wide text-center max-w-3xl mx-auto">
           <p className="gold-label mb-4">Engage Evenor</p>
-          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight mb-6">{sector.cta}.</h2>
+          <h2 className="display-lg mb-6">{sector.cta}.</h2>
           <p className="text-white/75 font-light text-lg leading-relaxed mb-10">
             Speak directly with a principal. Every enquiry is triaged within one working day.
           </p>
@@ -227,7 +227,6 @@ const Sector = () => {
               <Link
                 key={o.slug}
                 to={`/sectors/${o.slug}`}
-                onClick={() => window.scrollTo(0, 0)}
                 className="group relative block bg-white border-l-4 border-gold p-6 hover:-translate-y-1 transition-transform shadow-[0_1px_2px_rgba(11,37,69,0.04)] hover:shadow-[0_20px_40px_-16px_rgba(11,37,69,0.2)]"
               >
                 <p className="text-[11px] tracking-[0.2em] uppercase text-midgray font-medium mb-2">Sector</p>

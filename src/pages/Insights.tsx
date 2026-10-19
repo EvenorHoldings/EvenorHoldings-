@@ -55,7 +55,7 @@ const Insights = () => {
         <section className="bg-navy-deep text-white">
           <div className="container-wide py-14 max-w-4xl">
             <p className="gold-label mb-4">Editorial Standard</p>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight mb-5">
+            <h2 className="display-lg mb-5">
               Written by the people who carry the delivery risk.
             </h2>
             <p className="text-white/75 font-light leading-relaxed text-lg">

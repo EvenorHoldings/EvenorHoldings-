@@ -1,12 +1,13 @@
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Check, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/LazyCookieConsent";
 import PageHero from "@/components/PageHero";
+import PartnersSection from "@/components/PartnersSection";
+import ClientOnly from "@/components/ClientOnly";
 import Seo from "@/components/Seo";
 
 const OperationsMap = lazy(() => import("@/components/OperationsMap"));
@@ -40,25 +41,32 @@ const timeline = [
   { year: "2026", title: "Continental Framework", body: "Rollout of the Evenor Continental Framework — a unified engagement model across seven Sub-Saharan markets." },
 ];
 
+// Figures carried over from the previous home page. Listed in the PR as needing confirmation.
+const glance = [
+  { value: "12+", label: "Countries active" },
+  { value: "5", label: "Core capabilities" },
+  { value: "200+", label: "Strategic partners" },
+  { value: "48 hrs", label: "Response commitment" },
+];
+
+const industries = [
+  "Government & parastatal",
+  "Mining & minerals",
+  "Energy & utilities",
+  "Transportation & ports",
+  "Agriculture & agri-processing",
+  "Water & sanitation",
+  "Healthcare infrastructure",
+  "Industrial manufacturing",
+];
+
 const About = () => {
-  useEffect(() => {
-    document.title = "About Evenor Holdings · Principal-Led Infrastructure Partner in Africa";
-    const desc = "Evenor Holdings is a South African-headquartered multi-sector conglomerate delivering integrated infrastructure, ICT, petrochemicals, mining and consulting solutions across Sub-Saharan Africa.";
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", desc);
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-dvh bg-offwhite">
       <Seo
-        title="About Evenor Holdings | Continental Vision, Institutional Discipline"
-        description="Discover Evenor Holdings — mission, values, continental presence across South Africa, Tanzania, Kenya, Zambia, DRC, Rwanda and Uganda, and our corporate history from 2021 to today."
+        title="About Evenor Holdings | A Holding Company Building African Ventures"
+        description="About Evenor Holdings: a South African holding company that builds African ventures, with capabilities in logistics, ICT, consulting, petrochemicals and mining. Mission, values, presence and history."
       />
       <Navbar />
 
@@ -73,19 +81,18 @@ const About = () => {
         {/* Company Overview */}
         <section className="section-pad bg-white">
           <div className="container-wide max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
+            <div
             >
               <p className="gold-label gold-ink mb-6">Company Profile</p>
-              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy mb-10">
+              <h2 className="display-lg text-navy mb-10">
                 Built in Africa. Engineered for its next century.
               </h2>
               <div className="space-y-6 text-charcoal/85 text-[17px] md:text-[18px] font-light leading-[1.9]">
                 <p>
-                  Evenor Holdings is a South African-headquartered, principal-led industrial group operating across five interlocking sectors — logistics, information and communications technology infrastructure, management consulting, petrochemicals, and mining solutions.
+                  Evenor Holdings is a South African holding company that builds and operates African ventures. Today that means <Link to="/ventures/moodies" className="text-navy underline underline-offset-4">Moodies</Link>, a mood-led wellness shop, and <Link to="/ventures/osto" className="text-navy underline underline-offset-4">OSTO</Link>, a cooking appliance that runs on filtered waste oil.
+                </p>
+                <p>
+                  Behind the ventures sit five group capabilities: logistics, information and communications technology infrastructure, management consulting, petrochemicals, and mining solutions. They serve our own ventures and selected clients and partners.
                 </p>
                 <p>
                   From our Cape Town head office and East African operational hub in Dar es Salaam, we serve governments, parastatals, institutional investors and enterprise clients across Sub-Saharan Africa. Our model is deliberately narrow at the top and deep at the bench: senior principals hold every client relationship, supported by specialist delivery teams and a curated network of continental and international partners.
@@ -97,7 +104,7 @@ const About = () => {
                   We do not chase the market. We arrive with fully-engineered solutions, credible partnerships, and the long-term commitment African institutions deserve.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -106,7 +113,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14">
               <p className="gold-label gold-ink mb-4">Our Framework</p>
-              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
+              <h2 className="display-lg text-navy">
                 Mission · Vision · Values
               </h2>
             </div>
@@ -125,12 +132,8 @@ const About = () => {
                   body: null,
                 },
               ].map((c) => (
-                <motion.article
+                <article
                   key={c.label}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4 }}
                   className="bg-white border-t-4 border-gold p-8 md:p-10 shadow-[0_4px_24px_rgba(11,37,69,0.08)]"
                 >
                   <p className="text-gold text-[11px] font-semibold tracking-[0.22em] uppercase mb-4">
@@ -148,7 +151,7 @@ const About = () => {
                       ))}
                     </ul>
                   )}
-                </motion.article>
+                </article>
               ))}
             </div>
           </div>
@@ -162,7 +165,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14 text-white max-w-3xl mx-auto">
               <p className="gold-label mb-4">Continental Presence</p>
-              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white mb-6">
+              <h2 className="display-lg text-white mb-6">
                 Seven Markets. One Standard.
               </h2>
               <p className="text-white/70 font-light leading-relaxed text-base md:text-lg">
@@ -170,28 +173,22 @@ const About = () => {
               </p>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
+            <div
               className="max-w-6xl mx-auto mb-12"
             >
-              <Suspense fallback={<div className="h-[380px] md:h-[560px] w-full max-w-3xl mx-auto border border-gold/30 bg-navy-deep" aria-hidden="true" />}>
+              <ClientOnly fallback={<div className="h-[380px] md:h-[560px] w-full max-w-3xl mx-auto border border-gold/30 bg-navy-deep" aria-hidden="true" />}>
+                <Suspense fallback={<div className="h-[380px] md:h-[560px] w-full max-w-3xl mx-auto border border-gold/30 bg-navy-deep" aria-hidden="true" />}>
                 <OperationsMap />
               </Suspense>
-            </motion.div>
+              </ClientOnly>
+            </div>
 
 
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
               {presence.map((p, i) => (
-                <motion.div
+                <div
                   key={p.country}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
                   className={`p-6 border-l-4 ${p.primary ? "border-gold bg-white/[0.06]" : "border-white/20 bg-white/[0.03]"} backdrop-blur-sm`}
                 >
                   <div className="flex items-start gap-3">
@@ -201,18 +198,42 @@ const About = () => {
                       <p className="text-white/65 text-sm mt-1 leading-relaxed font-light">{p.note}</p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* At a glance */}
+        <section aria-labelledby="glance-title" className="section-pad bg-offwhite">
+          <div className="container-wide">
+            <p className="eyebrow gold-ink mb-4">At a glance</p>
+            <h2 id="glance-title" className="display-lg text-navy mb-12">The group in numbers.</h2>
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {glance.map((g) => (
+                <div key={g.label} className="border-t-2 border-gold pt-5">
+                  <dt className="text-sm text-charcoal/70">{g.label}</dt>
+                  <dd className="font-display text-4xl font-semibold text-navy mt-2">{g.value}</dd>
+                </div>
+              ))}
+            </dl>
+            <h3 className="text-lg font-semibold text-navy mt-16 mb-5">Industries we serve</h3>
+            <ul className="flex flex-wrap gap-3">
+              {industries.map((x) => (
+                <li key={x} className="border border-navy/15 px-4 py-2 text-sm text-navy">{x}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <PartnersSection />
 
         {/* Timeline */}
         <section className="section-pad bg-offwhite">
           <div className="container-wide">
             <div className="text-center mb-16">
               <p className="gold-label gold-ink mb-4">Our Trajectory</p>
-              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
+              <h2 className="display-lg text-navy">
                 A Deliberate, Compounding Build.
               </h2>
             </div>
@@ -224,12 +245,8 @@ const About = () => {
                 {timeline.map((t, i) => {
                   const right = i % 2 === 1;
                   return (
-                    <motion.div
+                    <div
                       key={t.year}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4 }}
                       className={`relative md:grid md:grid-cols-2 md:gap-12 ${right ? "" : ""}`}
                     >
                       <div aria-hidden className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-gold border-2 border-navy md:-translate-x-1/2 z-10" />
@@ -241,7 +258,7 @@ const About = () => {
                         <h3 className="font-display text-xl font-semibold text-navy mb-2">{t.title}</h3>
                         <p className="text-charcoal/75 text-[15px] leading-relaxed font-light">{t.body}</p>
                       </div>
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>
@@ -257,7 +274,7 @@ const About = () => {
           <div className="absolute inset-0 bg-navy/85" />
           <div className="relative container-wide text-center max-w-3xl mx-auto text-white">
             <p className="gold-label mb-4">Leadership</p>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white mb-6">
+            <h2 className="display-lg text-white mb-6">
               Meet the principals behind the mandate.
             </h2>
             <p className="text-white/75 font-light leading-relaxed mb-8 text-base md:text-lg">

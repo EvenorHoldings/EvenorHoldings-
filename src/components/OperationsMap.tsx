@@ -10,7 +10,7 @@ type Site = {
   primary?: boolean;
 };
 
-export const sites: Site[] = [
+const sites: Site[] = [
   { name: "Cape Town", country: "South Africa", note: "Group headquarters — 1st Floor, Cape Dahlia, West Beach", coords: [-33.8074, 18.4784], primary: true },
   { name: "Johannesburg", country: "South Africa", note: "Commercial & tender liaison", coords: [-26.2041, 28.0473] },
   { name: "Dar es Salaam", country: "Tanzania", note: "East Africa operational hub & port corridor", coords: [-6.7924, 39.2083], primary: true },
