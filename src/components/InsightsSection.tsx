@@ -11,7 +11,7 @@ const InsightsSection = () => {
   return (
     <section id="insights" aria-labelledby="insights-title" className="section-pad bg-white">
       <div className="container-wide">
-        <SectionHeader id="insights-title" eyebrow="Insights" title="Notes from the work." />
+        <SectionHeader id="insights-title" eyebrow="Insights" title="Ideas we are building on." />
         <ul className="grid gap-8 md:grid-cols-3">
           {latest.map((i) => (
             <li key={i.slug} className="group relative border-t-2 border-navy/10 pt-6 hover:border-gold transition-colors">

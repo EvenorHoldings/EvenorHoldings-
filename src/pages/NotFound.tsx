@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Home, Compass } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -7,6 +8,10 @@ import { IMG } from "@/assets/images";
 
 const NotFound = () => {
   const location = useLocation();
+  // The 404 page is pre-rendered once (as /__404__) and served for every unknown URL, so the
+  // attempted path is only shown after hydration to keep server and client markup identical.
+  const [attempted, setAttempted] = useState("");
+  useEffect(() => setAttempted(location.pathname), [location.pathname]);
   return (
     <div className="min-h-dvh bg-navy flex flex-col">
       <Seo
@@ -79,7 +84,7 @@ const NotFound = () => {
           </div>
 
           <p className="text-white/40 text-xs tracking-[0.22em] uppercase mt-12">
-            Attempted path: <span className="text-white/70">{location.pathname}</span>
+            Attempted path: <span className="text-white/70">{attempted}</span>
           </p>
         </div>
       </section>

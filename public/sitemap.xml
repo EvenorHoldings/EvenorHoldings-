@@ -12,13 +12,6 @@
   <url><loc>https://evenor.org/sectors/consulting</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://evenor.org/sectors/petrochemicals</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://evenor.org/sectors/mining</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://evenor.org/projects</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://evenor.org/projects/dar-hinterland-corridor</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://evenor.org/projects/national-fibre-backbone</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://evenor.org/projects/psu-digital-transformation</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://evenor.org/projects/coastal-fuel-terminal</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://evenor.org/projects/mine-to-port-optimisation</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://evenor.org/projects/port-campus-connectivity</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://evenor.org/insights</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://evenor.org/insights/corridor-thinking-african-logistics</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://evenor.org/insights/fibre-is-not-the-project</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>

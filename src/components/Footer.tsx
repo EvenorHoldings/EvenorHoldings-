@@ -15,10 +15,10 @@ const Footer = () => {
           <p className="font-display text-white text-xl font-semibold leading-tight">Evenor Holdings</p>
           <p className="text-gold text-sm mt-1 mb-5">Always Better.</p>
           <p className="text-sm leading-relaxed max-w-xs">
-            A South African holding company that builds and operates African ventures.
+            An emerging South African holding company building ventures that change lives across Africa.
           </p>
           <p className="text-xs leading-relaxed mt-6">Evenor Holdings (Pty) Ltd · Reg. No. K2025/717968</p>
-          <p className="text-xs leading-relaxed">CIPC South Africa · B-BBEE Level 2</p>
+          <p className="text-xs leading-relaxed">Incorporated in South Africa, 2025</p>
         </div>
 
         <nav aria-label="Ventures">
@@ -45,7 +45,6 @@ const Footer = () => {
           <ul className="space-y-2.5 text-sm">
             <li><Link to="/about" className={link}>About</Link></li>
             <li><Link to="/leadership" className={link}>Leadership</Link></li>
-            <li><Link to="/projects" className={link}>Projects</Link></li>
             <li><Link to="/insights" className={link}>Insights</Link></li>
             <li><Link to="/careers" className={link}>Careers</Link></li>
             <li><Link to={contactHref("investors")} className={link}>Investor relations</Link></li>

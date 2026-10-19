@@ -18,14 +18,14 @@ const HeroSection = () => (
     <div className="absolute inset-0 -z-10 bg-gradient-to-b from-navy/90 via-navy/85 to-navy" aria-hidden="true" />
 
     <div className="container-wide pt-36 pb-20 md:pt-48 md:pb-28">
-      <p className="eyebrow text-gold mb-6 animate-fade-in">Cape Town · South Africa</p>
+      <p className="eyebrow text-gold mb-6 animate-fade-in">Cape Town · Founded 2025</p>
       <h1 id="hero-title" className="display-xl text-white max-w-4xl animate-fade-up">
-        We build African ventures.
+        Building African ventures that change lives.
       </h1>
       <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-white/80">
-        Evenor Holdings is a South African holding company. We start, own and operate ventures of
-        our own, and back each one with five group capabilities: logistics, ICT, consulting,
-        petrochemicals and mining.
+        Evenor Holdings is an emerging South African holding company. We start, own and grow
+        ventures that make everyday life better, beginning with Moodies and OSTO, and we are
+        building the group across logistics, ICT, consulting, petrochemicals and mining.
       </p>
       <div className="mt-10 flex flex-col sm:flex-row gap-4">
         <Link to="/ventures" className="btn-gold">

@@ -1,5 +1,5 @@
 // Generates public/sitemap.xml from the slugs declared in src/data/*.ts so new
-// sectors, projects, insights, roles, ventures and legal pages can never drift
+// sectors, insights, roles, ventures and legal pages can never drift
 // out of the sitemap. The same list drives the static pre-renderer.
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -16,7 +16,6 @@ export function siteRoutes() {
   const data = {
     ventures: slugsFrom("src/data/ventures.ts"),
     sectors: slugsFrom("src/data/sectors.ts"),
-    projects: slugsFrom("src/data/projects.ts"),
     insights: slugsFrom("src/data/insights.ts"),
     roles: slugsFrom("src/data/roles.ts"),
     legal: slugsFrom("src/data/legal.ts"),
@@ -29,8 +28,6 @@ export function siteRoutes() {
     { loc: "/leadership", changefreq: "monthly", priority: "0.7" },
     { loc: "/contact", changefreq: "monthly", priority: "0.8" },
     ...data.sectors.map((s) => ({ loc: `/sectors/${s}`, changefreq: "monthly", priority: "0.7" })),
-    { loc: "/projects", changefreq: "monthly", priority: "0.7" },
-    ...data.projects.map((s) => ({ loc: `/projects/${s}`, changefreq: "monthly", priority: "0.6" })),
     { loc: "/insights", changefreq: "monthly", priority: "0.7" },
     ...data.insights.map((s) => ({ loc: `/insights/${s}`, changefreq: "yearly", priority: "0.6" })),
     { loc: "/careers", changefreq: "weekly", priority: "0.7" },

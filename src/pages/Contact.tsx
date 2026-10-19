@@ -17,7 +17,7 @@ const Contact = () => (
     <main id="main-content">
       <PageHero
         eyebrow="Contact"
-        title="Speak With Our Principals' Office."
+        title="Let's Build Something Together."
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact" }]}
         image={IMG.corridor}
       />

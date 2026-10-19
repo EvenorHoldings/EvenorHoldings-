@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 
 const PHONE = "27815402781"; // wa.me format, no +
 const MSG = encodeURIComponent(
-  "Hello Evenor Holdings, I would like to open a conversation with your principals' office."
+  "Hello Evenor Holdings, I would like to get in touch."
 );
 
 const WhatsAppButton = () => (

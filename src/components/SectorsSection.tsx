@@ -47,8 +47,8 @@ const SectorsSection = () => (
       <SectionHeader
         id="capabilities-title"
         eyebrow="Capabilities"
-        title="Five capabilities behind every venture."
-        intro="Our sectors are the toolkit the group draws on. They serve our own ventures first, and selected clients and partners alongside them."
+        title="Five capabilities we are building the group on."
+        intro="These are the sectors we know and intend to grow in. They give our ventures a toolkit to draw on, and they are where we see the next ventures taking shape."
       />
       <ul className="grid gap-px bg-navy/10 border border-navy/10 sm:grid-cols-2 lg:grid-cols-3">
         {capabilities.map(({ slug, icon: Icon, name, desc, tags }) => (
@@ -75,8 +75,8 @@ const SectorsSection = () => (
           <p className="text-lg leading-relaxed text-white/85">
             Procurement runs across every capability as a supporting function.
           </p>
-          <Link to="/projects" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-gold-bright">
-            See project work <ArrowUpRight size={16} aria-hidden="true" />
+          <Link to="/ventures" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-gold-bright">
+            See what we're building <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </li>
       </ul>

@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import VenturesSection from "@/components/VenturesSection";
 import SectorsSection from "@/components/SectorsSection";
 import ApproachSection from "@/components/ApproachSection";
-import FounderSection from "@/components/FounderSection";
+import FounderLink from "@/components/FounderLink";
 import InsightsSection from "@/components/InsightsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -14,8 +14,8 @@ import CookieConsent from "@/components/LazyCookieConsent";
 const Index = () => (
   <div className="min-h-dvh bg-offwhite">
     <Seo
-      title="Evenor Holdings | A Holding Company Building African Ventures"
-      description="Evenor Holdings is a South African holding company that builds and operates African ventures, including Moodies and OSTO, backed by capabilities in logistics, ICT, consulting, petrochemicals and mining."
+      title="Evenor Holdings | Building African Ventures That Change Lives"
+      description="Evenor Holdings is an emerging South African holding company, founded in 2025, building ventures that change lives, starting with Moodies and OSTO, across logistics, ICT, consulting, petrochemicals and mining."
     />
     <Navbar />
     <main id="main-content">
@@ -23,7 +23,7 @@ const Index = () => (
       <VenturesSection />
       <SectorsSection />
       <ApproachSection />
-      <FounderSection />
+      <FounderLink />
       <InsightsSection />
       <ContactSection />
     </main>

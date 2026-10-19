@@ -10,8 +10,6 @@ const Leadership = lazy(() => import("./pages/Leadership"));
 const Ventures = lazy(() => import("./pages/Ventures"));
 const VentureDetail = lazy(() => import("./pages/VentureDetail"));
 const Sector = lazy(() => import("./pages/Sector"));
-const Projects = lazy(() => import("./pages/Projects"));
-const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Careers = lazy(() => import("./pages/Careers"));
 const RoleDetail = lazy(() => import("./pages/RoleDetail"));
@@ -39,8 +37,6 @@ const AppRoutes = ({ queryClient }: { queryClient: QueryClient }) => (
           <Route path="/ventures" element={<Ventures />} />
           <Route path="/ventures/:slug" element={<VentureDetail />} />
           <Route path="/sectors/:slug" element={<Sector />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:slug" element={<RoleDetail />} />

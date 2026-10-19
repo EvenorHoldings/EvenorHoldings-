@@ -7,7 +7,6 @@ const links = [
   { label: "Ventures", to: "/ventures" },
   { label: "Capabilities", to: "/#capabilities" },
   { label: "About", to: "/about" },
-  { label: "Projects", to: "/projects" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },

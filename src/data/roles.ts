@@ -61,7 +61,7 @@ export const roles: Role[] = [
     summary:
       "Advise government entities and state-owned enterprises on operating models, procurement reform and delivery performance, with evidence you can defend in a boardroom.",
     responsibilities: [
-      "Run diagnostics, cost modelling and process analysis on client mandates",
+      "Run diagnostics, cost modelling and process analysis on client engagements",
       "Draft board-grade findings, business cases and implementation roadmaps",
       "Support bid and proposal development for public-sector tenders",
       "Facilitate stakeholder workshops and delivery reviews",
@@ -126,7 +126,7 @@ export const roles: Role[] = [
     responsibilities: [
       "Compile and submit public and private tender responses end to end",
       "Run supplier vetting, RFQ cycles and price negotiation",
-      "Maintain B-BBEE, tax and vendor compliance documentation",
+      "Maintain tax, supplier and vendor compliance documentation",
       "Track award outcomes and build a reusable bid library",
     ],
     requirements: [

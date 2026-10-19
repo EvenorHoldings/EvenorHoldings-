@@ -67,7 +67,7 @@ const Sector = () => {
       <section className="bg-navy text-white section-pad">
         <div className="container-wide">
           <div className="text-center mb-14">
-            <p className="gold-label mb-4">Our Distinctive Edge</p>
+            <p className="gold-label mb-4">How We Think</p>
             <h2 className="display-lg">Three Pillars.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -87,7 +87,7 @@ const Sector = () => {
         <div className="container-wide">
           <div className="max-w-2xl mb-14">
             <p className="gold-label gold-ink mb-4">Capability Map</p>
-            <h2 className="display-lg text-navy">What We Deliver.</h2>
+            <h2 className="display-lg text-navy">What We Offer.</h2>
             <div className="mt-6 h-[3px] w-16 bg-gold" />
           </div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -108,23 +108,11 @@ const Sector = () => {
         </div>
       </section>
 
-      {/* Metrics */}
-      <section className="bg-navy-deep text-white py-16 md:py-20">
-        <div className="container-wide grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-          {sector.metrics.map((m) => (
-            <div key={m.label} className="text-center border-l border-white/10 first:border-l-0 md:border-l md:first:border-l-0 px-4">
-              <div className="font-display text-gold text-4xl md:text-[44px] font-bold mb-2">{m.value}</div>
-              <div className="text-white/60 text-[11px] tracking-[0.2em] uppercase font-medium">{m.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Approach */}
       <section className="bg-offwhite section-pad">
         <div className="container-wide">
           <div className="text-center mb-14">
-            <p className="gold-label gold-ink mb-4">Delivery Method</p>
+            <p className="gold-label gold-ink mb-4">Our Method</p>
             <h2 className="display-lg text-navy">How We Engage.</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6 relative">
@@ -139,56 +127,51 @@ const Sector = () => {
         </div>
       </section>
 
-      {/* Case Study */}
-      <section className="bg-white section-pad">
+      {/* What we're building */}
+      <section aria-labelledby="focus-title" className="bg-white section-pad">
         <div className="container-wide">
           <div className="max-w-2xl mb-12">
-            <p className="gold-label gold-ink mb-4">Representative Engagement</p>
-            <h2 className="display-lg text-navy">Case in Point.</h2>
+            <p className="gold-label gold-ink mb-4">What we're building</p>
+            <h2 id="focus-title" className="display-lg text-navy">{sector.focus.title}</h2>
             <div className="mt-6 h-[3px] w-16 bg-gold" />
           </div>
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
             <div className="relative">
-              {sourceFor(sector.caseStudy.image) ? (
+              {sourceFor(sector.focus.image) ? (
                 <ResponsiveImage
-                  image={sourceFor(sector.caseStudy.image)!}
-                  alt={sector.caseStudy.client}
+                  image={sourceFor(sector.focus.image)!}
+                  alt=""
+                  aria-hidden
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="w-full h-full object-cover min-h-[360px] max-h-[540px] shadow-lg"
+                  className="w-full h-full object-cover min-h-[320px] max-h-[480px] shadow-lg"
                 />
               ) : (
                 <img
-                  src={sector.caseStudy.image}
-                  alt={sector.caseStudy.client}
+                  src={sector.focus.image}
+                  alt=""
+                  aria-hidden="true"
                   loading="lazy"
-                  className="w-full h-full object-cover min-h-[360px] max-h-[540px] shadow-lg"
+                  className="w-full h-full object-cover min-h-[320px] max-h-[480px] shadow-lg"
                 />
               )}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-deep/90 to-transparent p-6">
-                <p className="gold-ink text-[11px] tracking-[0.2em] uppercase font-medium">Location</p>
-                <p className="text-white font-display text-lg mt-1">{sector.caseStudy.location}</p>
-              </div>
             </div>
             <div className="flex flex-col justify-center">
-              <p className="text-[11px] tracking-[0.2em] uppercase text-midgray font-medium mb-3">Client</p>
-              <p className="font-display text-navy text-2xl md:text-3xl font-bold mb-8">{sector.caseStudy.client}</p>
-
-              <p className="text-[11px] tracking-[0.2em] uppercase text-midgray font-medium mb-3">Scope</p>
-              <p className="text-charcoal/85 font-light leading-[1.85] mb-8">{sector.caseStudy.scope}</p>
-
-              <p className="text-[11px] tracking-[0.2em] uppercase text-midgray font-medium mb-3">Outcome</p>
-              <p className="text-charcoal/85 font-light leading-[1.85] border-l-2 border-gold pl-5">
-                {sector.caseStudy.outcome}
-              </p>
-
-              {sector.partners && sector.partners.length > 0 && (
-                <div className="mt-10 pt-8 border-t border-navy/10">
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-midgray font-medium mb-3">Delivery Partner</p>
-                  {sector.partners.map((p) => (
-                    <p key={p} className="text-navy font-semibold">{p}</p>
-                  ))}
-                </div>
-              )}
+              <p className="text-charcoal/85 font-light leading-[1.85] mb-8 text-[16px] md:text-[17px]">{sector.focus.body}</p>
+              <p className="text-[11px] tracking-[0.2em] uppercase text-midgray font-medium mb-4">Focus areas</p>
+              <ul className="space-y-3">
+                {sector.focus.points.map((pt) => (
+                  <li key={pt} className="flex items-start gap-2.5 text-navy">
+                    <Check size={18} className="text-gold mt-0.5 flex-shrink-0" strokeWidth={2.5} aria-hidden="true" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/ventures"
+                className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-navy border-b-2 border-gold pb-1 self-start hover:text-gold-ink transition-colors"
+              >
+                See our ventures <ArrowRight size={16} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
@@ -197,10 +180,10 @@ const Sector = () => {
       {/* CTA */}
       <section className="bg-navy text-white py-20 md:py-28">
         <div className="container-wide text-center max-w-3xl mx-auto">
-          <p className="gold-label mb-4">Engage Evenor</p>
+          <p className="gold-label mb-4">Work With Us</p>
           <h2 className="display-lg mb-6">{sector.cta}.</h2>
           <p className="text-white/75 font-light text-lg leading-relaxed mb-10">
-            Speak directly with a principal. Every enquiry is triaged within one working day.
+            Tell us what you are working on. You will hear back from our team, not a call centre.
           </p>
           <Link
             to="/#contact"

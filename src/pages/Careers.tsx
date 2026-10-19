@@ -124,7 +124,7 @@ const Careers = () => {
       <main id="main-content">
         <PageHero
           eyebrow="Careers"
-          title="Build Africa's Infrastructure With Us."
+          title="Build What Comes Next With Us."
           breadcrumb={[{ label: "Home", href: "/" }, { label: "Careers" }]}
           image={IMG.capetown}
         />
@@ -138,10 +138,9 @@ const Careers = () => {
                 Disciplined People, Measurable Delivery.
               </h2>
               <p className="text-charcoal/80 font-light leading-relaxed text-base md:text-lg max-w-3xl">
-                We recruit operators — people who are accountable for a corridor, a network, a site or a
-                submission, and who can show the numbers behind their work. Every role below is open to
-                candidates who meet the stated requirements. Applications are reviewed by the relevant
-                sector lead and the principals' office.
+                We are an early-stage group, and the people who join now will shape what Evenor becomes.
+                We look for operators: people who take ownership, who are honest about results and who
+                want to build something that lasts. Applications are reviewed by the founding team.
               </p>
             </div>
           </div>

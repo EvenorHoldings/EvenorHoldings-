@@ -56,12 +56,11 @@ const Insights = () => {
           <div className="container-wide py-14 max-w-4xl">
             <p className="gold-label mb-4">Editorial Standard</p>
             <h2 className="display-lg mb-5">
-              Written by the people who carry the delivery risk.
+              Ideas from people building on the continent.
             </h2>
             <p className="text-white/75 font-light leading-relaxed text-lg">
-              These notes are drawn from live mandates rather than desk research. They are published
-              sparingly, and only where we believe an operating lesson is transferable to other
-              institutions working on the continent.
+              Short perspectives on the sectors we are building in: what we are learning, what we
+              believe, and where we think the opportunities lie for anyone building in Africa.
             </p>
           </div>
         </section>

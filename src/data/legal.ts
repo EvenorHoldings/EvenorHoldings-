@@ -79,7 +79,7 @@ export const legalDocs: Record<string, LegalDoc> = {
       {
         heading: "2. Information on this website",
         paragraphs: [
-          "Content on this website is provided for general information about the Group's capabilities and operating philosophy. It does not constitute investment advice, a public offer of securities, or a tender document. Project descriptions are representative and may have been abstracted for client confidentiality.",
+          "Content on this website is provided for general information about the Group's capabilities and operating philosophy. It does not constitute investment advice, a public offer of securities, or a tender document. Descriptions of ventures in development or pilot describe plans and intentions, not guarantees of future performance.",
           "While we take care to keep content accurate, we do not warrant completeness or currency, and we reserve the right to amend content without notice.",
         ],
       },
@@ -115,18 +115,12 @@ export const legalDocs: Record<string, LegalDoc> = {
     meta: "Compliance & Governance | Evenor Holdings (Pty) Ltd",
     eyebrow: "Legal — Governance",
     description:
-      "Evenor Holdings' compliance posture: CIPC registration, B-BBEE Level 2 status, POPIA data protection and sector licensing frameworks.",
+      "Evenor Holdings' compliance posture: CIPC company registration, POPIA data protection and sector licensing.",
     sections: [
       {
         heading: "Corporate registration",
         paragraphs: [
-          "Evenor Holdings (Pty) Ltd is registered with the Companies and Intellectual Property Commission (CIPC) of South Africa under Registration No. K2025/717968. The Group is headquartered in Cape Town and maintains records in accordance with the Companies Act, 2008.",
-        ],
-      },
-      {
-        heading: "B-BBEE status",
-        paragraphs: [
-          "The Group holds a Broad-Based Black Economic Empowerment (B-BBEE) Level 2 recognition level. Supporting certificates and affidavits are furnished to clients and tendering authorities as part of standard bid documentation and are available on request.",
+          "Evenor Holdings (Pty) Ltd is registered with the Companies and Intellectual Property Commission (CIPC) of South Africa under Registration No. K2025/717968, and was incorporated in 2025. The Group is headquartered in Cape Town and maintains records in accordance with the Companies Act, 2008.",
         ],
       },
       {
@@ -138,13 +132,13 @@ export const legalDocs: Record<string, LegalDoc> = {
       {
         heading: "Sector-specific compliance",
         paragraphs: [
-          "Engagements in petrochemicals, mining and logistics are executed under the licences and permits applicable to the relevant jurisdiction — including environmental authorisations, transport operator registrations and port authority requirements — arranged with and through the mandated principal on each programme.",
+          "Activities in petrochemicals, mining, logistics and our ventures are carried out under the licences, permits and authorisations that apply in the relevant jurisdiction, and we obtain these before an activity begins.",
         ],
       },
       {
         heading: "Conduct & confidentiality",
         paragraphs: [
-          "The Group maintains strict confidentiality protocols across all mandates. Client identities and programme details are disclosed publicly only with written consent; sovereign and defence-adjacent work is never disclosed. Anti-bribery and anti-corruption controls are embedded in our engagement terms.",
+          "We treat information shared with us in confidence, and we disclose the names of customers or partners only with their written consent. We do not tolerate bribery or corruption in any of our dealings.",
         ],
       },
     ],

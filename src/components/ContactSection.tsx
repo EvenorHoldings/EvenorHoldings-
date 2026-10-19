@@ -139,7 +139,7 @@ const ContactSection = () => {
                   Thank you.
                 </p>
                 <p className="text-charcoal/80 font-light leading-relaxed max-w-md mx-auto">
-                  A member of our principals' office will be in contact with you
+                  A member of our team will be in contact with you
                   within 48 business hours at the correspondence address you provided.
                 </p>
               </div>
