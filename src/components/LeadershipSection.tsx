@@ -9,7 +9,7 @@ const LeadershipSection = () => {
       <div className="container-wide">
         <div className="text-center mb-16">
           <p className="gold-label gold-ink mb-4">Leadership</p>
-          <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
+          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
             The Vision Behind the Work.
           </h2>
         </div>

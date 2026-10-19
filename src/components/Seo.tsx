@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const SITE = "https://www.evenor.org";
+const SITE = "https://evenor.org";
 const DEFAULT_OG = `${SITE}/og-image.jpg`;
 
 interface SeoProps {
@@ -35,7 +35,7 @@ const upsertLink = (rel: string, href: string) => {
 
 const Seo = ({ title, description, image, type = "website", jsonLd, noindex }: SeoProps) => {
   const { pathname } = useLocation();
-  const url = `${SITE}${pathname === "/" ? "" : pathname}`;
+  const url = `${SITE}${pathname}`;
   const ogImage = image ?? DEFAULT_OG;
 
   useEffect(() => {

@@ -53,7 +53,7 @@ const CapacityCard = ({ c }: { c: typeof cards[0] }) => (
       <span className="inline-block bg-gold text-navy text-[10px] font-bold px-3 py-1 tracking-[0.15em] uppercase mb-4 rounded-full">
         {c.tag}
       </span>
-      <h3 className="font-display text-white text-[22px] font-bold mb-3 leading-snug">{c.title}</h3>
+      <h3 className="font-display text-xl font-semibold text-white mb-3">{c.title}</h3>
       <p className="text-white/75 text-sm font-light leading-relaxed mb-5">{c.body}</p>
       <div className="flex items-center gap-2 pt-4 border-t border-white/15">
         <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -102,7 +102,7 @@ const ProjectsSection = () => {
       <div className="container-wide">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <p className="gold-label mb-4">Our Capacity</p>
-          <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
+          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white mb-6">
             What Evenor Holdings Brings to the Table.
           </h2>
           <p className="text-white/70 text-base md:text-lg font-light leading-relaxed">

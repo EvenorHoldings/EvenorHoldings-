@@ -5,7 +5,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const ORIGIN = "https://www.evenor.org";
+const ORIGIN = "https://evenor.org";
 
 const slugsFrom = (file) =>
   [...readFileSync(resolve(root, file), "utf8").matchAll(/^\s*slug:\s*"([^"]+)"/gm)].map((m) => m[1]);

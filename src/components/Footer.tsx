@@ -76,7 +76,7 @@ const Footer = () => {
         className="container-wide mt-14 pt-6 border-t flex flex-col md:flex-row justify-between gap-2 text-[12px] text-white/70"
         style={{ borderColor: "hsl(var(--navy-light))" }}
       >
-        <span>Evenor Holdings (Pty) Ltd — www.evenor.org</span>
+        <span>Evenor Holdings (Pty) Ltd — evenor.org</span>
         <span className="italic">Designed with purpose. Built for Africa.</span>
       </div>
     </footer>

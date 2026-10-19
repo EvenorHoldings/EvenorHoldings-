@@ -94,7 +94,7 @@ const HeroSection = () => {
           >
             <p className="gold-label mb-8">{slides[i].eyebrow}</p>
 
-            <h1 className="font-display text-white text-[40px] sm:text-6xl md:text-7xl lg:text-[72px] font-extrabold leading-[1.05] tracking-tight mb-8">
+            <h1 className="font-display text-5xl sm:text-7xl font-semibold leading-[0.95] text-white mb-8">
               {slides[i].title[0]}<br />
               {slides[i].title[1]}
             </h1>
@@ -124,15 +124,15 @@ const HeroSection = () => {
         {/* Slide indicators */}
         <div
           className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1"
-          role="tablist"
+          role="group"
           aria-label="Hero slides"
         >
           {slides.map((_, idx) => (
             <button
               key={idx}
+              type="button"
               onClick={() => setI(idx)}
-              role="tab"
-              aria-selected={idx === i}
+              aria-current={idx === i ? "true" : undefined}
               aria-label={`Show slide ${idx + 1} of ${slides.length}`}
               className="min-h-11 min-w-11 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >

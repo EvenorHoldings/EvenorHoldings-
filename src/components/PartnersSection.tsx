@@ -22,7 +22,7 @@ const PartnersSection = () => {
       />
       <div className="relative container-wide max-w-5xl text-center">
         <p className="gold-label mb-4">Ecosystem</p>
-        <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
+        <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white mb-6">
           Global Partners. African Mandate.
         </h2>
         <p className="text-white/75 max-w-2xl mx-auto font-light leading-relaxed text-base md:text-[17px] mb-14">

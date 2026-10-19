@@ -46,7 +46,7 @@ const Projects = () => {
         <div className="container-wide py-14 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
           <div>
             <p className="gold-label mb-4">The Evenor Portfolio</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-5">
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight mb-5">
               Engagements chosen for the standard they set — not the noise they make.
             </h2>
             <p className="text-white/75 font-light leading-relaxed max-w-2xl">
@@ -131,7 +131,7 @@ const Projects = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="font-display text-navy text-xl font-bold leading-snug mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-display text-xl font-semibold text-navy mb-3 group-hover:text-gold transition-colors">
                   {p.title}
                 </h3>
                 <p className="text-charcoal/70 text-sm font-light leading-relaxed mb-5 line-clamp-3">
@@ -162,7 +162,7 @@ const Projects = () => {
         <div className="container-wide grid md:grid-cols-[1.4fr_1fr] gap-10 items-center">
           <div>
             <p className="gold-label mb-3">Client Confidentiality</p>
-            <h3 className="font-display text-2xl md:text-3xl font-bold leading-tight mb-4">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold leading-tight mb-4">
               Selected engagements are not disclosed on public channels.
             </h3>
             <p className="text-white/70 font-light leading-relaxed max-w-2xl">

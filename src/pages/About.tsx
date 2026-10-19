@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Check, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CookieConsent from "@/components/CookieConsent";
+import CookieConsent from "@/components/LazyCookieConsent";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
-import OperationsMap from "@/components/OperationsMap";
+
+const OperationsMap = lazy(() => import("@/components/OperationsMap"));
 
 import { IMG } from "@/assets/images";
 
@@ -79,7 +80,7 @@ const About = () => {
               transition={{ duration: 0.4 }}
             >
               <p className="gold-label gold-ink mb-6">Company Profile</p>
-              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold leading-tight mb-10">
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy mb-10">
                 Built in Africa. Engineered for its next century.
               </h2>
               <div className="space-y-6 text-charcoal/85 text-[17px] md:text-[18px] font-light leading-[1.9]">
@@ -105,7 +106,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14">
               <p className="gold-label gold-ink mb-4">Our Framework</p>
-              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
                 Mission · Vision · Values
               </h2>
             </div>
@@ -161,7 +162,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-14 text-white max-w-3xl mx-auto">
               <p className="gold-label mb-4">Continental Presence</p>
-              <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white mb-6">
                 Seven Markets. One Standard.
               </h2>
               <p className="text-white/70 font-light leading-relaxed text-base md:text-lg">
@@ -176,7 +177,9 @@ const About = () => {
               transition={{ duration: 0.4 }}
               className="max-w-6xl mx-auto mb-12"
             >
-              <OperationsMap />
+              <Suspense fallback={<div className="h-[380px] md:h-[560px] w-full max-w-3xl mx-auto border border-gold/30 bg-navy-deep" aria-hidden="true" />}>
+                <OperationsMap />
+              </Suspense>
             </motion.div>
 
 
@@ -209,7 +212,7 @@ const About = () => {
           <div className="container-wide">
             <div className="text-center mb-16">
               <p className="gold-label gold-ink mb-4">Our Trajectory</p>
-              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
                 A Deliberate, Compounding Build.
               </h2>
             </div>
@@ -235,7 +238,7 @@ const About = () => {
                         <span className="inline-block bg-navy text-white text-[11px] tracking-[0.2em] font-semibold px-3 py-1.5 mb-3">
                           {t.year}
                         </span>
-                        <h3 className="font-display text-navy text-xl md:text-2xl font-bold mb-2">{t.title}</h3>
+                        <h3 className="font-display text-xl font-semibold text-navy mb-2">{t.title}</h3>
                         <p className="text-charcoal/75 text-[15px] leading-relaxed font-light">{t.body}</p>
                       </div>
                     </motion.div>
@@ -254,7 +257,7 @@ const About = () => {
           <div className="absolute inset-0 bg-navy/85" />
           <div className="relative container-wide text-center max-w-3xl mx-auto text-white">
             <p className="gold-label mb-4">Leadership</p>
-            <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white mb-6">
               Meet the principals behind the mandate.
             </h2>
             <p className="text-white/75 font-light leading-relaxed mb-8 text-base md:text-lg">

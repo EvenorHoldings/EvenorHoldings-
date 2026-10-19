@@ -1,4 +1,5 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import NotFound from "./NotFound";
+import { Link, useParams } from "react-router-dom";
 import { ArrowUpRight, Check, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,7 +12,7 @@ const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const project = projects.find((p) => p.slug === slug);
 
-  if (!project) return <Navigate to="/projects" replace />;
+  if (!project) return <NotFound />;
 
   const related = projects.filter((p) => p.slug !== project.slug && p.sector === project.sector).slice(0, 2);
   const fallback = projects.filter((p) => p.slug !== project.slug).slice(0, 2);
@@ -77,7 +78,7 @@ const ProjectDetail = () => {
               {project.summary}
             </p>
             <div className="mt-10">
-              <h3 className="font-display text-navy text-2xl font-bold mb-4">The Challenge</h3>
+              <h3 className="font-display text-navy text-2xl font-semibold mb-4">The Challenge</h3>
               <p className="text-charcoal/80 font-light leading-relaxed">{project.challenge}</p>
             </div>
           </div>
@@ -107,7 +108,7 @@ const ProjectDetail = () => {
       <section className="section-pad bg-navy text-white">
         <div className="container-wide">
           <p className="gold-label gold-ink mb-4">Evenor Approach</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-12 max-w-3xl">
+          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight mb-12 max-w-3xl">
             How the mandate was structured, sequenced, and governed.
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -125,7 +126,7 @@ const ProjectDetail = () => {
       <section className="section-pad bg-offwhite">
         <div className="container-wide">
           <p className="gold-label gold-ink mb-4">Measured Outcome</p>
-          <h2 className="font-display text-navy text-3xl md:text-4xl font-bold mb-10 max-w-3xl">
+          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy mb-10 max-w-3xl">
             Results the client took to their board.
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -148,7 +149,7 @@ const ProjectDetail = () => {
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
               <p className="gold-label gold-ink mb-3">Continue Reading</p>
-              <h3 className="font-display text-2xl md:text-3xl font-bold">Related engagements</h3>
+              <h3 className="font-display text-2xl md:text-3xl font-semibold">Related engagements</h3>
             </div>
             <Link to="/projects" className="inline-flex items-center gap-2 text-gold text-[11px] tracking-[0.2em] uppercase font-bold hover:text-white transition-colors">
               <ArrowLeft size={14} /> All Projects
@@ -184,7 +185,7 @@ const ProjectDetail = () => {
       <section className="bg-gold text-navy py-14">
         <div className="container-wide flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="font-display text-2xl md:text-3xl font-bold leading-tight">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold leading-tight">
               A similar mandate on your desk?
             </h3>
             <p className="text-navy/80 mt-2">Speak to an Evenor principal — not a sales team.</p>

@@ -177,7 +177,7 @@ const LegalPage = () => {
           <div className="container-wide max-w-3xl">
             {legal.sections.map((s) => (
               <section key={s.heading} className="mb-10">
-                <h2 className="font-display text-navy text-2xl font-bold mb-4">{s.heading}</h2>
+                <h2 className="font-display text-navy text-2xl font-semibold mb-4">{s.heading}</h2>
                 {s.paragraphs.map((p, i) => (
                   <p key={i} className="text-charcoal/85 font-light leading-relaxed mb-4">
                     {p}

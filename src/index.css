@@ -48,12 +48,19 @@
     @apply antialiased;
     background: hsl(var(--offwhite));
     color: hsl(var(--charcoal));
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
+    @apply text-base leading-7;
   }
   h1, h2, h3, h4, .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0;
   }
+  /* Type scale (matches moodies.life). Component classes still override where set. */
+  h1 { @apply text-5xl sm:text-7xl font-semibold leading-[0.95]; }
+  h2 { @apply text-3xl sm:text-5xl font-semibold leading-tight; }
+  h3 { @apply text-xl font-semibold; }
+  h4 { @apply font-semibold; }
 }
 
 @layer components {
@@ -62,7 +69,7 @@
   .section-pad-sm{ @apply py-10 md:py-14 lg:py-20; }
 
   .gold-label {
-    @apply text-[11px] font-medium uppercase tracking-[0.14em];
+    @apply text-[10px] font-semibold uppercase tracking-[0.28em];
     color: hsl(var(--gold));
   }
 

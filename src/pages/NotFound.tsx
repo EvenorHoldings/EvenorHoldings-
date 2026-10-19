@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 import { ArrowLeft, Home, Compass } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,11 +7,6 @@ import { IMG } from "@/assets/images";
 
 const NotFound = () => {
   const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
   return (
     <div className="min-h-dvh bg-navy flex flex-col">
       <Seo
@@ -35,7 +29,7 @@ const NotFound = () => {
 
         <div className="container-wide relative py-32 md:py-40 text-white">
           <p className="gold-label mb-6">Error 404 · Route Unavailable</p>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-none mb-6">
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-semibold leading-none mb-6">
             Off the Map.
           </h1>
           <div className="h-[3px] w-16 bg-gold mb-8" />

@@ -4,7 +4,7 @@ import { Mail, Linkedin, Shield, Scale, Users, FileText } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CookieConsent from "@/components/CookieConsent";
+import CookieConsent from "@/components/LazyCookieConsent";
 import PageHero from "@/components/PageHero";
 import { CEO_IMAGE } from "@/assets/images";
 import ResponsiveImage from "@/components/ResponsiveImage";
@@ -148,7 +148,7 @@ const Leadership = () => {
           <div className="container-wide">
             <div className="text-center mb-14 max-w-3xl mx-auto">
               <p className="gold-label gold-ink mb-4">Governance</p>
-              <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold mb-6">
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy mb-6">
                 Standards Held in the Open.
               </h2>
               <p className="text-charcoal/75 font-light leading-relaxed text-base md:text-lg">
@@ -167,7 +167,7 @@ const Leadership = () => {
                   className="bg-white p-8 border-l-4 border-gold shadow-[0_4px_24px_rgba(11,37,69,0.06)]"
                 >
                   <g.icon size={28} className="text-gold mb-4" strokeWidth={1.5} />
-                  <h3 className="font-display text-navy text-xl font-bold mb-3">{g.title}</h3>
+                  <h3 className="font-display text-xl font-semibold text-navy mb-3">{g.title}</h3>
                   <p className="text-charcoal/75 text-[15px] leading-[1.8] font-light">{g.body}</p>
                 </motion.div>
               ))}

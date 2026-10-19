@@ -24,9 +24,10 @@ export const sites: Site[] = [
 const dot = (primary?: boolean) =>
   L.divIcon({
     className: "",
-    html: `<span style="display:block;width:${primary ? 18 : 12}px;height:${primary ? 18 : 12}px;border-radius:9999px;background:hsl(43 55% 55%);box-shadow:0 0 0 ${primary ? 6 : 4}px hsla(43,55%,55%,0.25);border:2px solid hsl(211 74% 16%)"></span>`,
-    iconSize: [primary ? 18 : 12, primary ? 18 : 12],
-    iconAnchor: [primary ? 9 : 6, primary ? 9 : 6],
+    // 44px transparent hit area (WCAG target size) wrapping the visible dot
+    html: `<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;"><span style="display:block;width:${primary ? 18 : 12}px;height:${primary ? 18 : 12}px;border-radius:9999px;background:hsl(43 55% 55%);box-shadow:0 0 0 ${primary ? 6 : 4}px hsla(43,55%,55%,0.25);border:2px solid hsl(211 74% 16%)"></span></span>`,
+    iconSize: [44, 44],
+    iconAnchor: [22, 22],
   });
 
 const OperationsMap = () => {

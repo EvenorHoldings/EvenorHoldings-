@@ -2,6 +2,7 @@ import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { checkThrottle, recordSubmission } from "@/lib/formThrottle";
 import { toast } from "@/hooks/use-toast";
 import { IMG } from "@/assets/images";
 import { contactSchema, toContactRow, ROUTING } from "@/lib/contactSchema";
@@ -42,6 +43,12 @@ const ContactSection = () => {
       return;
     }
 
+    const throttle = checkThrottle("contact");
+    if (!throttle.ok) {
+      toast({ title: "Please wait", description: throttle.reason, variant: "destructive" });
+      return;
+    }
+
     setLoading(true);
     const { error } = await supabase.from("contacts").insert(toContactRow(parsed.data));
 
@@ -55,6 +62,7 @@ const ContactSection = () => {
       });
       return;
     }
+    recordSubmission("contact");
     setSubmitted(true);
   };
 
@@ -76,7 +84,7 @@ const ContactSection = () => {
           className="text-center mb-14 text-white max-w-4xl mx-auto"
         >
           <p className="gold-label mb-4">Start a Conversation</p>
-          <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
+          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white mb-6">
             The Right Project Deserves<br />the Right Partner.
           </h2>
           <p className="text-white/75 max-w-2xl mx-auto font-light leading-relaxed text-base md:text-lg">

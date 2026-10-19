@@ -24,7 +24,7 @@ const SectorDeepDive = () => {
       <div className="container-wide">
         <div className="text-center mb-12">
           <p className="gold-label gold-ink mb-4">Sector Intelligence</p>
-          <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
+          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
             Depth in Every Division.
           </h2>
         </div>
@@ -86,7 +86,7 @@ const SectorDeepDive = () => {
           className="grid lg:grid-cols-[1.2fr_1fr] gap-10 animate-fade-in"
         >
           <div>
-            <h3 className="font-display text-navy text-2xl md:text-3xl font-bold mb-6">{t.h3}</h3>
+            <h3 className="font-display text-navy text-2xl md:text-3xl font-semibold mb-6">{t.h3}</h3>
             <div className="space-y-4 text-charcoal/80 font-light leading-[1.85] text-[15px] md:text-base">
               {t.body.map((p, i) => (
                 <p key={i}>{p}</p>

@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 import { Truck, Network, Brain, Droplet, Mountain, ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -66,7 +67,7 @@ const SectorsSection = () => {
       <div className="container-wide relative">
         <div className="text-center mb-16">
           <p className="gold-label gold-ink mb-4">Our Core Activities</p>
-          <h2 className="font-display text-navy text-3xl md:text-[44px] font-bold">
+          <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy">
             Five Sectors. One Standard.
           </h2>
           <div className="mt-6 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
@@ -102,7 +103,7 @@ const SectorCard = ({
   index,
   slug,
 }: {
-  icon: any;
+  icon: LucideIcon;
   name: string;
   desc: string;
   tags: string[];

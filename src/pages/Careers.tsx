@@ -4,12 +4,13 @@ import { MapPin, Briefcase, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CookieConsent from "@/components/CookieConsent";
+import CookieConsent from "@/components/LazyCookieConsent";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
 import { IMG } from "@/assets/images";
 import { roles } from "@/data/roles";
 import { supabase } from "@/integrations/supabase/client";
+import { checkThrottle, recordSubmission } from "@/lib/formThrottle";
 import { toast } from "@/hooks/use-toast";
 import { applicationSchema, toApplicationRow } from "@/lib/applicationSchema";
 
@@ -61,6 +62,12 @@ const Careers = () => {
       return;
     }
 
+    const throttle = checkThrottle("careers");
+    if (!throttle.ok) {
+      toast({ title: "Please wait", description: throttle.reason, variant: "destructive" });
+      return;
+    }
+
     setLoading(true);
     const { error } = await supabase.from("job_applications").insert(toApplicationRow(parsed.data));
     setLoading(false);
@@ -73,6 +80,7 @@ const Careers = () => {
       });
       return;
     }
+    recordSubmission("careers");
     setSubmitted(true);
   };
 
@@ -86,7 +94,7 @@ const Careers = () => {
     hiringOrganization: {
       "@type": "Organization",
       name: "Evenor Holdings (Pty) Ltd",
-      sameAs: "https://www.evenor.org",
+      sameAs: "https://evenor.org",
     },
     jobLocation: {
       "@type": "Place",
@@ -119,7 +127,7 @@ const Careers = () => {
               transition={{ duration: 0.4 }}
             >
               <p className="gold-label gold-ink mb-4">Working at Evenor</p>
-              <h2 className="font-display text-navy text-3xl md:text-[40px] font-bold mb-6 leading-tight">
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-navy mb-6">
                 Disciplined People, Measurable Delivery.
               </h2>
               <p className="text-charcoal/80 font-light leading-relaxed text-base md:text-lg max-w-3xl">
@@ -134,7 +142,7 @@ const Careers = () => {
 
         <section className="pb-20 md:pb-28" aria-labelledby="open-roles">
           <div className="container-wide max-w-5xl">
-            <h2 id="open-roles" className="font-display text-navy text-2xl md:text-3xl font-bold mb-8">
+            <h2 id="open-roles" className="font-display text-navy text-2xl md:text-3xl font-semibold mb-8">
               Open Roles
             </h2>
             <ul className="space-y-4">
@@ -230,7 +238,7 @@ const Careers = () => {
           <div className="container-wide max-w-3xl">
             <div className="text-center mb-10">
               <p className="gold-label mb-4">Application</p>
-              <h2 id="apply-heading" className="font-display text-white text-3xl md:text-[40px] font-bold">
+              <h2 id="apply-heading" className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-white">
                 Submit Your Application
               </h2>
               <p className="text-white/75 font-light mt-5 leading-relaxed">
