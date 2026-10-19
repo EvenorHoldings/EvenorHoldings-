@@ -31,14 +31,14 @@ const Insights = () => {
           "@context": "https://schema.org",
           "@type": "Blog",
           name: "Evenor Holdings Perspectives",
-          url: "https://www.evenor.org/insights",
+          url: "https://evenor.org/insights",
           publisher: { "@type": "Organization", name: "Evenor Holdings (Pty) Ltd" },
           blogPost: insights.map((i) => ({
             "@type": "BlogPosting",
             headline: i.title,
             description: i.dek,
             datePublished: i.date,
-            url: `https://www.evenor.org/insights/${i.slug}`,
+            url: `https://evenor.org/insights/${i.slug}`,
           })),
         }}
       />
@@ -55,13 +55,12 @@ const Insights = () => {
         <section className="bg-navy-deep text-white">
           <div className="container-wide py-14 max-w-4xl">
             <p className="gold-label mb-4">Editorial Standard</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-5">
-              Written by the people who carry the delivery risk.
+            <h2 className="display-lg mb-5">
+              Ideas from people building on the continent.
             </h2>
             <p className="text-white/75 font-light leading-relaxed text-lg">
-              These notes are drawn from live mandates rather than desk research. They are published
-              sparingly, and only where we believe an operating lesson is transferable to other
-              institutions working on the continent.
+              Short perspectives on the sectors we are building in: what we are learning, what we
+              believe, and where we think the opportunities lie for anyone building in Africa.
             </p>
           </div>
         </section>
@@ -115,7 +114,7 @@ const Insights = () => {
                   <p className="text-navy/70 text-[11px] tracking-[0.18em] uppercase mb-3">
                     {fmt(i.date)} · {i.readingMinutes} min read
                   </p>
-                  <h3 className="font-display text-navy text-xl font-bold leading-snug mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-display text-xl font-semibold text-navy mb-3 group-hover:text-gold transition-colors">
                     {i.title}
                   </h3>
                   <p className="text-charcoal/75 text-[15px] font-light leading-relaxed mb-5">{i.dek}</p>

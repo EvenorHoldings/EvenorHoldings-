@@ -1,45 +1,36 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import HeroSection from "@/components/HeroSection";
-import PhilosophySection from "@/components/PhilosophySection";
+import VenturesSection from "@/components/VenturesSection";
 import SectorsSection from "@/components/SectorsSection";
-import WhyEvenorSection from "@/components/WhyEvenorSection";
-import LeadershipSection from "@/components/LeadershipSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import SectorDeepDive from "@/components/SectorDeepDive";
-import IndustriesTeaserSection from "@/components/IndustriesTeaserSection";
-import PartnersSection from "@/components/PartnersSection";
+import ApproachSection from "@/components/ApproachSection";
+import FounderLink from "@/components/FounderLink";
+import InsightsSection from "@/components/InsightsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CookieConsent from "@/components/CookieConsent";
+import CookieConsent from "@/components/LazyCookieConsent";
 
-const Index = () => {
-  return (
-    <div className="min-h-dvh bg-offwhite">
-      <Seo
-        title="Evenor Holdings | Always Better | Africa's Multi-Sector Infrastructure Group"
-        description="Evenor Holdings is a South African industrial and technology conglomerate delivering turnkey solutions across Logistics, ICT, Consulting, Petrochemicals and Mining in Sub-Saharan Africa."
-      />
-      <Navbar />
-      <main id="main-content">
-        <HeroSection />
-        <section id="philosophy"><PhilosophySection /></section>
-        <SectorsSection />
-        <SectorDeepDive />
-        <WhyEvenorSection />
-        <IndustriesTeaserSection />
-        <LeadershipSection />
-        <ProjectsSection />
-        <PartnersSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-      <CookieConsent />
-    </div>
-
-  );
-};
+const Index = () => (
+  <div className="min-h-dvh bg-offwhite">
+    <Seo
+      title="Evenor Holdings | Building African Ventures That Change Lives"
+      description="Evenor Holdings is an emerging South African holding company, founded in 2025, building ventures that change lives, starting with Moodies and OSTO, across logistics, ICT, consulting, petrochemicals and mining."
+    />
+    <Navbar />
+    <main id="main-content">
+      <HeroSection />
+      <VenturesSection />
+      <SectorsSection />
+      <ApproachSection />
+      <FounderLink />
+      <InsightsSection />
+      <ContactSection />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+    <CookieConsent />
+  </div>
+);
 
 export default Index;
