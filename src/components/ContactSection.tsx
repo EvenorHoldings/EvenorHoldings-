@@ -1,15 +1,33 @@
-import { useState, FormEvent } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState, FormEvent } from "react";
+import { useSearchParams } from "react-router-dom";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { checkThrottle, recordSubmission } from "@/lib/formThrottle";
 import { toast } from "@/hooks/use-toast";
 import { IMG } from "@/assets/images";
 import { contactSchema, toContactRow, ROUTING } from "@/lib/contactSchema";
+import { CONTACT_TOPICS, type ContactTopic } from "@/lib/site";
+import { ventures } from "@/data/ventures";
 
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [enquiryType, setEnquiryType] = useState("General");
+  const [message, setMessage] = useState("");
+  const [params] = useSearchParams();
+
+  // Preselect the desk from ?topic=<key> (e.g. investors, tenders) or ?interest=<venture>.
+  // Runs after mount so pre-rendered HTML and the first client render match.
+  useEffect(() => {
+    const topic = params.get("topic") as ContactTopic | null;
+    const interest = params.get("interest");
+    const venture = interest ? ventures.find((v) => v.slug === interest) : undefined;
+    if (venture) {
+      setEnquiryType(CONTACT_TOPICS.ventures);
+      setMessage((m) => m || `I'm interested in ${venture.name}${venture.stage === "Pilot" ? " and its pilot programme" : ""}. `);
+    } else if (topic && topic in CONTACT_TOPICS) {
+      setEnquiryType(CONTACT_TOPICS[topic]);
+    }
+  }, [params]);
 
   const inp =
     "w-full bg-white border-2 border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-midgray/70 focus:outline-none focus:border-gold transition-colors";
@@ -42,7 +60,15 @@ const ContactSection = () => {
       return;
     }
 
+    const throttle = checkThrottle("contact");
+    if (!throttle.ok) {
+      toast({ title: "Please wait", description: "reason" in throttle ? throttle.reason : "Please try again shortly.", variant: "destructive" });
+      return;
+    }
+
     setLoading(true);
+    // Loaded on demand: keeps the Supabase SDK off the critical path and out of pre-rendering.
+    const { supabase } = await import("@/integrations/supabase/client");
     const { error } = await supabase.from("contacts").insert(toContactRow(parsed.data));
 
     setLoading(false);
@@ -55,6 +81,7 @@ const ContactSection = () => {
       });
       return;
     }
+    recordSubmission("contact");
     setSubmitted(true);
   };
 
@@ -68,22 +95,18 @@ const ContactSection = () => {
       }}
     >
       <div className="container-wide">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
+        <div
           className="text-center mb-14 text-white max-w-4xl mx-auto"
         >
           <p className="gold-label mb-4">Start a Conversation</p>
-          <h2 className="font-display text-white text-3xl md:text-[44px] font-bold mb-6">
-            The Right Project Deserves<br />the Right Partner.
+          <h2 className="display-lg text-white mb-6">
+            Building something? Let's talk.
           </h2>
           <p className="text-white/75 max-w-2xl mx-auto font-light leading-relaxed text-base md:text-lg">
-            Select the nature of your enquiry and our principals' office will
-            route your correspondence to the appropriate desk.
+            Partnerships, ventures, investor questions or tenders: choose a topic and
+            we'll route your message to the right desk.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-[2fr_3fr] shadow-2xl max-w-6xl mx-auto">
           <div
@@ -116,7 +139,7 @@ const ContactSection = () => {
                   Thank you.
                 </p>
                 <p className="text-charcoal/80 font-light leading-relaxed max-w-md mx-auto">
-                  A member of our principals' office will be in contact with you
+                  A member of our team will be in contact with you
                   within 48 business hours at the correspondence address you provided.
                 </p>
               </div>
@@ -165,6 +188,8 @@ const ContactSection = () => {
                       required
                       name="message"
                       placeholder="Message / Nature of Enquiry"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       rows={6}
                       maxLength={5000}
                       className={`${inp} resize-none`}

@@ -48,7 +48,7 @@ const PageHero = ({ eyebrow, title, breadcrumb, image, height = "60vh" }: PageHe
           ))}
         </nav>
         {eyebrow && <p className="gold-label mb-4">{eyebrow}</p>}
-        <h1 className="font-display text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] max-w-4xl">
+        <h1 className="display-xl text-white max-w-4xl">
           {title}
         </h1>
         <div className="mt-8 h-[3px] w-16 bg-gold" />

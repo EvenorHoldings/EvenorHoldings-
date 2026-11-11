@@ -33,7 +33,7 @@ const InsightDetail = () => {
           datePublished: article.date,
           author: { "@type": "Organization", name: "Evenor Holdings (Pty) Ltd" },
           publisher: { "@type": "Organization", name: "Evenor Holdings (Pty) Ltd" },
-          mainEntityOfPage: `https://www.evenor.org/insights/${article.slug}`,
+          mainEntityOfPage: `https://evenor.org/insights/${article.slug}`,
           articleSection: article.sector,
         }}
       />
@@ -59,7 +59,7 @@ const InsightDetail = () => {
             {article.body.map((block, bi) => (
               <section key={bi} className="mb-10">
                 {block.heading && (
-                  <h2 className="font-display text-navy text-2xl md:text-3xl font-bold mb-5">{block.heading}</h2>
+                  <h2 className="font-display text-navy text-2xl md:text-3xl font-semibold mb-5">{block.heading}</h2>
                 )}
                 {block.paragraphs.map((p, pi) => (
                   <p key={pi} className="text-charcoal/85 text-lg font-light leading-relaxed mb-5">
@@ -87,7 +87,7 @@ const InsightDetail = () => {
           <section className="bg-navy text-white section-pad">
             <div className="container-wide">
               <p className="gold-label mb-4">Further Reading</p>
-              <h2 className="font-display text-2xl md:text-3xl font-bold mb-10">Related Perspectives</h2>
+              <h2 className="font-display text-2xl md:text-3xl font-semibold mb-10">Related Perspectives</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {fallbackRelated.map((r) => (
                   <Link
@@ -98,7 +98,7 @@ const InsightDetail = () => {
                     <p className="text-white/70 text-[11px] tracking-[0.18em] uppercase mb-3">
                       {r.sector} · {fmt(r.date)}
                     </p>
-                    <h3 className="font-display text-lg font-bold leading-snug group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-gold transition-colors">
                       {r.title}
                     </h3>
                   </Link>

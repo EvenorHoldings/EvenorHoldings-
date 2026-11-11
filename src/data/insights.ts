@@ -21,7 +21,7 @@ export const insights: Insight[] = [
     body: [
       {
         paragraphs: [
-          "African freight conversations tend to begin and end at the port gate. That is understandable — terminals are visible, financeable and politically legible. But in our experience the difference between a corridor that traders trust and one they route around is rarely the crane. It is the hinterland: the inland depot that cannot clear at night, the border post where two agencies hold overlapping mandates, the transporter whose fleet utilisation collapses on the empty return leg.",
+          "African freight conversations tend to begin and end at the port gate. That is understandable — terminals are visible, financeable and politically legible. But the difference between a corridor that traders trust and one they route around is rarely the crane. It is the hinterland: the inland depot that cannot clear at night, the border post where two agencies hold overlapping mandates, the transporter whose fleet utilisation collapses on the empty return leg.",
           "Corridor thinking treats the route as a single system with one performance promise. It asks a simpler question than most master plans do: how many hours does a container spend not moving, and who owns each of those hours?",
         ],
       },
@@ -32,9 +32,9 @@ export const insights: Insight[] = [
         ],
       },
       {
-        heading: "What we do differently",
+        heading: "What we believe works",
         paragraphs: [
-          "We contract for the journey, not the leg. That means a single accountable principal across transport, customs facilitation and inland handling, with performance measured in door-to-door dwell time rather than per-leg activity. It also means being honest with clients about where a corridor is simply not ready, and sequencing volumes accordingly.",
+          "Contract for the journey, not the leg. That means a single accountable party across transport, customs facilitation and inland handling, with performance measured in door-to-door dwell time rather than per-leg activity. It also means being honest about where a corridor is simply not ready, and sequencing volumes accordingly.",
           "The commercial consequence is unglamorous but decisive: predictability. Institutional shippers do not pay a premium for speed records. They pay for a delivery window they can plan a factory, a clinic or a tender around.",
         ],
       },
@@ -57,7 +57,7 @@ export const insights: Insight[] = [
       {
         heading: "Design for the second decade",
         paragraphs: [
-          "We advise clients to specify operating requirements before route requirements. Where will monitoring live? Which faults are remediable remotely, and which require a vehicle, a permit and a landowner conversation? How are duct records kept so that the fifth contractor to work the route does not cut the second contractor's cable?",
+          "Our view is simple: specify operating requirements before route requirements. Where will monitoring live? Which faults are remediable remotely, and which require a vehicle, a permit and a landowner conversation? How are duct records kept so that the fifth contractor to work the route does not cut the second contractor's cable?",
           "These questions shape route selection, redundancy topology and even procurement structure. Answered late, they become the reason capacity exists on paper but not in practice.",
         ],
       },
@@ -86,14 +86,14 @@ export const insights: Insight[] = [
       {
         heading: "Where value leaks",
         paragraphs: [
-          "Three patterns recur across the mandates we advise on. Specifications written around a product rather than an outcome, which narrows competition and inflates lifecycle cost. Evaluation criteria that reward the lowest capital number while ignoring maintainability. And award structures with no meaningful remedy when performance drifts in year three.",
+          "Three patterns recur in public procurement. Specifications written around a product rather than an outcome, which narrows competition and inflates lifecycle cost. Evaluation criteria that reward the lowest capital number while ignoring maintainability. And award structures with no meaningful remedy when performance drifts in year three.",
           "None of these are corruption problems. They are design problems — and they are fixable with better drafting, clearer service levels and disciplined market engagement before the tender is issued.",
         ],
       },
       {
-        heading: "Our working principle",
+        heading: "A better starting point",
         paragraphs: [
-          "We help clients specify what must be true at the end, then work backwards to the commercial instrument that makes it likely. Fewer, better-defined lots. Outcome-linked payment milestones. Explicit knowledge-transfer obligations. Documented decision trails that survive audit and leadership change.",
+          "Start by specifying what must be true at the end, then work backwards to the commercial instrument that makes it likely. Fewer, better-defined lots. Outcome-linked payment milestones. Explicit knowledge-transfer obligations. Documented decision trails that survive audit and leadership change.",
           "Good procurement rarely makes headlines. It quietly removes the reasons projects appear in them.",
         ],
       },
@@ -122,7 +122,7 @@ export const insights: Insight[] = [
       {
         heading: "The advisory role",
         paragraphs: [
-          "Our involvement is usually structural rather than transactional: helping clients match storage and haulage capacity to realistic demand curves, tightening custody and reconciliation processes, and preparing the documentation trail that regulators, insurers and financiers all eventually ask for.",
+          "The work that matters is usually structural rather than transactional: matching storage and haulage capacity to realistic demand curves, tightening custody and reconciliation processes, and preparing the documentation trail that regulators, insurers and financiers all eventually ask for.",
           "Reliability, done properly, looks like an absence of events. That is the point.",
         ],
       },

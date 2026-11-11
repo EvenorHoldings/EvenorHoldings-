@@ -1,15 +1,15 @@
-import { FormEvent, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { MapPin, Briefcase, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CookieConsent from "@/components/CookieConsent";
+import CookieConsent from "@/components/LazyCookieConsent";
 import PageHero from "@/components/PageHero";
 import Seo from "@/components/Seo";
 import { IMG } from "@/assets/images";
 import { roles } from "@/data/roles";
-import { supabase } from "@/integrations/supabase/client";
+import { checkThrottle, recordSubmission } from "@/lib/formThrottle";
 import { toast } from "@/hooks/use-toast";
 import { applicationSchema, toApplicationRow } from "@/lib/applicationSchema";
 
@@ -22,6 +22,16 @@ const Careers = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+  const [params] = useSearchParams();
+
+  // /careers?role=<slug> (linked from each role page) preselects that role.
+  useEffect(() => {
+    const r = params.get("role");
+    if (r && roles.some((x) => x.slug === r)) {
+      setSelected(r);
+      setOpenRole(r);
+    }
+  }, [params]);
 
   const applyFor = (slug: string) => {
     setSelected(slug);
@@ -61,7 +71,15 @@ const Careers = () => {
       return;
     }
 
+    const throttle = checkThrottle("careers");
+    if (!throttle.ok) {
+      toast({ title: "Please wait", description: "reason" in throttle ? throttle.reason : "Please try again shortly.", variant: "destructive" });
+      return;
+    }
+
     setLoading(true);
+    // Loaded on demand: keeps the Supabase SDK off the critical path and out of pre-rendering.
+    const { supabase } = await import("@/integrations/supabase/client");
     const { error } = await supabase.from("job_applications").insert(toApplicationRow(parsed.data));
     setLoading(false);
 
@@ -73,6 +91,7 @@ const Careers = () => {
       });
       return;
     }
+    recordSubmission("careers");
     setSubmitted(true);
   };
 
@@ -86,7 +105,7 @@ const Careers = () => {
     hiringOrganization: {
       "@type": "Organization",
       name: "Evenor Holdings (Pty) Ltd",
-      sameAs: "https://www.evenor.org",
+      sameAs: "https://evenor.org",
     },
     jobLocation: {
       "@type": "Place",
@@ -105,48 +124,39 @@ const Careers = () => {
       <main id="main-content">
         <PageHero
           eyebrow="Careers"
-          title="Build Africa's Infrastructure With Us."
+          title="Build What Comes Next With Us."
           breadcrumb={[{ label: "Home", href: "/" }, { label: "Careers" }]}
           image={IMG.capetown}
         />
 
         <section className="section-pad">
           <div className="container-wide max-w-5xl">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
+            <div
             >
               <p className="gold-label gold-ink mb-4">Working at Evenor</p>
-              <h2 className="font-display text-navy text-3xl md:text-[40px] font-bold mb-6 leading-tight">
+              <h2 className="display-lg text-navy mb-6">
                 Disciplined People, Measurable Delivery.
               </h2>
               <p className="text-charcoal/80 font-light leading-relaxed text-base md:text-lg max-w-3xl">
-                We recruit operators — people who are accountable for a corridor, a network, a site or a
-                submission, and who can show the numbers behind their work. Every role below is open to
-                candidates who meet the stated requirements. Applications are reviewed by the relevant
-                sector lead and the principals' office.
+                We are an early-stage group, and the people who join now will shape what Evenor becomes.
+                We look for operators: people who take ownership, who are honest about results and who
+                want to build something that lasts. Applications are reviewed by the founding team.
               </p>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         <section className="pb-20 md:pb-28" aria-labelledby="open-roles">
           <div className="container-wide max-w-5xl">
-            <h2 id="open-roles" className="font-display text-navy text-2xl md:text-3xl font-bold mb-8">
+            <h2 id="open-roles" className="font-display text-navy text-2xl md:text-3xl font-semibold mb-8">
               Open Roles
             </h2>
             <ul className="space-y-4">
-              {roles.map((r, i) => {
+              {roles.map((r) => {
                 const expanded = openRole === r.slug;
                 return (
-                  <motion.li
+                  <li
                     key={r.slug}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: Math.min(i * 0.05, 0.2) }}
                     className="bg-white border border-navy/10 border-l-[3px] border-l-gold rounded-[4px]"
                   >
                     <h3>
@@ -204,16 +214,21 @@ const Careers = () => {
                             </ul>
                           </div>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() => applyFor(r.slug)}
-                          className="btn-gold mt-8 !py-3 !px-6 !text-[11px]"
-                        >
-                          Apply for this role
-                        </button>
+                        <div className="mt-8 flex flex-wrap gap-4">
+                          <button
+                            type="button"
+                            onClick={() => applyFor(r.slug)}
+                            className="btn-gold !py-3 !px-6"
+                          >
+                            Apply for this role
+                          </button>
+                          <Link to={`/careers/${r.slug}`} className="btn-outline-navy !py-3 !px-6">
+                            Role page
+                          </Link>
+                        </div>
                       </div>
                     )}
-                  </motion.li>
+                  </li>
                 );
               })}
             </ul>
@@ -230,7 +245,7 @@ const Careers = () => {
           <div className="container-wide max-w-3xl">
             <div className="text-center mb-10">
               <p className="gold-label mb-4">Application</p>
-              <h2 id="apply-heading" className="font-display text-white text-3xl md:text-[40px] font-bold">
+              <h2 id="apply-heading" className="display-lg text-white">
                 Submit Your Application
               </h2>
               <p className="text-white/75 font-light mt-5 leading-relaxed">
@@ -308,7 +323,7 @@ const Careers = () => {
                   <p className="text-charcoal/60 text-xs font-light mt-4 leading-relaxed">
                     By applying you consent to Evenor Holdings processing your details for recruitment
                     purposes in line with our{" "}
-                    <a href="/legal/privacy" className="underline hover:text-navy">Privacy Policy</a>.
+                    <Link to="/legal/privacy" className="underline hover:text-navy">Privacy Policy</Link>.
                   </p>
 
                   <button type="submit" disabled={loading} className="btn-gold w-full mt-6 min-h-11 disabled:opacity-60">
