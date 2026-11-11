@@ -28,8 +28,8 @@ const jsonLd = {
 const Ventures = () => (
   <PageLayout>
     <Seo
-      title="Ventures | Moodies and OSTO | Evenor Holdings"
-      description="The ventures Evenor Holdings builds and operates in South Africa: Moodies, a mood-led wellness shop, and OSTO, a cooking appliance that runs on filtered waste oil."
+      title="Ventures | Moodies, OSTO and RES360 | Evenor Holdings"
+      description="The ventures Evenor Holdings builds and operates in South Africa: Moodies, a mood-led wellness shop, OSTO, a cooking appliance that runs on filtered waste oil, and RES360, a student accommodation platform."
       jsonLd={jsonLd}
     />
     <PageHero

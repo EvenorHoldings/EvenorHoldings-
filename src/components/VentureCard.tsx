@@ -19,7 +19,7 @@ const VentureCard = ({ venture: v }: { venture: Venture }) => {
         <h3 className="mb-4">
           <Link
             to={`/ventures/${v.slug}`}
-            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 before:absolute before:inset-0 before:content-['']"
+            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 before:absolute before:inset-0 before:z-[1] before:content-['']"
             style={{ outlineColor: accent }}
           >
             <VentureWordmark venture={v} className="text-4xl md:text-5xl" />
@@ -28,9 +28,9 @@ const VentureCard = ({ venture: v }: { venture: Venture }) => {
         <p className="text-lg leading-snug mb-4" style={{ color: ink }}>{v.tagline}</p>
         <p className="leading-relaxed opacity-80 flex-1">{v.summary}</p>
         <div className="relative z-10 mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold">
-          <span className="inline-flex items-center gap-2">
+          <Link to={`/ventures/${v.slug}`} className="inline-flex items-center gap-2">
             Read more <ArrowRight size={16} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
-          </span>
+          </Link>
           {external ? (
             <a
               href={v.primaryCta.href}

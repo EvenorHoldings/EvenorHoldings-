@@ -6,6 +6,13 @@ import { legalDocs } from "@/data/legal";
 import { siteRoutes } from "../../scripts/generate-sitemap.mjs";
 
 describe("site data", () => {
+  it("includes RES360 alongside Moodies and OSTO with its requested website", () => {
+    expect(ventures.map((v) => v.slug)).toEqual(["moodies", "osto", "res360"]);
+    const res360 = ventures.find((v) => v.slug === "res360");
+    expect(new URL(res360?.primaryCta.href ?? "https://invalid.example").origin).toBe("https://www.res360.org");
+    expect(siteRoutes().map((r) => r.loc)).toContain("/ventures/res360");
+  });
+
   it("keeps the nav sector list in sync with sector content", () => {
     expect(sectorNav.map((s) => [s.slug, s.nav])).toEqual(sectors.map((s) => [s.slug, s.nav]));
   });

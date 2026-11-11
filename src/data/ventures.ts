@@ -1,10 +1,11 @@
+import { IMG } from "@/assets/images";
 import lifestyle from "@/assets/ventures/moodies-lifestyle-800.webp";
 import calm from "@/assets/ventures/moodies-calm-800.webp";
 import gummies from "@/assets/ventures/moodies-gummies-600.webp";
 import cookies from "@/assets/ventures/moodies-cookies-600.webp";
 import brownie from "@/assets/ventures/moodies-brownie-600.webp";
 
-export type VentureStage = "Trading" | "Pilot" | "In development";
+export type VentureStage = "Trading" | "Pilot" | "In development" | "Live";
 
 export interface VentureImage {
   src: string;
@@ -143,6 +144,45 @@ export const ventures: Venture[] = [
       surface: "#0F1F3A",
       ink: "#FFFFFF",
       accent: "#D4A53A",
+    },
+  },
+  {
+    slug: "res360",
+    name: "RES360",
+    legalName: "RES360",
+    tagline: "Every student. Every campus. Every home.",
+    category: "Student accommodation · Digital platform",
+    country: "South Africa",
+    stage: "Live",
+    summary: "A South African student accommodation platform connecting students with residences near universities and colleges. Search by province, city or campus, list a space and plan your rent in one place.",
+    story: [
+      "RES360, formerly Residence24, brings student residence discovery and property listing together in one platform. It helps students explore accommodation near South African universities, TVET colleges and private colleges.",
+      "Students can search by province, city or institution and consider preferences such as accessible, pet-friendly and LGBTQ+ friendly accommodation. A rent calculator helps them estimate costs before choosing a residence.",
+      "Property owners can submit rooms and residences for review, while landlord workspaces and a safety centre support the experience beyond the initial search. RES360 sits alongside Moodies and OSTO in Evenor Holdings’ venture portfolio.",
+    ],
+    highlights: [
+      { title: "Campus-focused discovery", desc: "Find residences by province, city and university or college across South Africa." },
+      { title: "Spaces for students", desc: "Landlords can submit rooms and residences for review and access a dedicated workspace." },
+      { title: "Budget and safety", desc: "Estimate rental costs and access the safety centre alongside your accommodation search." },
+    ],
+    capabilities: ["ict"],
+    url: `https://www.res360.org/?${UTM}`,
+    primaryCta: { label: "Visit res360.org", href: `https://www.res360.org/?${UTM}` },
+    secondaryCta: { label: "Partner with RES360", href: "/contact?interest=res360" },
+    seo: {
+      title: "RES360 | Student Accommodation in South Africa | Evenor Holdings",
+      description: "RES360 connects students with residences near South African universities and colleges. Explore accommodation, list a space and plan your rental budget.",
+    },
+    theme: {
+      surface: "hsl(var(--smoke))",
+      ink: "hsl(var(--navy))",
+      accent: "hsl(var(--gold-ink))",
+    },
+    cover: {
+      src: IMG.capetown,
+      alt: "Cape Town cityscape, one of the South African cities served by RES360",
+      width: 1280,
+      height: 853,
     },
   },
 ];

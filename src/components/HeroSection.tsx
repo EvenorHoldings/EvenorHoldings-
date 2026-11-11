@@ -24,7 +24,7 @@ const HeroSection = () => (
       </h1>
       <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-white/80">
         Evenor Holdings is an emerging South African holding company. We start, own and grow
-        ventures that make everyday life better, beginning with Moodies and OSTO, and we are
+        ventures that make everyday life better, beginning with Moodies, OSTO and RES360, and we are
         building the group across logistics, ICT, consulting, petrochemicals and mining.
       </p>
       <div className="mt-10 flex flex-col sm:flex-row gap-4">
