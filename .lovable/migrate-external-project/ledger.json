@@ -3,8 +3,8 @@
     "capability": "code and routes",
     "source": "uploaded revamp archive",
     "outcome": "preserve imported presentation; add RES360",
-    "status": "in_progress",
-    "next_action": "Verify home, venture directory, detail, contact preselection"
+    "status": "verified",
+    "next_action": "None; desktop and mobile venture navigation passed"
   },
   {
     "capability": "database schema and records",
@@ -24,15 +24,15 @@
     "capability": "assets",
     "source": "archive source-controlled assets",
     "outcome": "preserve existing assets and import venture media",
-    "status": "in_progress",
-    "next_action": "Verify image loading"
+    "status": "verified",
+    "next_action": "None; venture images rendered in browser checks"
   },
   {
     "capability": "external providers and endpoints",
     "source": "existing Cloud form inserts; outbound venture websites",
     "outcome": "preserve providers and links",
     "status": "preserved",
-    "next_action": "Verify RES360 outbound destination"
+    "next_action": "RES360 destination verified; existing form delivery was not changed or retested"
   },
   {
     "capability": "Vercel cutover",
