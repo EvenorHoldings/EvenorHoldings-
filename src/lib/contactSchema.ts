@@ -7,6 +7,7 @@ export const ROUTING: Record<string, string> = {
   "Tender Submission": "tenders@evenor.org",
   "Partnership Proposal": "partners@evenor.org",
   "Investor Enquiry": "joachim@evenor.org",
+  Ventures: "partners@evenor.org",
   "Executive Office": "joachim@evenor.org",
 };
 

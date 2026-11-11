@@ -1,8 +1,7 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
-const SITE = "https://www.evenor.org";
-const DEFAULT_OG = `${SITE}/og-image.jpg`;
+import { DEFAULT_OG, SITE, canonicalFor } from "@/lib/site";
+import { HeadContext } from "@/lib/head";
 
 interface SeoProps {
   title: string;
@@ -35,8 +34,12 @@ const upsertLink = (rel: string, href: string) => {
 
 const Seo = ({ title, description, image, type = "website", jsonLd, noindex }: SeoProps) => {
   const { pathname } = useLocation();
-  const url = `${SITE}${pathname === "/" ? "" : pathname}`;
-  const ogImage = image ?? DEFAULT_OG;
+  const url = canonicalFor(pathname);
+  const ogImage = image ? (image.startsWith("http") ? image : `${SITE}${image}`) : DEFAULT_OG;
+
+  // Pre-render: hand the head data to the server renderer.
+  const ssr = useContext(HeadContext);
+  if (ssr) ssr.head = { title, description, url, image: ogImage, type, noindex, jsonLd };
 
   useEffect(() => {
     document.title = title;
@@ -44,7 +47,6 @@ const Seo = ({ title, description, image, type = "website", jsonLd, noindex }: S
     upsertMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
     upsertLink("canonical", url);
 
-    // Open Graph
     upsertMeta("property", "og:title", title);
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:type", type);
@@ -52,13 +54,13 @@ const Seo = ({ title, description, image, type = "website", jsonLd, noindex }: S
     upsertMeta("property", "og:image", ogImage);
     upsertMeta("property", "og:site_name", "Evenor Holdings");
 
-    // Twitter
     upsertMeta("name", "twitter:card", "summary_large_image");
     upsertMeta("name", "twitter:title", title);
     upsertMeta("name", "twitter:description", description);
     upsertMeta("name", "twitter:image", ogImage);
 
-    // JSON-LD (page-specific, tagged so we can remove on unmount)
+    // Page JSON-LD. Remove any copy the pre-renderer baked in so it is never duplicated.
+    document.head.querySelectorAll('script[data-seo="page"]').forEach((s) => s.remove());
     let script: HTMLScriptElement | null = null;
     if (jsonLd) {
       script = document.createElement("script");

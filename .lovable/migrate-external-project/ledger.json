@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "code and routes",
+    "source": "uploaded revamp archive",
+    "outcome": "preserve imported presentation; add RES360",
+    "status": "verified",
+    "next_action": "None; desktop and mobile venture navigation passed"
+  },
+  {
+    "capability": "database schema and records",
+    "source": "existing Lovable Cloud and archive migrations",
+    "outcome": "retain existing contacts and applications; no migration requested",
+    "status": "preserved",
+    "next_action": "No database changes"
+  },
+  {
+    "capability": "auth identities and authorization",
+    "source": "existing managed integration",
+    "outcome": "retain generated client and access controls",
+    "status": "preserved",
+    "next_action": "No authentication changes"
+  },
+  {
+    "capability": "assets",
+    "source": "archive source-controlled assets",
+    "outcome": "preserve existing assets and import venture media",
+    "status": "verified",
+    "next_action": "None; venture images rendered in browser checks"
+  },
+  {
+    "capability": "external providers and endpoints",
+    "source": "existing Cloud form inserts; outbound venture websites",
+    "outcome": "preserve providers and links",
+    "status": "preserved",
+    "next_action": "RES360 destination verified; existing form delivery was not changed or retested"
+  },
+  {
+    "capability": "Vercel cutover",
+    "source": "user managed Vercel deployment",
+    "outcome": "retain deployment configuration",
+    "status": "pending",
+    "next_action": "User must deploy updated source to Vercel"
+  }
+]

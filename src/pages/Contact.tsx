@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CookieConsent from "@/components/CookieConsent";
+import CookieConsent from "@/components/LazyCookieConsent";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import Seo from "@/components/Seo";
@@ -17,7 +17,7 @@ const Contact = () => (
     <main id="main-content">
       <PageHero
         eyebrow="Contact"
-        title="Speak With Our Principals' Office."
+        title="Let's Build Something Together."
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact" }]}
         image={IMG.corridor}
       />
