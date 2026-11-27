@@ -157,10 +157,9 @@
   ]
 }
     </script>
-    <!-- Inter (300-800): loaded from Google Fonts; self-hosting this file is the next step. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" />
+    <!-- Preload the self-hosted variable Inter font. -->
+    <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/inter.css" />
     <!-- Without JS, show content that would otherwise fade in -->
     <noscript><style>.animate-fade-in,.animate-fade-up{animation:none!important;opacity:1!important}</style></noscript>
   </head>

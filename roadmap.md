@@ -4,5 +4,5 @@
 - [x] Phase 3: remove unused old homepage sections, Lighthouse + acceptance report (awaiting go-ahead)
 - [x] Replace +27 81 540 2781 with +27 78 234 0831 everywhere
 - [x] Phase 4: self-hosted Inter font (speed) — file committed at public/fonts/inter-latin-wght-normal.woff2
-- [ ] Phase 4b: publish self-hosted Inter (add @font-face + preload, drop the Google Fonts link) — needs one more push to the revamp branch, now that the font blob is in the repository
+- [x] Phase 4b: publish self-hosted Inter with local font stylesheet and preload; Google Fonts removed — Vercel revamp @ 24caf51b
 - [x] Live push: revamp @ 0715b26b — redesign + phone +27 78 234 0831 + Inter via Google Fonts
