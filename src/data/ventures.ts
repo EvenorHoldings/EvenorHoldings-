@@ -1,4 +1,3 @@
-import { IMG } from "@/assets/images";
 import lifestyle from "@/assets/ventures/moodies-lifestyle-800.webp";
 import calm from "@/assets/ventures/moodies-calm-800.webp";
 import gummies from "@/assets/ventures/moodies-gummies-600.webp";
