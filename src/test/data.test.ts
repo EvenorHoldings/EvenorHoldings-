@@ -6,8 +6,13 @@ import { legalDocs } from "@/data/legal";
 import { siteRoutes } from "../../scripts/generate-sitemap.mjs";
 
 describe("site data", () => {
+  it("links Elections Intelligence to its public platform", () => {
+    const ei = ventures.find((v) => v.slug === "elections-intelligence");
+    expect(ei?.primaryCta.href).toBe("https://electionsintelligence.org/");
+  });
+
   it("includes RES360 alongside Moodies and OSTO with its requested website", () => {
-    expect(ventures.map((v) => v.slug)).toEqual(["moodies", "osto", "res360"]);
+    expect(ventures.map((v) => v.slug)).toEqual(["moodies", "osto", "res360", "elections-intelligence"]);
     const res360 = ventures.find((v) => v.slug === "res360");
     expect(new URL(res360?.primaryCta.href ?? "https://invalid.example").origin).toBe("https://www.res360.org");
     expect(siteRoutes().map((r) => r.loc)).toContain("/ventures/res360");
@@ -24,7 +29,8 @@ describe("site data", () => {
   });
 
   it("tags outbound venture links with referral UTMs", () => {
-    for (const v of ventures) {
+    // Elections Intelligence uses its exact public URL as requested.
+    for (const v of ventures.filter((x) => x.slug !== "elections-intelligence")) {
       if (v.url) expect(v.url).toContain("utm_source=evenor.org");
       if (v.primaryCta.href.startsWith("http")) expect(v.primaryCta.href).toContain("utm_source=evenor.org");
     }

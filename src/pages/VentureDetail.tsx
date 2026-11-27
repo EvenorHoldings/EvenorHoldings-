@@ -14,7 +14,7 @@ const Cta = ({ cta, primary, accent, ink }: { cta: VentureCta; primary?: boolean
     ? { background: accent, color: ink === "#FFFFFF" ? "#0B1B33" : "#FFFFFF", outlineColor: accent }
     : { border: `1px solid ${accent}`, color: ink, outlineColor: accent };
   return isExternal(cta.href) ? (
-    <a href={cta.href} target="_blank" rel="noopener" className={cls} style={style}>
+    <a href={cta.href} target="_blank" rel="noopener noreferrer" className={cls} style={style}>
       {cta.label} <ArrowUpRight size={16} aria-hidden="true" />
       <span className="sr-only">(opens in a new tab)</span>
     </a>
@@ -31,7 +31,7 @@ const VentureDetail = () => {
   if (!v) return <NotFound />;
 
   const { surface, ink, accent } = v.theme;
-  const caps = v.capabilities.map((c) => sectors.find((s) => s.slug === c)).filter(Boolean);
+  const caps = v.capabilities.map((c) => sectors.find((s) => s.slug === c)).filter((c): c is (typeof sectors)[number] => c !== undefined);
   const others = ventures.filter((o) => o.slug !== v.slug);
   const pageUrl = `${SITE}/ventures/${v.slug}`;
 
@@ -45,7 +45,7 @@ const VentureDetail = () => {
     ...(v.url ? { url: v.url.split("?")[0] } : {}),
     areaServed: { "@type": "Country", name: v.country },
     parentOrganization: { "@id": ORG_ID, name: "Evenor Holdings (Pty) Ltd" },
-    ...(v.cover ? { image: `${SITE}${v.cover.src}` } : {}),
+    ...(v.cover ? { image: v.cover.src.startsWith("http") ? v.cover.src : `${SITE}${v.cover.src}` } : {}),
   };
 
   return (
@@ -85,6 +85,13 @@ const VentureDetail = () => {
                 loading="eager"
                 className="w-full h-auto object-cover aspect-[4/5]"
               />
+              {v.cover.credit && (
+                <p className="mt-2 text-xs opacity-75">
+                  Photo:{" "}
+                  <a href={v.cover.credit.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Lourie Pieterse / Wikimedia Commons</a>{" "}
+                  (<a href={v.cover.credit.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">CC BY-SA 3.0</a>)
+                </p>
+              )}
             </div>
           )}
         </div>
@@ -107,7 +114,7 @@ const VentureDetail = () => {
                 <div>
                   <dt className="eyebrow gold-ink mb-1">Website</dt>
                   <dd>
-                    <a href={v.url} target="_blank" rel="noopener" className="text-navy underline underline-offset-4 hover:text-gold-ink">
+                    <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-navy underline underline-offset-4 hover:text-gold-ink">
                       {new URL(v.url).hostname.replace(/^www\./, "")}
                     </a>
                   </dd>
@@ -119,9 +126,9 @@ const VentureDetail = () => {
                 <p className="eyebrow gold-ink mb-3">Group capabilities used</p>
                 <ul className="space-y-2">
                   {caps.map((c) => (
-                    <li key={c!.slug}>
-                      <Link to={`/sectors/${c!.slug}`} className="text-navy hover:text-gold-ink underline-offset-4 hover:underline">
-                        {c!.nav}
+                    <li key={c.slug}>
+                      <Link to={`/sectors/${c.slug}`} className="text-navy hover:text-gold-ink underline-offset-4 hover:underline">
+                        {c.nav}
                       </Link>
                     </li>
                   ))}

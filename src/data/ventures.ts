@@ -1,9 +1,10 @@
-import { IMG } from "@/assets/images";
 import lifestyle from "@/assets/ventures/moodies-lifestyle-800.webp";
 import calm from "@/assets/ventures/moodies-calm-800.webp";
 import gummies from "@/assets/ventures/moodies-gummies-600.webp";
 import cookies from "@/assets/ventures/moodies-cookies-600.webp";
 import brownie from "@/assets/ventures/moodies-brownie-600.webp";
+const STELLENBOSCH_PHOTO =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Stellenbosch_university_campus.jpg/1280px-Stellenbosch_university_campus.jpg";
 
 export type VentureStage = "Trading" | "Pilot" | "In development" | "Live";
 
@@ -12,6 +13,8 @@ export interface VentureImage {
   alt: string;
   width: number;
   height: number;
+  /** Attribution for third-party licensed photos. */
+  credit?: { text: string; sourceUrl: string; licenseUrl: string };
 }
 
 export interface VentureCta {
@@ -158,7 +161,7 @@ export const ventures: Venture[] = [
     story: [
       "RES360, formerly Residence24, brings student residence discovery and property listing together in one platform. It helps students explore accommodation near South African universities, TVET colleges and private colleges.",
       "Students can search by province, city or institution and consider preferences such as accessible, pet-friendly and LGBTQ+ friendly accommodation. A rent calculator helps them estimate costs before choosing a residence.",
-      "Property owners can submit rooms and residences for review, while landlord workspaces and a safety centre support the experience beyond the initial search. RES360 sits alongside Moodies and OSTO in Evenor Holdings’ venture portfolio.",
+      "Property owners can submit rooms and residences for review, while landlord workspaces and a safety centre support the experience beyond the initial search. RES360 sits alongside Moodies, OSTO and Elections Intelligence in Evenor Holdings’ venture portfolio.",
     ],
     highlights: [
       { title: "Campus-focused discovery", desc: "Find residences by province, city and university or college across South Africa." },
@@ -179,10 +182,50 @@ export const ventures: Venture[] = [
       accent: "hsl(var(--gold-ink))",
     },
     cover: {
-      src: IMG.capetown,
-      alt: "Cape Town cityscape, one of the South African cities served by RES360",
+      src: STELLENBOSCH_PHOTO,
+      alt: "Historic buildings and trees on the Stellenbosch University campus in Stellenbosch, Western Cape",
       width: 1280,
-      height: 853,
+      height: 960,
+      credit: {
+        text: "Lourie Pieterse / Wikimedia Commons (CC BY-SA 3.0)",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Stellenbosch_university_campus.jpg",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      },
+    },
+  },
+  {
+    slug: "elections-intelligence",
+    name: "Elections Intelligence",
+    legalName: "Elections Intelligence",
+    tagline: "A source-led archive and analytics platform for national elections worldwide.",
+    category: "Civic data · Elections intelligence · Research platform",
+    country: "South Africa",
+    stage: "Live",
+    summary:
+      "Explore and compare historical national election results, each tied back to its source. The current archive covers national elections through 2023.",
+    story: [
+      "Elections Intelligence is an independent venture built by Evenor Holdings. It brings historical national election results from around the world into one source-led archive, so researchers, journalists and civic organisations can explore and compare outcomes.",
+      "Every figure is tied back to its source. The current archive is historical, covering national elections through 2023, and the platform does not publish live results.",
+      "Elections Intelligence is independent and is not affiliated with any election authority.",
+    ],
+    highlights: [
+      { title: "Source-led", desc: "Results are presented with references to the sources they come from." },
+      { title: "National elections worldwide", desc: "A historical archive of national elections across many countries, through 2023." },
+      { title: "Analytics for research", desc: "Tools to explore and compare historical results across countries and years." },
+    ],
+    capabilities: ["ict", "consulting"],
+    url: "https://electionsintelligence.org/",
+    primaryCta: { label: "Visit Elections Intelligence", href: "https://electionsintelligence.org/" },
+    secondaryCta: { label: "Contact us about Elections Intelligence", href: "/contact?interest=elections-intelligence" },
+    seo: {
+      title: "Elections Intelligence | Source-Led National Elections Archive | Evenor Holdings",
+      description:
+        "Elections Intelligence is a source-led archive and analytics platform for national elections worldwide, built by Evenor Holdings. Historical archive through 2023.",
+    },
+    theme: {
+      surface: "hsl(var(--navy))",
+      ink: "#FFFFFF",
+      accent: "hsl(var(--gold))",
     },
   },
 ];
