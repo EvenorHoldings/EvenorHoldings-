@@ -121,7 +121,7 @@ const ContactSection = () => {
               <p className="gold-label">Head Office · Cape Town</p>
               <div className="space-y-4 text-sm font-light">
                 <p className="flex gap-3"><MapPin size={16} className="text-gold shrink-0 mt-0.5" /><span>1st Floor, Cape Dahlia<br/>80 Coral Road, West Beach<br/>Cape Town, 7441</span></p>
-                <p className="flex gap-3"><Phone size={16} className="text-gold shrink-0 mt-0.5" /><a href="tel:+27815402781" className="hover:text-gold transition-colors">+27 81 540 2781</a></p>
+                <p className="flex gap-3"><Phone size={16} className="text-gold shrink-0 mt-0.5" /><a href="tel:+27782340831" className="hover:text-gold transition-colors">+27 78 234 0831</a></p>
                 <p className="flex gap-3"><Mail size={16} className="text-gold shrink-0 mt-0.5" /><a href="mailto:info@evenor.org" className="hover:text-gold transition-colors">info@evenor.org</a></p>
                 <p className="flex gap-3"><Clock size={16} className="text-gold shrink-0 mt-0.5" /><span>Mon–Fri · 08:00–17:00 SAST</span></p>
               </div>

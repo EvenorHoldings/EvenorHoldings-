@@ -57,7 +57,7 @@ export const legalDocs: Record<string, LegalDoc> = {
       {
         heading: "6. Contact",
         paragraphs: [
-          "Questions regarding this policy or the exercise of your rights may be directed to info@evenor.org or +27 81 540 2781 during business hours (Mon–Fri, 08:00–17:00 SAST).",
+          "Questions regarding this policy or the exercise of your rights may be directed to info@evenor.org or +27 78 234 0831 during business hours (Mon–Fri, 08:00–17:00 SAST).",
         ],
       },
     ],

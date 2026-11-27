@@ -1,27 +1,30 @@
+import { useEffect, useState } from "react";
 import { MessageCircle } from "lucide-react";
 
-const PHONE = "27815402781"; // wa.me format, no +
-const MSG = encodeURIComponent(
-  "Hello Evenor Holdings, I would like to get in touch."
-);
+const MSG = encodeURIComponent("Hello Evenor Holdings, I would like to get in touch.");
 
-const WhatsAppButton = () => (
-  <a
-    href={`https://wa.me/${PHONE}?text=${MSG}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp Our Office"
-    className="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-navy border border-gold/50 hover:border-gold hover:bg-navy-deep shadow-2xl px-4 py-3 md:px-5 md:py-4 transition-all duration-300"
-    style={{ boxShadow: "0 12px 30px rgba(0,0,0,0.35)" }}
-  >
-    <span className="w-9 h-9 rounded-full bg-gold flex items-center justify-center text-navy">
-      <MessageCircle size={18} strokeWidth={2.5} />
-    </span>
-    <span className="hidden md:flex flex-col leading-tight">
-      <span className="text-[10px] tracking-[0.22em] uppercase text-gold">Direct Line</span>
-      <span className="text-white text-sm font-medium">WhatsApp Our Office</span>
-    </span>
-  </a>
-);
-
+/** Floating WhatsApp link; hides while the homepage closing band is visible. */
+const WhatsAppButton = () => {
+  const [hidden, setHidden] = useState(false);
+  useEffect(() => {
+    const band = document.getElementById("closing-band");
+    if (!band || !("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver(([e]) => setHidden(e.isIntersecting));
+    io.observe(band);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <a
+      href={`https://wa.me/27782340831?text=${MSG}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Message Evenor Holdings on WhatsApp"
+      aria-hidden={hidden || undefined}
+      tabIndex={hidden ? -1 : undefined}
+      className={`fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-navy text-gold shadow-lg ring-1 ring-gold/40 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${hidden ? "pointer-events-none opacity-0" : "opacity-100"}`}
+    >
+      <MessageCircle size={24} aria-hidden="true" />
+    </a>
+  );
+};
 export default WhatsAppButton;

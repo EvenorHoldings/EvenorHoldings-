@@ -1,12 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 import HeroSection from "@/components/HeroSection";
-import VenturesSection from "@/components/VenturesSection";
-import SectorsSection from "@/components/SectorsSection";
-import ApproachSection from "@/components/ApproachSection";
-import FounderLink from "@/components/FounderLink";
-import InsightsSection from "@/components/InsightsSection";
-import ContactSection from "@/components/ContactSection";
+import HomeVentures from "@/components/home/HomeVentures";
+import HowWeBuild from "@/components/home/HowWeBuild";
+import FocusAreas from "@/components/home/FocusAreas";
+import LatestInsight from "@/components/home/LatestInsight";
+import ClosingBand from "@/components/home/ClosingBand";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/LazyCookieConsent";
@@ -20,12 +19,11 @@ const Index = () => (
     <Navbar />
     <main id="main-content">
       <HeroSection />
-      <VenturesSection />
-      <SectorsSection />
-      <ApproachSection />
-      <FounderLink />
-      <InsightsSection />
-      <ContactSection />
+      <HomeVentures />
+      <HowWeBuild />
+      <FocusAreas />
+      <LatestInsight />
+      <ClosingBand />
     </main>
     <Footer />
     <WhatsAppButton />
