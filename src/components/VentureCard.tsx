@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Flame } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BarChart3, Flame } from "lucide-react";
 import type { Venture } from "@/data/ventures";
 import { isExternal } from "@/data/ventures";
 import VentureWordmark from "@/components/VentureWordmark";
@@ -35,7 +35,7 @@ const VentureCard = ({ venture: v }: { venture: Venture }) => {
             <a
               href={v.primaryCta.href}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 underline-offset-4 hover:underline"
               style={{ color: accent }}
             >
@@ -60,13 +60,27 @@ const VentureCard = ({ venture: v }: { venture: Venture }) => {
             decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
-        ) : (
+        ) : null}
+        {v.cover?.credit && (
+          <p className="absolute bottom-0 right-0 z-10 rounded-tl-sm bg-navy-deep/75 px-2 py-1 text-[11px] leading-tight text-offwhite">
+            Photo:{" "}
+            <a href={v.cover.credit.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+              {v.cover.credit.text.replace(" (CC BY-SA 3.0)", "")}
+            </a>{" "}
+            (<a href={v.cover.credit.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">CC BY-SA 3.0</a>)
+          </p>
+        )}
+        {v.cover ? null : (
           <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
             <div
               className="absolute inset-0 opacity-60"
               style={{ background: `radial-gradient(circle at 50% 60%, ${accent}55 0%, transparent 60%)` }}
             />
-            <Flame size={96} strokeWidth={1} style={{ color: accent }} />
+            {v.slug === "elections-intelligence" ? (
+              <BarChart3 size={96} strokeWidth={1} style={{ color: accent }} />
+            ) : (
+              <Flame size={96} strokeWidth={1} style={{ color: accent }} />
+            )}
           </div>
         )}
       </div>

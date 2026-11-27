@@ -14,7 +14,7 @@ const Cta = ({ cta, primary, accent, ink }: { cta: VentureCta; primary?: boolean
     ? { background: accent, color: ink === "#FFFFFF" ? "#0B1B33" : "#FFFFFF", outlineColor: accent }
     : { border: `1px solid ${accent}`, color: ink, outlineColor: accent };
   return isExternal(cta.href) ? (
-    <a href={cta.href} target="_blank" rel="noopener" className={cls} style={style}>
+    <a href={cta.href} target="_blank" rel="noopener noreferrer" className={cls} style={style}>
       {cta.label} <ArrowUpRight size={16} aria-hidden="true" />
       <span className="sr-only">(opens in a new tab)</span>
     </a>
@@ -85,6 +85,13 @@ const VentureDetail = () => {
                 loading="eager"
                 className="w-full h-auto object-cover aspect-[4/5]"
               />
+              {v.cover.credit && (
+                <p className="mt-2 text-xs opacity-75">
+                  Photo:{" "}
+                  <a href={v.cover.credit.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Lourie Pieterse / Wikimedia Commons</a>{" "}
+                  (<a href={v.cover.credit.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">CC BY-SA 3.0</a>)
+                </p>
+              )}
             </div>
           )}
         </div>
@@ -107,7 +114,7 @@ const VentureDetail = () => {
                 <div>
                   <dt className="eyebrow gold-ink mb-1">Website</dt>
                   <dd>
-                    <a href={v.url} target="_blank" rel="noopener" className="text-navy underline underline-offset-4 hover:text-gold-ink">
+                    <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-navy underline underline-offset-4 hover:text-gold-ink">
                       {new URL(v.url).hostname.replace(/^www\./, "")}
                     </a>
                   </dd>
