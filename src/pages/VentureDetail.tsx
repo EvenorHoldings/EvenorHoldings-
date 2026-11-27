@@ -45,7 +45,7 @@ const VentureDetail = () => {
     ...(v.url ? { url: v.url.split("?")[0] } : {}),
     areaServed: { "@type": "Country", name: v.country },
     parentOrganization: { "@id": ORG_ID, name: "Evenor Holdings (Pty) Ltd" },
-    ...(v.cover ? { image: `${SITE}${v.cover.src}` } : {}),
+    ...(v.cover ? { image: v.cover.src.startsWith("http") ? v.cover.src : `${SITE}${v.cover.src}` } : {}),
   };
 
   return (

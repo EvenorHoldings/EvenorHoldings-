@@ -4,7 +4,8 @@ import calm from "@/assets/ventures/moodies-calm-800.webp";
 import gummies from "@/assets/ventures/moodies-gummies-600.webp";
 import cookies from "@/assets/ventures/moodies-cookies-600.webp";
 import brownie from "@/assets/ventures/moodies-brownie-600.webp";
-import stellenbosch from "@/assets/ventures/stellenbosch-university-campus-960.webp";
+const STELLENBOSCH_PHOTO =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Stellenbosch_university_campus.jpg/1280px-Stellenbosch_university_campus.jpg";
 
 export type VentureStage = "Trading" | "Pilot" | "In development" | "Live";
 
@@ -182,10 +183,10 @@ export const ventures: Venture[] = [
       accent: "hsl(var(--gold-ink))",
     },
     cover: {
-      src: stellenbosch,
+      src: STELLENBOSCH_PHOTO,
       alt: "Historic buildings and trees on the Stellenbosch University campus in Stellenbosch, Western Cape",
-      width: 960,
-      height: 720,
+      width: 1280,
+      height: 960,
       credit: {
         text: "Lourie Pieterse / Wikimedia Commons (CC BY-SA 3.0)",
         sourceUrl: "https://commons.wikimedia.org/wiki/File:Stellenbosch_university_campus.jpg",
