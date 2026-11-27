@@ -1,10 +1,8 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App.tsx";
+import "@fontsource-variable/inter/wght.css";
 import "./index.css";
 
-// Activate the non-render-blocking Google Fonts stylesheet (see index.html).
-const gfonts = document.getElementById("gfonts") as HTMLLinkElement | null;
-if (gfonts) gfonts.media = "all";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Application root is missing");

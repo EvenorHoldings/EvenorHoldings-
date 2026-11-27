@@ -15,7 +15,7 @@ const WhatsAppButton = () => {
   }, []);
   return (
     <a
-      href={`https://wa.me/27815402781?text=${MSG}`}
+      href={`https://wa.me/27782340831?text=${MSG}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Message Evenor Holdings on WhatsApp"
