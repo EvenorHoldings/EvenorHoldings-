@@ -1,4 +1,4 @@
 # Roadmap — homepage simplicity redesign (by phases)
 - [x] Phase 1: new tokens + Inter, homepage 6 sections, 4-link nav, slim footer, round WhatsApp button
 - [x] Phase 2: apply same rhythm/tokens to /ventures, /about, /insights, /contact (awaiting go-ahead)
-- [ ] Phase 3: remove unused old homepage sections, Lighthouse + acceptance report (awaiting go-ahead)
+- [x] Phase 3: remove unused old homepage sections, Lighthouse + acceptance report (awaiting go-ahead)
