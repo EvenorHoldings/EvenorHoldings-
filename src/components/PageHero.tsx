@@ -28,12 +28,12 @@ const PageHero = ({ eyebrow, title, breadcrumb, image, height = "60vh" }: PageHe
           aria-hidden
           priority
           sizes="100vw"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-35"
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy/85 to-navy/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
       <div className="relative container-wide pt-40 pb-16 md:pb-20">
-        <nav aria-label="Breadcrumb" className="mb-6 text-white/70 text-[11px] tracking-[0.2em] uppercase font-medium">
+        <nav aria-label="Breadcrumb" className="mb-6 text-white/70 text-[11px] tracking-[0.14em] uppercase font-medium">
           {breadcrumb.map((b, i) => (
             <span key={b.label}>
               {b.href ? (
@@ -51,7 +51,7 @@ const PageHero = ({ eyebrow, title, breadcrumb, image, height = "60vh" }: PageHe
         <h1 className="display-xl text-white max-w-4xl">
           {title}
         </h1>
-        <div className="mt-8 h-[3px] w-16 bg-gold" />
+        <div className="mt-8 h-px w-12 bg-gold" aria-hidden="true" />
       </div>
     </section>
   );

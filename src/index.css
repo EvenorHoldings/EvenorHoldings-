@@ -76,13 +76,13 @@
   .link-arrow { @apply inline-flex items-center gap-2 font-semibold underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold; }
   .reveal { opacity: 0; transform: translateY(12px); transition: opacity 400ms ease-out, transform 400ms ease-out; }
   .reveal.is-in { opacity: 1; transform: none; }
-  .section-pad    { @apply py-20 md:py-28 lg:py-32; }
+  .section-pad    { @apply py-24 lg:py-40; }
   .section-pad-sm { @apply py-14 md:py-20; }
 
   /* Type system: Space Grotesk for display, DM Sans for text. One scale, used everywhere. */
-  .eyebrow    { @apply text-xs font-semibold uppercase tracking-[0.2em]; }
-  .display-xl { @apply font-display text-[2.75rem] sm:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight; }
-  .display-lg { @apply font-display text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight; }
+  .eyebrow    { @apply text-xs font-semibold uppercase tracking-[0.14em]; }
+  .display-xl { @apply font-display font-semibold; font-size: clamp(2.75rem, 7vw, 6rem); line-height: 1.05; letter-spacing: -0.02em; }
+  .display-lg { @apply font-display font-semibold; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em; }
   .display-md { @apply font-display text-2xl sm:text-3xl font-semibold leading-tight tracking-tight; }
 
   /* Legacy alias kept for existing pages */
@@ -108,7 +108,7 @@
   .btn-gold,
   .btn-outline-white,
   .btn-outline-navy {
-    @apply inline-flex min-h-11 items-center justify-center rounded-sm px-6 py-3 text-sm font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4;
+    @apply inline-flex min-h-[52px] items-center justify-center rounded-xl px-7 py-3 text-base font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4;
   }
   .btn-gold { background: hsl(var(--gold)); color: hsl(var(--navy)); outline-color: hsl(var(--gold)); }
   .btn-gold:hover { background: hsl(var(--gold-bright)); }
