@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Self-hosted Inter (variable weight 100-900): served by this site, no third-party font request. */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+}
+
 @layer base {
   :root {
     /* Brand HSL tokens */
