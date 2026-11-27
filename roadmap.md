@@ -1,6 +1,4 @@
-# Current task
-- [x] Inspect the confirmed revamp archive and RES360 website.
-- [x] Import the confirmed presentation without changing existing services.
-- [x] Add RES360 to shared venture content and links.
-- [x] Verify tests and desktop/mobile venture navigation.
-- [x] Deploy RES360 update through the confirmed GitHub revamp branch; Vercel reported success and live desktop/mobile navigation passed.
+# Roadmap — homepage simplicity redesign (by phases)
+- [x] Phase 1: new tokens + Inter, homepage 6 sections, 4-link nav, slim footer, round WhatsApp button
+- [ ] Phase 2: apply same rhythm/tokens to /ventures, /about, /insights, /contact (awaiting go-ahead)
+- [ ] Phase 3: remove unused old homepage sections, Lighthouse + acceptance report (awaiting go-ahead)

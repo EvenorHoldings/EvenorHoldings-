@@ -2,55 +2,34 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { IMAGES } from "@/assets/images";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { sectorNav } from "@/data/sectorNav";
 import { contactHref } from "@/lib/site";
 
 const HeroSection = () => (
-  <section aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-navy">
+  <section aria-labelledby="hero-title" className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-navy">
     <ResponsiveImage
       image={IMAGES.port}
       alt=""
       aria-hidden
       priority
       sizes="100vw"
-      className="absolute inset-0 -z-10 h-full w-full object-cover"
+      className="absolute inset-0 -z-10 h-full w-full object-cover opacity-35"
     />
-    <div className="absolute inset-0 -z-10 bg-gradient-to-b from-navy/90 via-navy/85 to-navy" aria-hidden="true" />
+    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/40" aria-hidden="true" />
 
-    <div className="container-wide pt-36 pb-20 md:pt-48 md:pb-28">
-      <p className="eyebrow text-gold mb-6 animate-fade-in">Cape Town · Founded 2025</p>
-      <h1 id="hero-title" className="display-xl text-white max-w-4xl animate-fade-up">
-        Building African ventures that change lives.
-      </h1>
-      <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-white/80">
-        Evenor Holdings is an emerging South African holding company. We start, own and grow
-        ventures that make everyday life better, beginning with Moodies, OSTO, RES360 and Elections Intelligence, and we are
-        building the group across logistics, ICT, consulting, petrochemicals and mining.
+    <div className="container-wide w-full py-32">
+      <p className="eyebrow-sm text-gold mb-6">Cape Town · Founded 2025</p>
+      <h1 id="hero-title" className="home-h1 text-white max-w-4xl">Building African ventures that change lives.</h1>
+      <p className="home-body mt-8 text-white/85">
+        Evenor Holdings starts, owns and grows businesses that make everyday life better.
       </p>
-      <div className="mt-10 flex flex-col sm:flex-row gap-4">
-        <Link to="/ventures" className="btn-gold">
-          See our ventures <ArrowRight size={16} className="ml-2" aria-hidden="true" />
-        </Link>
-        <Link to={contactHref("partnership")} className="btn-outline-white">
-          Partner with us
+      <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8">
+        <a href="#ventures" className="btn-primary">See our ventures</a>
+        <Link to={contactHref("partnership")} className="link-arrow text-white">
+          Partner with us <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>
     </div>
-
-    <div className="border-t border-white/10 bg-navy-deep/60">
-      <ul className="container-wide grid grid-cols-2 sm:grid-cols-5 gap-x-4 gap-y-1 py-4" aria-label="Capabilities">
-        {sectorNav.map((s) => (
-          <li key={s.slug}>
-            <Link
-              to={`/sectors/${s.slug}`}
-              className="flex min-h-11 items-center text-xs font-medium uppercase tracking-[0.16em] text-white/70 hover:text-gold transition-colors"
-            >
-              {s.short}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <span className="absolute bottom-8 left-1/2 h-12 w-px bg-gold motion-safe:animate-pulse" aria-hidden="true" />
   </section>
 );
 

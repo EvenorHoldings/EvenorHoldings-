@@ -5,10 +5,8 @@ import { contactHref } from "@/lib/site";
 
 const links = [
   { label: "Ventures", to: "/ventures" },
-  { label: "Capabilities", to: "/#capabilities" },
   { label: "About", to: "/about" },
   { label: "Insights", to: "/insights" },
-  { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -76,15 +74,14 @@ const Navbar = () => {
           solid ? "bg-navy/95 backdrop-blur border-b border-white/10" : "bg-transparent"
         }`}
       >
-        <nav aria-label="Primary" className="container-wide flex h-16 md:h-20 items-center justify-between">
+        <nav aria-label="Primary" className="container-wide flex h-[72px] items-center justify-between">
           <Link
             to="/"
             className="flex flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             aria-label="Evenor Holdings home"
           >
             <span className="font-display text-white text-lg md:text-xl font-semibold tracking-tight">Evenor Holdings</span>
-            <span className="h-[2px] w-8 bg-gold mt-1" aria-hidden="true" />
-          </Link>
+                      </Link>
 
           <ul className="hidden lg:flex items-center gap-7">
             {links.map((l) => (
@@ -101,7 +98,7 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <Link to={contactHref("partnership")} className="btn-gold !py-2.5 !px-5">
+              <Link to={contactHref("partnership")} className="btn-primary !h-11 !px-5 !text-sm">
                 Partner with us
               </Link>
             </li>
@@ -129,7 +126,7 @@ const Navbar = () => {
             aria-label="Menu"
             className="fixed inset-0 z-50 flex flex-col bg-navy"
           >
-            <div className="container-wide flex h-16 items-center justify-between">
+            <div className="container-wide flex h-[72px] items-center justify-between">
               <span className="font-display text-white text-lg font-semibold">Evenor Holdings</span>
               <button
                 type="button"
@@ -140,20 +137,20 @@ const Navbar = () => {
                 <X size={24} aria-hidden="true" />
               </button>
             </div>
-            <ul className="container-wide flex-1 flex flex-col justify-center gap-1">
+            <ul className="container-wide flex-1 flex flex-col pt-10 gap-1">
               {links.map((l) => (
                 <li key={l.to}>
                   <Link
                     to={l.to}
                     onClick={() => setOpen(false)}
-                    className="block py-3 font-display text-2xl text-white hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                    className="block py-3 text-[32px] font-semibold leading-tight text-white hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
                   >
                     {l.label}
                   </Link>
                 </li>
               ))}
-              <li className="pt-6">
-                <Link to={contactHref("partnership")} onClick={() => setOpen(false)} className="btn-gold w-full">
+              <li className="mt-auto pb-10 pt-6">
+                <Link to={contactHref("partnership")} onClick={() => setOpen(false)} className="btn-primary w-full">
                   Partner with us
                 </Link>
               </li>
