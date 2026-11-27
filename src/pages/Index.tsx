@@ -14,7 +14,7 @@ const Index = () => (
   <div className="min-h-dvh bg-offwhite">
     <Seo
       title="Evenor Holdings | Building African Ventures That Change Lives"
-      description="Evenor Holdings is an emerging South African holding company, founded in 2025, building ventures that change lives, starting with Moodies, OSTO, RES360 and Elections Intelligence, across logistics, ICT, consulting, petrochemicals and mining."
+      description="Evenor Holdings is a Cape Town holding company founded in 2025, building ventures that change lives: Moodies, OSTO, RES360 and Elections Intelligence."
     />
     <Navbar />
     <main id="main-content">

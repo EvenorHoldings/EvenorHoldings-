@@ -23,6 +23,7 @@ export const contactSchema = z.object({
     .trim()
     .min(5, "Please share a few more words")
     .max(5000, "Message is too long"),
+  consent: z.literal(true, { errorMap: () => ({ message: "Please agree to the privacy notice" }) }),
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;

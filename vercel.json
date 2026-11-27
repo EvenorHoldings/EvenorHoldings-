@@ -27,6 +27,16 @@
       "permanent": true
     },
     {
+      "source": "/careers",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/careers/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
       "source": "/projects",
       "destination": "/ventures",
       "permanent": true
@@ -51,10 +61,6 @@
       "destination": "/spa.html"
     },
     {
-      "source": "/careers/:slug",
-      "destination": "/spa.html"
-    },
-    {
       "source": "/legal/:doc",
       "destination": "/spa.html"
     }
@@ -65,7 +71,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co https://upload.wikimedia.org; connect-src 'self' https://*.supabase.co wss://*.supabase.co; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests"
         },
         {
           "key": "Strict-Transport-Security",

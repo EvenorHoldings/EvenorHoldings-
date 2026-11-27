@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
 /** Homepage-only short lines; full copy stays on the venture pages. */
 const HOME: Record<string, { tagline?: string; label: string; href?: string }> = {
   moodies: { label: "Visit moodies.life" },
-  osto: { label: "Join the pilot", href: import.meta.env.VITE_OSTO_PILOT_URL },
+  osto: { label: "Join the pilot" },
   res360: { label: "Visit res360.org" },
   "elections-intelligence": { tagline: "Every national election, tied to its source.", label: "Visit electionsintelligence.org" },
 };

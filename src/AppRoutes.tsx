@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ScrollManager from "@/components/ScrollManager";
@@ -11,8 +11,6 @@ const Ventures = lazy(() => import("./pages/Ventures"));
 const VentureDetail = lazy(() => import("./pages/VentureDetail"));
 const Sector = lazy(() => import("./pages/Sector"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Careers = lazy(() => import("./pages/Careers"));
-const RoleDetail = lazy(() => import("./pages/RoleDetail"));
 const Insights = lazy(() => import("./pages/Insights"));
 const InsightDetail = lazy(() => import("./pages/InsightDetail"));
 const LegalPage = lazy(() => import("./pages/LegalPage"));
@@ -38,8 +36,7 @@ const AppRoutes = ({ queryClient }: { queryClient: QueryClient }) => (
           <Route path="/ventures/:slug" element={<VentureDetail />} />
           <Route path="/sectors/:slug" element={<Sector />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/careers/:slug" element={<RoleDetail />} />
+          <Route path="/careers/*" element={<Navigate to="/about" replace />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/:slug" element={<InsightDetail />} />
           <Route path="/legal/:doc" element={<LegalPage />} />

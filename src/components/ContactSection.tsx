@@ -1,5 +1,5 @@
 import { useEffect, useState, FormEvent } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { checkThrottle, recordSubmission } from "@/lib/formThrottle";
 import { toast } from "@/hooks/use-toast";
@@ -52,6 +52,7 @@ const ContactSection = () => {
       email: fd.get("email"),
       phone: fd.get("phone") ?? "",
       message: fd.get("message"),
+      consent: fd.get("consent") === "on",
     });
 
     if (!parsed.success) {
@@ -76,7 +77,7 @@ const ContactSection = () => {
     if (error) {
       toast({
         title: "Submission failed",
-        description: `Please try again or email support@evenor.org`,
+        description: `Please try again or email info@evenor.org`,
         variant: "destructive",
       });
       return;
@@ -106,6 +107,7 @@ const ContactSection = () => {
             Partnerships, ventures, investor questions or tenders: choose a topic and
             we'll route your message to the right desk.
           </p>
+          <p className="lg:hidden mt-5 text-sm text-white/75">Mon–Fri · 08:00–17:00 SAST · Meetings by appointment</p>
         </div>
 
         <div className="grid lg:grid-cols-[2fr_3fr] shadow-2xl max-w-6xl mx-auto">
@@ -123,11 +125,8 @@ const ContactSection = () => {
                 <p className="flex gap-3"><MapPin size={16} className="text-gold shrink-0 mt-0.5" /><span>1st Floor, Cape Dahlia<br/>80 Coral Road, West Beach<br/>Cape Town, 7441</span></p>
                 <p className="flex gap-3"><Phone size={16} className="text-gold shrink-0 mt-0.5" /><a href="tel:+27782340831" className="hover:text-gold transition-colors">+27 78 234 0831</a></p>
                 <p className="flex gap-3"><Mail size={16} className="text-gold shrink-0 mt-0.5" /><a href="mailto:info@evenor.org" className="hover:text-gold transition-colors">info@evenor.org</a></p>
-                <p className="flex gap-3"><Clock size={16} className="text-gold shrink-0 mt-0.5" /><span>Mon–Fri · 08:00–17:00 SAST</span></p>
+                <p className="flex gap-3"><Clock size={16} className="text-gold shrink-0 mt-0.5" /><span>Mon–Fri · 08:00–17:00 SAST · Meetings by appointment</span></p>
               </div>
-              <p className="text-white/60 text-[11px] tracking-[0.2em] uppercase pt-4 border-t border-white/20">
-                By appointment · Discreet counsel
-              </p>
             </div>
           </div>
 
@@ -197,22 +196,19 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                {/* Honeypot */}
-                <input
-                  type="text"
-                  name="website"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                  className="hidden"
-                />
+                {/* Honeypot: hidden from people, left for bots to fill */}
+                <div className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input id="website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
 
-
-                <p className="text-[11px] text-charcoal/80 mt-5 mb-6 leading-relaxed">
-                  Your enquiry will be routed to{" "}
-                  <span className="text-navy font-medium">{ROUTING[enquiryType]}</span>. By submitting,
-                  you consent to Evenor Holdings storing your details in accordance with POPIA.
-                </p>
+                <label htmlFor="consent" className="mt-5 mb-6 flex items-start gap-3 text-sm text-charcoal/80 leading-relaxed">
+                  <input id="consent" name="consent" type="checkbox" required className="mt-1 h-4 w-4 shrink-0 accent-navy" />
+                  <span>
+                    I agree that Evenor Holdings may store and use my details to respond to this enquiry, in line with POPIA and our{" "}
+                    <Link to="/legal/privacy" className="text-navy underline underline-offset-2">Privacy Policy</Link>.
+                  </span>
+                </label>
 
                 <button
                   type="submit"

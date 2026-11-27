@@ -18,12 +18,13 @@ const WhatsAppButton = () => {
       href={`https://wa.me/27782340831?text=${MSG}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Message Evenor Holdings on WhatsApp"
+      aria-label="Chat with Evenor on WhatsApp"
       aria-hidden={hidden || undefined}
       tabIndex={hidden ? -1 : undefined}
-      className={`fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-navy text-gold shadow-lg ring-1 ring-gold/40 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${hidden ? "pointer-events-none opacity-0" : "opacity-100"}`}
+      className={`fixed bottom-6 right-6 z-40 flex h-12 items-center gap-2 rounded-full bg-navy px-5 text-sm font-semibold text-white shadow-lg ring-1 ring-white/20 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${hidden ? "pointer-events-none opacity-0" : "opacity-100"}`}
     >
-      <MessageCircle size={24} aria-hidden="true" />
+      <MessageCircle size={20} aria-hidden="true" />
+      <span>WhatsApp</span>
     </a>
   );
 };

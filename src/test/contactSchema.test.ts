@@ -9,6 +9,7 @@ const valid = {
   email: " amina@example.co.tz ",
   phone: "",
   message: "We would like Evenor to bid on a corridor logistics tender.",
+  consent: true as const,
 };
 
 describe("contactSchema", () => {
@@ -49,6 +50,10 @@ describe("contactSchema", () => {
 
   it("requires an enquiry type", () => {
     expect(contactSchema.safeParse({ ...valid, enquiry_type: "" }).success).toBe(false);
+  });
+
+  it("rejects an enquiry without POPIA consent", () => {
+    expect(contactSchema.safeParse({ ...valid, consent: false }).success).toBe(false);
   });
 
   it("maps optional empty fields to null in the database row", () => {

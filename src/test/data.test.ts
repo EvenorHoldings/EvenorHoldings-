@@ -24,6 +24,7 @@ describe("site data", () => {
 
   it("puts every venture and legal page in the sitemap", () => {
     const locs = siteRoutes().map((r) => r.loc);
+    expect(locs.some((l) => l.startsWith("/careers"))).toBe(false);
     for (const v of ventures) expect(locs).toContain(`/ventures/${v.slug}`);
     for (const k of Object.keys(legalDocs)) expect(locs).toContain(`/legal/${k}`);
   });

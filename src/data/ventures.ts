@@ -3,8 +3,11 @@ import calm from "@/assets/ventures/moodies-calm-800.webp";
 import gummies from "@/assets/ventures/moodies-gummies-600.webp";
 import cookies from "@/assets/ventures/moodies-cookies-600.webp";
 import brownie from "@/assets/ventures/moodies-brownie-600.webp";
-const STELLENBOSCH_PHOTO =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Stellenbosch_university_campus.jpg/1280px-Stellenbosch_university_campus.jpg";
+import stellenbosch from "@/assets/ventures/res360-stellenbosch-1280.webp";
+
+/** OSTO pilot link; override with VITE_OSTO_PILOT_URL. */
+export const OSTO_PILOT_URL: string =
+  import.meta.env.VITE_OSTO_PILOT_URL || "https://osto.lovable.app/pilot";
 
 export type VentureStage = "Trading" | "Pilot" | "In development" | "Live";
 
@@ -136,7 +139,7 @@ export const ventures: Venture[] = [
     ],
     capabilities: ["petrochemicals", "logistics"],
     url: `https://osto.lovable.app/?${UTM}`,
-    primaryCta: { label: "Join the pilot", href: `https://osto.lovable.app/pilot?${UTM}` },
+    primaryCta: { label: "Join the pilot", href: `${OSTO_PILOT_URL}${OSTO_PILOT_URL.includes("?") ? "&" : "?"}${UTM}` },
     secondaryCta: { label: "Visit the OSTO site", href: `https://osto.lovable.app/?${UTM}` },
     seo: {
       title: "OSTO | Cooking Energy From Filtered Waste Oil | Evenor Holdings",
@@ -182,7 +185,7 @@ export const ventures: Venture[] = [
       accent: "hsl(var(--gold-ink))",
     },
     cover: {
-      src: STELLENBOSCH_PHOTO,
+      src: stellenbosch,
       alt: "Historic buildings and trees on the Stellenbosch University campus in Stellenbosch, Western Cape",
       width: 1280,
       height: 960,
