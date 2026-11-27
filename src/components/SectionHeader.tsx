@@ -12,7 +12,7 @@ interface SectionHeaderProps {
 
 const SectionHeader = ({ eyebrow, title, intro, inverse, align = "left", id }: SectionHeaderProps) => (
   <div className={`max-w-3xl mb-12 md:mb-16 ${align === "center" ? "mx-auto text-center" : ""}`}>
-    <p className={`eyebrow mb-4 ${inverse ? "text-gold" : "gold-ink"}`}>{eyebrow}</p>
+    <p className={`eyebrow mb-4 ${inverse ? "text-white/70" : "text-muted-foreground"}`}>{eyebrow}</p>
     <h2 id={id} className={`display-lg ${inverse ? "text-white" : "text-navy"}`}>
       {title}
     </h2>

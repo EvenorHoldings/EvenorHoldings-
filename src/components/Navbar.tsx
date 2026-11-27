@@ -90,7 +90,7 @@ const Navbar = () => {
                   to={l.to}
                   end={l.to === "/"}
                   className={({ isActive }) =>
-                    `${linkBase} ${isActive && !l.to.includes("#") ? "text-gold" : "text-white/85 hover:text-white"}`
+                    `${linkBase} ${isActive && !l.to.includes("#") ? "text-white underline underline-offset-8" : "text-white/85 hover:text-white"}`
                   }
                 >
                   {l.label}
@@ -98,7 +98,7 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <Link to={contactHref("partnership")} className="btn-primary !h-11 !px-5 !text-sm">
+              <Link to={contactHref("partnership")} className="btn-outline-white !min-h-11 !h-11 !px-5 !text-sm">
                 Partner with us
               </Link>
             </li>
@@ -143,14 +143,14 @@ const Navbar = () => {
                   <Link
                     to={l.to}
                     onClick={() => setOpen(false)}
-                    className="block py-3 text-[32px] font-semibold leading-tight text-white hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                    className="block py-3 text-[32px] font-semibold leading-tight text-white hover:text-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
                   >
                     {l.label}
                   </Link>
                 </li>
               ))}
               <li className="mt-auto pb-10 pt-6">
-                <Link to={contactHref("partnership")} onClick={() => setOpen(false)} className="btn-primary w-full">
+                <Link to={contactHref("partnership")} onClick={() => setOpen(false)} className="btn-outline-white w-full">
                   Partner with us
                 </Link>
               </li>

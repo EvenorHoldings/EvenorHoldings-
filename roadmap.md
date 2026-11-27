@@ -7,3 +7,4 @@
 - [x] Phase 4b: publish self-hosted Inter with local font stylesheet and preload; Google Fonts removed — Vercel revamp @ 24caf51b
 - [x] Live push: revamp @ 0715b26b — redesign + phone +27 78 234 0831 + Inter via Google Fonts
 - [x] Uploaded brief: remove careers, contact consent/honeypot/hours, homepage CTA/alt, self-hosted RES360 WebP, meta, WhatsApp label, OSTO env URL
+- [x] Style finish: gold limited to main buttons and status chips; one primary button per screen

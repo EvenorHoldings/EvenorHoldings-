@@ -66,7 +66,7 @@ const Leadership = () => {
               <div
                 className="mx-auto lg:mx-0 lg:sticky lg:top-32"
               >
-                <div className="relative w-[300px] sm:w-[380px] lg:w-[440px] aspect-[4/5] overflow-hidden shadow-[0_20px_60px_-20px_rgba(11,37,69,0.5)] border-l-4 border-gold">
+                <div className="relative w-[300px] sm:w-[380px] lg:w-[440px] aspect-[4/5] overflow-hidden shadow-[0_20px_60px_-20px_rgba(11,37,69,0.5)] border-l-4 border-current">
                   <ResponsiveImage
                     image={CEO_IMAGE}
                     alt="Joachim Urio, Founder & CEO of Evenor Holdings"
@@ -83,7 +83,7 @@ const Leadership = () => {
                   <div className="flex items-center gap-5 mt-5 pt-5 border-t border-navy/10">
                     <a
                       href="mailto:joachim@evenor.org"
-                      className="flex items-center gap-2 text-navy hover:text-gold transition-colors text-sm"
+                      className="flex items-center gap-2 text-navy hover:opacity-70 transition-colors text-sm"
                     >
                       <Mail size={16} /> Executive Office
                     </a>
@@ -135,9 +135,9 @@ const Leadership = () => {
               {governance.map((g, i) => (
                 <div
                   key={g.title}
-                  className="bg-white p-8 border-l-4 border-gold shadow-[0_4px_24px_rgba(11,37,69,0.06)]"
+                  className="bg-white p-8 border-l-4 border-current shadow-[0_4px_24px_rgba(11,37,69,0.06)]"
                 >
-                  <g.icon size={28} className="text-gold mb-4" strokeWidth={1.5} />
+                  <g.icon size={28} className="text-current mb-4" strokeWidth={1.5} />
                   <h3 className="font-display text-xl font-semibold text-navy mb-3">{g.title}</h3>
                   <p className="text-charcoal/75 text-[15px] leading-[1.8] font-light">{g.body}</p>
                 </div>
@@ -156,7 +156,7 @@ const Leadership = () => {
               </p>
               <p className="text-charcoal/70 text-sm font-light">
                 Written enquiries may be directed to the office of the CEO at{" "}
-                <a href="mailto:joachim@evenor.org" className="text-navy underline underline-offset-4 hover:text-gold transition-colors">
+                <a href="mailto:joachim@evenor.org" className="text-navy underline underline-offset-4 hover:opacity-70 transition-colors">
                   joachim@evenor.org
                 </a>
                 .
@@ -175,7 +175,7 @@ const Leadership = () => {
             <p className="font-display italic text-white text-2xl md:text-[28px] leading-snug">
               "Whatever we put into the world should leave things better than they were."
             </p>
-            <p className="text-gold text-[13px] mt-6 tracking-[0.2em] uppercase font-semibold">
+            <p className="text-current text-[13px] mt-6 tracking-[0.2em] uppercase font-semibold">
               — Always Better
             </p>
           </div>

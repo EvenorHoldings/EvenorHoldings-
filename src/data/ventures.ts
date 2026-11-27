@@ -149,7 +149,7 @@ export const ventures: Venture[] = [
     theme: {
       surface: "#0F1F3A",
       ink: "#FFFFFF",
-      accent: "#D4A53A",
+      accent: "hsl(var(--offwhite))",
     },
   },
   {

@@ -37,11 +37,11 @@ const PageHero = ({ eyebrow, title, breadcrumb, image, height = "60vh" }: PageHe
           {breadcrumb.map((b, i) => (
             <span key={b.label}>
               {b.href ? (
-                <Link to={b.href} className="hover:text-gold transition-colors">
+                <Link to={b.href} className="hover:text-white transition-colors">
                   {b.label}
                 </Link>
               ) : (
-                <span className="text-gold">{b.label}</span>
+                <span className="text-white">{b.label}</span>
               )}
               {i < breadcrumb.length - 1 && <span className="mx-3 text-white/40">/</span>}
             </span>
@@ -51,7 +51,7 @@ const PageHero = ({ eyebrow, title, breadcrumb, image, height = "60vh" }: PageHe
         <h1 className="display-xl text-white max-w-4xl">
           {title}
         </h1>
-        <div className="mt-8 h-px w-12 bg-gold" aria-hidden="true" />
+        <div className="mt-8 h-px w-12 bg-white/30" aria-hidden="true" />
       </div>
     </section>
   );

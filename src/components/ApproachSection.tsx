@@ -35,8 +35,8 @@ const ApproachSection = () => (
       />
       <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s) => (
-          <li key={s.n} className="border-t border-gold/60 pt-6">
-            <p className="font-display text-gold text-sm font-semibold mb-4">{s.n}</p>
+          <li key={s.n} className="border-t border-current pt-6">
+            <p className="font-display text-current text-sm font-semibold mb-4">{s.n}</p>
             <h3 className="text-xl font-semibold text-white mb-3">{s.title}</h3>
             <p className="text-white/70 leading-relaxed">{s.desc}</p>
           </li>

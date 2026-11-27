@@ -15,7 +15,7 @@ const HowWeBuild = () => (
         {steps.map(([n, w, s]) => (
           <li key={n}>
             <Reveal>
-              <span className="block h-px w-full bg-gold" aria-hidden="true" />
+              <span className="block h-px w-full bg-ink/20" aria-hidden="true" />
               <p className="mt-6 text-sm font-semibold text-muted-foreground">{n}</p>
               <p className="mt-2 text-2xl font-semibold text-ink">{w}</p>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">{s}</p>

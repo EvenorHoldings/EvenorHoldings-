@@ -98,7 +98,7 @@ const Insights = () => {
               <Link
                 key={i.slug}
                 to={`/insights/${i.slug}`}
-                className="group block bg-white border border-navy/10 border-l-[3px] border-l-gold rounded-[4px] hover:border-gold transition-all shadow-sm hover:shadow-xl overflow-hidden"
+                className="group block bg-white border border-navy/10 border-l-[3px] border-l-current rounded-[4px] hover:border-current transition-all shadow-sm hover:shadow-xl overflow-hidden"
               >
                 <div className="relative h-52 overflow-hidden">
                   <div
@@ -114,11 +114,11 @@ const Insights = () => {
                   <p className="text-navy/70 text-[11px] tracking-[0.18em] uppercase mb-3">
                     {fmt(i.date)} · {i.readingMinutes} min read
                   </p>
-                  <h3 className="font-display text-xl font-semibold text-navy mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-display text-xl font-semibold text-navy mb-3 group-hover:underline transition-colors">
                     {i.title}
                   </h3>
                   <p className="text-charcoal/75 text-[15px] font-light leading-relaxed mb-5">{i.dek}</p>
-                  <span className="inline-flex items-center gap-1 text-navy text-[11px] tracking-[0.16em] uppercase font-bold group-hover:text-gold">
+                  <span className="inline-flex items-center gap-1 text-navy text-[11px] tracking-[0.16em] uppercase font-bold group-hover:underline">
                     Read Perspective <ArrowUpRight size={14} aria-hidden="true" />
                   </span>
                 </div>

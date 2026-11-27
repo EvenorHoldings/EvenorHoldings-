@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const link = "hover:text-gold transition-colors";
+const link = "hover:text-white transition-colors";
 const nav = [
   ["Ventures", "/ventures"],
   ["About", "/about"],
@@ -13,7 +13,7 @@ const Footer = () => (
     <div className="container-wide flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
       <div>
         <p className="text-lg font-semibold text-white">Evenor Holdings</p>
-        <p className="text-sm text-gold">Always Better.</p>
+        <p className="text-sm text-white/60">Always Better.</p>
       </div>
       <nav aria-label="Footer">
         <ul className="flex flex-wrap gap-x-8 gap-y-2 text-sm">

@@ -15,7 +15,7 @@ const HomeVentures = () => (
   <section id="ventures" aria-labelledby="ventures-title" className="section-home bg-offwhite">
     <div className="container-wide">
       <Reveal>
-        <span className="block h-px w-12 bg-gold mb-6" aria-hidden="true" />
+        <span className="block h-px w-12 bg-ink/20 mb-6" aria-hidden="true" />
         <p className="eyebrow-sm text-muted-foreground">Our ventures</p>
         <h2 id="ventures-title" className="home-h2 mt-4 text-ink">Four companies. One standard.</h2>
       </Reveal>
@@ -40,7 +40,7 @@ const HomeVentures = () => (
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-navy" role="img" aria-label={`${v.name} monogram`}>
-                      <span className="text-8xl font-bold tracking-tight text-gold">{v.slug === "elections-intelligence" ? "EI" : v.name}</span>
+                      <span className="text-8xl font-bold tracking-tight text-white">{v.slug === "elections-intelligence" ? "EI" : v.name}</span>
                     </div>
                   )}
                   {v.cover?.credit && (

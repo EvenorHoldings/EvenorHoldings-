@@ -76,7 +76,7 @@ const OperationsMap = () => {
         ref={ref}
         role="application"
         aria-label="Interactive map of Evenor Holdings operational locations across Sub-Saharan Africa"
-        className="h-[380px] md:h-[560px] w-full max-w-3xl mx-auto border border-gold/30 bg-navy-deep z-0"
+        className="h-[380px] md:h-[560px] w-full max-w-3xl mx-auto border border-current bg-navy-deep z-0"
       />
       <p className="mt-3 text-white/50 text-xs font-light">
         Interactive map · scroll-zoom disabled for page comfort — pinch or use the +/− controls.

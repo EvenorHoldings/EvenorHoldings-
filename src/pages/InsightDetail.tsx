@@ -53,7 +53,7 @@ const InsightDetail = () => {
 
         <article className="section-pad bg-offwhite">
           <div className="container-wide max-w-3xl">
-            <p className="font-display text-navy/90 italic text-xl md:text-2xl leading-relaxed border-l-[3px] border-gold pl-6 mb-12">
+            <p className="font-display text-navy/90 italic text-xl md:text-2xl leading-relaxed border-l-[3px] border-current pl-6 mb-12">
               {article.dek}
             </p>
             {article.body.map((block, bi) => (
@@ -72,7 +72,7 @@ const InsightDetail = () => {
             <div className="mt-14 pt-8 border-t border-navy/15 flex flex-wrap items-center justify-between gap-4">
               <Link
                 to="/insights"
-                className="text-navy text-[11px] tracking-[0.2em] uppercase font-bold hover:text-gold transition-colors"
+                className="text-navy text-[11px] tracking-[0.2em] uppercase font-bold hover:opacity-70 transition-colors"
               >
                 ← All Perspectives
               </Link>
@@ -93,12 +93,12 @@ const InsightDetail = () => {
                   <Link
                     key={r.slug}
                     to={`/insights/${r.slug}`}
-                    className="group block border border-white/15 border-l-[3px] border-l-gold p-6 rounded-[4px] hover:bg-white/5 transition-colors"
+                    className="group block border border-white/15 border-l-[3px] border-l-current p-6 rounded-[4px] hover:bg-white/5 transition-colors"
                   >
                     <p className="text-white/70 text-[11px] tracking-[0.18em] uppercase mb-3">
                       {r.sector} · {fmt(r.date)}
                     </p>
-                    <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg font-semibold leading-snug group-hover:underline transition-colors">
                       {r.title}
                     </h3>
                   </Link>

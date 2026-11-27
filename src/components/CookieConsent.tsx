@@ -28,11 +28,11 @@ const CookieConsent = () => {
     <div
       role="region"
       aria-label="Cookie and privacy notice"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-navy-deep border-t-2 border-gold text-white"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-navy-deep border-t-2 border-current text-white"
     >
       <div className="container-wide py-5 md:py-6 flex flex-col md:flex-row gap-5 md:gap-8 items-start md:items-center">
         <div className="flex-1">
-          <p className="text-[11px] tracking-[0.22em] uppercase text-gold mb-2">
+          <p className="text-[11px] tracking-[0.22em] uppercase text-current mb-2">
             Privacy Notice
           </p>
           <p className="text-white/85 text-sm font-light leading-relaxed max-w-3xl">
@@ -50,7 +50,7 @@ const CookieConsent = () => {
           </button>
           <button
             onClick={() => decide("accepted")}
-            className="btn-gold !py-3 !px-5 !text-[11px] min-h-11 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="btn-outline-white !py-3 !px-5 !text-[11px] min-h-11 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Accept
           </button>

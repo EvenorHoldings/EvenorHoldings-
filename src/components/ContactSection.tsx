@@ -30,7 +30,7 @@ const ContactSection = () => {
   }, [params]);
 
   const inp =
-    "w-full bg-white border-2 border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-midgray/70 focus:outline-none focus:border-gold transition-colors";
+    "w-full bg-white border-2 border-navy/15 px-4 py-3 text-sm text-navy placeholder:text-midgray/70 focus:outline-none focus:border-current transition-colors";
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -112,7 +112,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-[2fr_3fr] shadow-2xl max-w-6xl mx-auto">
           <div
-            className="hidden lg:flex relative bg-cover bg-center min-h-full border-r-4 border-gold flex-col justify-end p-10 text-white"
+            className="hidden lg:flex relative bg-cover bg-center min-h-full border-r-4 border-current flex-col justify-end p-10 text-white"
             style={{
               backgroundImage:
                 `url(${IMG.corridor})`,
@@ -122,17 +122,17 @@ const ContactSection = () => {
             <div className="relative space-y-6">
               <p className="gold-label">Head Office · Cape Town</p>
               <div className="space-y-4 text-sm font-light">
-                <p className="flex gap-3"><MapPin size={16} className="text-gold shrink-0 mt-0.5" /><span>1st Floor, Cape Dahlia<br/>80 Coral Road, West Beach<br/>Cape Town, 7441</span></p>
-                <p className="flex gap-3"><Phone size={16} className="text-gold shrink-0 mt-0.5" /><a href="tel:+27782340831" className="hover:text-gold transition-colors">+27 78 234 0831</a></p>
-                <p className="flex gap-3"><Mail size={16} className="text-gold shrink-0 mt-0.5" /><a href="mailto:info@evenor.org" className="hover:text-gold transition-colors">info@evenor.org</a></p>
-                <p className="flex gap-3"><Clock size={16} className="text-gold shrink-0 mt-0.5" /><span>Mon–Fri · 08:00–17:00 SAST · Meetings by appointment</span></p>
+                <p className="flex gap-3"><MapPin size={16} className="text-current shrink-0 mt-0.5" /><span>1st Floor, Cape Dahlia<br/>80 Coral Road, West Beach<br/>Cape Town, 7441</span></p>
+                <p className="flex gap-3"><Phone size={16} className="text-current shrink-0 mt-0.5" /><a href="tel:+27782340831" className="hover:opacity-70 transition-colors">+27 78 234 0831</a></p>
+                <p className="flex gap-3"><Mail size={16} className="text-current shrink-0 mt-0.5" /><a href="mailto:info@evenor.org" className="hover:opacity-70 transition-colors">info@evenor.org</a></p>
+                <p className="flex gap-3"><Clock size={16} className="text-current shrink-0 mt-0.5" /><span>Mon–Fri · 08:00–17:00 SAST · Meetings by appointment</span></p>
               </div>
             </div>
           </div>
 
           <div className="bg-white p-8 md:p-10">
             {submitted ? (
-              <div className="bg-navy-deep/5 border-l-4 border-gold p-10 text-center" role="status" aria-live="polite">
+              <div className="bg-navy-deep/5 border-l-4 border-current p-10 text-center" role="status" aria-live="polite">
                 <p className="gold-label gold-ink mb-4">Received</p>
                 <p className="text-navy font-display text-2xl md:text-3xl leading-snug mb-4">
                   Thank you.

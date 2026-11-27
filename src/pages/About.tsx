@@ -67,7 +67,7 @@ const About = () => (
             <p>
               We are building the group across five sectors we know and believe in: logistics, information and communications technology, management consulting, petrochemicals and mining. They give our ventures a toolkit to draw on, and they are where we expect many of our next ventures to come from.
             </p>
-            <p className="text-navy font-medium italic border-l-4 border-gold pl-6 py-2">
+            <p className="text-navy font-medium italic border-l-4 border-current pl-6 py-2">
               Our standard is simple: Always Better. Whatever we put into the world should leave people, businesses and communities better off than before.
             </p>
           </div>
@@ -95,16 +95,16 @@ const About = () => (
             ].map((c) => (
               <article
                 key={c.label}
-                className="bg-white border-t-4 border-gold p-8 md:p-10 shadow-[0_4px_24px_rgba(11,37,69,0.08)]"
+                className="bg-white border-t-4 border-current p-8 md:p-10 shadow-[0_4px_24px_rgba(11,37,69,0.08)]"
               >
-                <p className="text-gold text-[11px] font-semibold tracking-[0.22em] uppercase mb-4">{c.label}</p>
+                <p className="text-current text-[11px] font-semibold tracking-[0.22em] uppercase mb-4">{c.label}</p>
                 {c.body ? (
                   <p className="text-charcoal/85 text-[15px] leading-[1.85] font-light">{c.body}</p>
                 ) : (
                   <ul className="space-y-3">
                     {values.map((v) => (
                       <li key={v} className="flex items-start gap-3 text-charcoal/90 text-[15px]">
-                        <Check size={16} className="text-gold shrink-0 mt-1" aria-hidden="true" />
+                        <Check size={16} className="text-current shrink-0 mt-1" aria-hidden="true" />
                         <span>{v}</span>
                       </li>
                     ))}
@@ -132,7 +132,7 @@ const About = () => (
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {focus.map((f) => (
-              <div key={f.title} className="p-8 border-l-4 border-gold bg-white/[0.06]">
+              <div key={f.title} className="p-8 border-l-4 border-current bg-white/[0.06]">
                 <h3 className="text-white font-display text-xl font-semibold mb-3">{f.title}</h3>
                 <p className="text-white/70 text-[15px] leading-relaxed font-light">{f.body}</p>
               </div>
@@ -151,7 +151,7 @@ const About = () => (
           <ol className="relative max-w-3xl mx-auto border-l-2 border-navy/15 space-y-12 pl-8 md:pl-12">
             {journey.map((t) => (
               <li key={t.title} className="relative">
-                <span aria-hidden="true" className="absolute -left-[41px] md:-left-[57px] top-1.5 w-3 h-3 rounded-full bg-gold border-2 border-navy" />
+                <span aria-hidden="true" className="absolute -left-[41px] md:-left-[57px] top-1.5 w-3 h-3 rounded-full bg-current opacity-30 border-2 border-navy" />
                 <span className="inline-block bg-navy text-white text-[11px] tracking-[0.2em] font-semibold px-3 py-1.5 mb-3 uppercase">
                   {t.when}
                 </span>

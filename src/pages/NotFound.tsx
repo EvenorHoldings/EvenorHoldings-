@@ -37,7 +37,7 @@ const NotFound = () => {
           <h1 className="display-xl mb-6">
             Off the Map.
           </h1>
-          <div className="h-[3px] w-16 bg-gold mb-8" />
+          <div className="h-[3px] w-16 bg-current opacity-30 mb-8" />
           <p className="text-white/75 font-light text-[17px] md:text-[18px] max-w-2xl leading-relaxed mb-10">
             There is nothing at this address. The page may have moved or never existed.
             Try one of the links below.
@@ -73,10 +73,10 @@ const NotFound = () => {
                 to={l.href}
                 className="bg-navy-deep hover:bg-navy-light transition-colors p-6 group"
               >
-                <div className="text-[10px] tracking-[0.22em] uppercase text-gold mb-2">
+                <div className="text-[10px] tracking-[0.22em] uppercase text-current mb-2">
                   Continue to
                 </div>
-                <div className="font-display text-white text-lg group-hover:text-gold transition-colors">
+                <div className="font-display text-white text-lg group-hover:underline transition-colors">
                   {l.label} →
                 </div>
               </Link>

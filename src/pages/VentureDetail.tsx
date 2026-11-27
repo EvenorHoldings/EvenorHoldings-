@@ -143,7 +143,7 @@ const VentureDetail = () => {
         <div className="container-wide">
           <ul className="grid gap-10 md:grid-cols-3">
             {v.highlights.map((h) => (
-              <li key={h.title} className="border-t-2 border-gold pt-6">
+              <li key={h.title} className="border-t-2 border-current pt-6">
                 <Check size={20} className="text-gold-ink mb-4" aria-hidden="true" />
                 <h2 className="text-xl font-semibold text-navy mb-3">{h.title}</h2>
                 <p className="text-charcoal/75 leading-relaxed">{h.desc}</p>

@@ -8,7 +8,7 @@ const LatestInsight = () => {
   return (
     <section aria-labelledby="insight-title" className="section-home bg-offwhite border-t border-border">
       <Reveal className="container-wide">
-        <span className="block h-px w-12 bg-gold mb-6" aria-hidden="true" />
+        <span className="block h-px w-12 bg-ink/20 mb-6" aria-hidden="true" />
         <p className="eyebrow-sm text-muted-foreground">{a.sector} · {formatInsightDate(a.date)}</p>
         <h2 id="insight-title" className="mt-4 max-w-3xl text-3xl md:text-[36px] font-semibold leading-tight text-ink">{a.title}</h2>
         <p className="home-body mt-5 text-muted-foreground">{a.dek.split(/(?<=\.)\s/)[0]}</p>
